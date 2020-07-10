@@ -1,6 +1,4 @@
-<?php
-	include_once $_SERVER["DOCUMENT_ROOT"]."/main/inc/head.html";
-?>
+@include('inc/head')
 			<div id="sub_sec">
                 <div class="beds">
                     <div class="beds_detail inner">
@@ -9,14 +7,12 @@
                             <p class="hastens_name hei85p">HÄSTENS</p>
                             <p class="beds_title hei85p_kr">VIVIDUS®</p>
                             <p class="beds_txt hei85p_kr">Our second most exclusive bed</p>
-                            <a class="beds_more hei85p_kr" href="<?php $_SERVER["DOCUMENT_ROOT"]?>/main/sub/beds_sub.html">SHOW ME THE BED</a>
+                            <a class="beds_more hei85p_kr" href="<?php $_SERVER["DOCUMENT_ROOT"]?>/main/sub/beds_sub">SHOW ME THE BED</a>
                         </div>
                     </div>
                 </div>
             </div>
-<?php
-	include_once $_SERVER["DOCUMENT_ROOT"]."/main/inc/footer.html";
-?>
+@include('inc/footer')
         <script>
              $(document).ready(function(){
                console.log("a")

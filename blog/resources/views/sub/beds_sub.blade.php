@@ -1,6 +1,4 @@
-<?php
-	include_once $_SERVER["DOCUMENT_ROOT"]."/main/inc/head.html";
-?>
+@include('inc/head')
 			<div id="sub_sec">
                 <div class="beds_sub inner">
 					<div class="beds_sub_edi">
@@ -193,9 +191,7 @@
                     </div>
                 </div>
             </div>
-<?php
-	include_once $_SERVER["DOCUMENT_ROOT"]."/main/inc/footer.html";
-?>
+@include('inc/footer')
         <script>
             var swiper = new Swiper('.swiper-container', {
               slidesPerView: 1,

@@ -1,6 +1,4 @@
-<?php
-	include_once $_SERVER["DOCUMENT_ROOT"]."/main/inc/head.html";
-?>
+@include('inc/head')
 			<div id="sub_sec">
                 <div class="acc">
                     <div class="acc_title">
@@ -115,8 +113,6 @@
                     </div>
                 </div>
             </div>
-<?php
-	include_once $_SERVER["DOCUMENT_ROOT"]."/main/inc/footer.html";
-?>
+@include('inc/footer')
     </body>
 </html>

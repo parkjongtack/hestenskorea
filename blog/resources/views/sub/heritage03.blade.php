@@ -1,6 +1,4 @@
-<?php
-	include_once $_SERVER["DOCUMENT_ROOT"]."/main/inc/head.html";
-?>
+@include('inc/head')
 			<div id="sub_sec">
                 <div class="heritage03_sub_01">
                     <div class="h_sub_bot1">
@@ -26,9 +24,7 @@
                     </div>
                 </div>
             </div>
-<?php
-	include_once $_SERVER["DOCUMENT_ROOT"]."/main/inc/footer.html";
-?>
+@include('inc/footer')
         <script>
              $(document).ready(function(){
                console.log("a")
