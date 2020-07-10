@@ -1,9 +1,9 @@
-@if(!session('user_id'))
+{{-- @if(!session('user_id'))
 	<script type="text/javascript">
 		alert('로그인 해주세요.');
 		location.href = '/ey_login';
 	</script>
-@endif
+@endif --}}
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -38,19 +38,12 @@
                         <div class="nav_sub"><a href="/ey_moslider">MOBILE 슬라이드</a></div>
                         <div class="nav_sub"><a href="/ey_mopopup">MOBILE 팝업</a></div>
                     </div>
-                    <div class="na_title nav_img"><i class="fas fa-comments"></i>커뮤니티</div>
+                    <div class="na_title nav_img"><i class="fas fa-comments"></i>카테고리</div>
                     <div class="na_title dep2">
-                        <div class="nav_sub"><a href="/ey_faq">FAQ</a></div>
-                        <div class="nav_sub"><a href="/ey_notice">공지사항</a></div>
-						<div class="nav_sub"><a href="/ey_newsletter">뉴스레터</a></div>
-                        <!-- <div class="nav_sub"><a href="/ey_free">자유게시판</a></div> -->
-                        <div class="nav_sub"><a href="/happy_call/happy_call_list">상담게시판</a></div>
-                        <!-- <div class="nav_sub"><a href="/ey_education">교육게시판</a></div> -->
-						<div class="nav_sub"><a href="/ey_data_room">자료실</a></div>
-						<div class="nav_sub"><a href="/ey_law_data_room">법령정보</a></div>
-						<div class="nav_sub"><a href="/ey_security_data_room">보안서식</a></div>
-						<div class="nav_sub"><a href="/ey_cso_request_education">CSO 양성교육</a></div>
-						<div class="nav_sub"><a href="/ey_security_request_education">산업보안방문교육</a></div>
+                        <div class="nav_sub"><a href="/ey_faq">beds</a></div>
+                        <div class="nav_sub"><a href="/ey_notice">acc</a></div>
+						<div class="nav_sub"><a href="/ey_newsletter">press</a></div>
+                        <div class="nav_sub"><a href="/happy_call/happy_call_list">media</a></div>
                     </div>
                     <div class="na_title nav_img"><i class="far fa-chart-bar"></i>통계 현황</div>
                     <div class="na_title dep2">

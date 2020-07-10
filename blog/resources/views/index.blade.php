@@ -55,7 +55,7 @@
                 <div class="news_sec">
                     <div class="title_box">
                         <h2>HERITAGE</h2>
-                        <p><a href="#none" style="color: #00154a;">READ MORE</a></p>
+                        <p><a href="#none" style="color: #00154a">READ MORE</a></p>
                     </div>
                 </div>
             </div>
