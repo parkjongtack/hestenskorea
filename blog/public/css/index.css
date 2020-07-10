@@ -329,6 +329,20 @@ img{max-width: 100%; display: block; margin: 0 auto;}
 .pag_write li.on{background-color: #3d6cb4; color: #fff;}
 .pag_write li.on a{color: #fff; background-color: #3d6cb4;}
 
+/*contact*/
+.map{margin-bottom: 100px;}
+#daumRoughmapContainer1594365579451{width: 100% !important;}
+.contact_info{font-size: 0; margin-bottom: 100px;}
+.contact_info .info{display: inline-block; font-size: 20px; height: 400px; border-bottom: 1px solid #fff; position: relative; vertical-align: top;}
+.contact_info .left{width: 480px; background-color: #00154a;}
+.contact_info .right{width: 920px; overflow: hidden;}
+.contact_info .info .info_text{position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); text-align: center; width: 100%; color: #fff;}
+.contact_info .info .info_text .info_ico{margin-bottom: 5px;}
+.contact_info .info .info_text p{font-size: 30px; font-weight: 100;}
+.contact_info .info .info_text h1{font-size: 45px; font-weight: 500;}
+.contact_info .info .info_text span{font-size: 20px; font-weight: 100;}
+
+
 @media screen and (max-width: 1440px){
     .inner{width: 97.2222vw; margin: 0 auto;}
     .hei85p{transform: scaleY(0.85);font-family: 'Noto Sans',serif;}

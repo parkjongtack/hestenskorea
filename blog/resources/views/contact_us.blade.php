@@ -1,63 +1,55 @@
 <?php
 	include_once $_SERVER["DOCUMENT_ROOT"]."/main/inc/head.html";
 ?>
-		<div>
-			<p><img src="./img/contact_map.png" /></p>
-		</div>
-		<table class="contact_us_layer" cellpadding="0" cellspacing="0" border="0">
-			<tr>
-				<td style="padding-left:50px;">					
-					<table cellpadding="0" cellspacing="0" border="0">
-						<tr>
-							<td align="center">
-								<img src="./img/contact_phone.png" width="34px" height="44px" style="verticla-align:top;" />
-							</td>
-						</tr>
-						<tr>
-							<td align="center" style="color:white;font-weight:300;font-size:31.43pt;">
-								전화문의
-							</td>
-						</tr>
-						<tr>
-							<td align="center" style="color:white;font-size:45.57pt;">
-								02-3467-8407
-							</td>							
-						</tr>
-						<tr>
-							<td align="center" style="color:white;font-weight:300;font-size:20pt;padding-bottom:230px;">
-								EMAIL-8H@THE8H.COM<br/>
-								MON-SAT 9:30~19:00<br/>
-								SUN 11:00~6:00
-							</td>							
-						</tr>
-						<tr>
-							<td align="center">
-								<img src="./img/contact_sell.png" width="45px" height="41px" style="verticla-align:top;margin-top:-100px;" />
-							</td>
-						</tr>
-						<tr>
-							<td align="center" style="color:white;font-weight:300;font-size:31.43pt;height:30px;">
-								<div style="margin-top:-70px;">판매1처</div>
-							</td>
-						</tr>
-					</table>
-				</td>
-				<td style="float:right;">
-					<table cellpadding="0" cellspacing="0" border="0">
-						<tr>
-							<td class="contact_picture1">
-								<img src="./img/contact_picture1.png"  />
-							</td>
-						</tr>
-						<tr>
-							<td class="contact_picture2">
-								<img src="./img/contact_picture2.png"  />
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
+<style>
+    .wrap_controllers{display: none !important;}
+</style>
+    <div id="sub_sec">
+        <div class="contact">
+            <div class="map">
+                <div id="daumRoughmapContainer1594365579451" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+                <script charset="UTF-8">
+                	new daum.roughmap.Lander({
+                		"timestamp" : "1594365579451",
+                		"key" : "2z72g",
+                		"mapWidth" : "1920",
+                		"mapHeight" : "540"
+                	}).render();
+                </script>
+            </div>
+            <div class="contact_info inner">
+                <div class="info left">
+                    <div class="info_text">
+                        <div class="info_ico">
+                            <img src="../img/sub/contact_ico_01.png" alt="">
+                        </div>
+                        <p>전화문의</p>
+                        <h1>02-3467-8407</h1>
+                        <span>
+                            email-8h@the8h.com<br>
+                            MON-SAT 9:30~19:00<br>
+                            SUN 11:00~6:00
+                        </span>
+                    </div>
+                </div>
+                <div class="info right">
+                    <img src="../img/sub/contact_01.png" alt="">
+                </div>
+                <div class="info left">
+                    <div class="info_text">
+                        <div class="info_ico">
+                            <img src="../img/sub/contact_ico_02.png" alt="">
+                        </div>
+                        <p>판매처</p>
+                    </div>
+                </div>
+                <div class="info right">
+                    <img src="../img/sub/contact_02.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 <?php
 	include_once $_SERVER["DOCUMENT_ROOT"]."/main/inc/footer.html";
 ?>
