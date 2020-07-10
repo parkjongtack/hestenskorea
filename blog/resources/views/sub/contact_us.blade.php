@@ -5,7 +5,7 @@
     <div id="sub_sec">
         <div class="contact">
             <div class="map">
-                <div id="daumRoughmapContainer1594365579451" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                <div id="daumRoughmapContainer1594365579451" class="root_daum_roughmap root_daum_roughmap_landing mo_none"></div>
                 <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
                 <script charset="UTF-8">
                    new daum.roughmap.Lander({
@@ -15,6 +15,15 @@
                       "mapHeight" : "540"
                    }).render();
                 </script>
+				<div id="daumRoughmapContainer1594382776882" class="root_daum_roughmap root_daum_roughmap_landing mo_block"></div>
+				<script charset="UTF-8">
+					new daum.roughmap.Lander({
+						"timestamp" : "1594382776882",
+						"key" : "2z778",
+						"mapWidth" : "360",
+						"mapHeight" : "260"
+					}).render();
+				</script>
             </div>
             <div class="contact_info inner">
                 <div class="info left">
@@ -32,7 +41,8 @@
                     </div>
                 </div>
                 <div class="info right">
-                    <img src="/img/sub/contact_01.png" alt="">
+                    <img class="mo_none" src="/img/sub/contact_01.png" alt="">
+					<img class="mo_block" src="/img/sub/m_contact_01.png" alt="">
                 </div>
                 <div class="info left">
                     <div class="info_text">
@@ -43,7 +53,8 @@
                     </div>
                 </div>
                 <div class="info right">
-                    <img src="/img/sub/contact_02.png" alt="">
+                    <img class="mo_none" src="/img/sub/contact_02.png" alt="">
+					<img class="mo_block" src="/img/sub/m_contact_02.png" alt="">
                 </div>
             </div>
         </div>
