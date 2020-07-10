@@ -19,42 +19,48 @@
                     <div class="acc_content">
                         <ul class="inner">
                             <li class="half">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>
                                 </div>
                             </li>
                             <li class="half n_m">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>
                                 </div>
                             </li>
                             <li class="half n_m">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>
                                 </div>
                             </li>
                             <li class="half n_m">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>
@@ -68,42 +74,48 @@
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>
                                 </div>
                             </li>
                             <li class="half n_m">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>
                                 </div>
                             </li>
                             <li class="half n_m">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>
                                 </div>
                             </li>
                             <li class="half n_m">
-                                <img src="../img/acc_img01.png" alt="">
+                                <img class="mo_block" src="../img/acc_img01.png" alt="">
+                                <img class="mo_none" src="../img/acc_img01.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85"></p>
                                     <h2 class="hei85"></h2>

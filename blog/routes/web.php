@@ -22,7 +22,8 @@ Route::get('/', 'Main@main');
 
 Route::get('/sub/acc', 'Sub@acc');
 Route::get('/sub/beds', 'Sub@beds');
-Route::get('/sub/beds', 'Sub@contact_us');
+Route::get('/sub/beds_sub', 'Sub@beds_sub');
+Route::get('/sub/contact_us', 'Sub@contact_us');
 Route::get('/sub/heritage01', 'Sub@heritage01');
 Route::get('/sub/heritage02', 'Sub@heritage02');
 Route::get('/sub/heritage03', 'Sub@heritage03');

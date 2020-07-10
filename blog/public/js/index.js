@@ -41,11 +41,14 @@ $(function(){
 
     //material
     $("#sub_sec .material_sub_img").click(function(){
+        var w_widht = $(document).width();
+        if(w_widht > 1367){
         var this_con = $(this);
         var idx = $(this).parent().index();
-
+        console.log("adsfasfdsa")
         function doing(){
             var header_height = $("#header").height();
+            console.log(header_height)
             var this_con_offset = $(this_con).offset().top;
             $('html, body').animate({scrollTop:this_con_offset-header_height},0);
         }
@@ -168,6 +171,42 @@ $(function(){
         
         $("#sub_sec .material_sub_img").not('.on').animate({height:"15.6250vw"},0);
         $("#sub_sec .material_sub_img").not('.on').children('div').css({height:"auto"});
+    }else{
+        console.log("abs")
+        var this_con = $(this);
+        var idx = $(this).parent().index();
+        for(var i=0; i<$('.material_sub').length; i++){
+            $("#sub_sec .material_sub_img").eq(i).children('img').attr('src','../img/sub/material_0'+(i+1)+'.png');
+            $("#sub_sec .material_sub_img").eq(i).children('div').css({
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%,-50%)"
+            });
+            $("#sub_sec .material_sub_img").eq(i).children('div').children('h2').css({
+                position: "relative",
+                top: "auto",
+                bottom: "auto",
+                left: "auto",
+                right: "auto",
+                transform: "translate(0)"
+            });
+            $("#sub_sec .material_sub_img").eq(i).children('div'). children('p').css({
+                position: "relative",
+                top: "auto",
+                bottom: "auto",
+                left: "auto",
+                right: "auto",
+                transform: "translate(0)",
+                textAlign: "center"
+            });
+        }
+        $(this_con).animate({height:$(this_con).children('img').height()-5},100);
+        $("#sub_sec .material_sub_img").removeClass("on");
+        $(this_con).toggleClass("on");
+        
+        $("#sub_sec .material_sub_img").not('.on').animate({height:"15.6250vw"},0);
+    }
     });
 
     //news

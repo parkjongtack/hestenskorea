@@ -31,6 +31,12 @@ class Sub extends Controller
 
 	}
 
+	public function beds_sub(Request $request) {
+
+		return view('sub/beds_sub'); 
+
+	}
+
 	public function heritage01(Request $request) {
 
 		return view('sub/heritage01'); 

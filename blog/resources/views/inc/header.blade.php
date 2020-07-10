@@ -58,7 +58,7 @@
                 </div>
             </li>
             <li class="ham_list"><a href="/sub/beds">Beds</a></li>
-            <li class="ham_list">Acc</li>
+            <li class="ham_list"><a href="/sub/acc">Acc</a></li>
             <li class="ham_list"><a href="/sub/materials">Material</a></li>
             <li class="ham_list">Heritage</li>
             <ul class="ham_list_sub hamHeritage">
@@ -66,14 +66,10 @@
                 <a href="/sub/heritage02"><li>Blue Check</li></a>
                 <a href="/sub/heritage03"><li>Royal Court</li></a>
             </ul>
-            <li class="ham_list">News</li>
-            <ul class="ham_list_sub hamNews">
+            <li class="ham_list"><a href="/sub/news">News</a></li>
+            {{-- <ul class="ham_list_sub hamNews">
                 <a href="#none"><li>PRESS</li></a>
                 <a href="#none"><li>MEDIA</li></a>
-            </ul>
-            <li class="ham_list">Contact</li>
-            <ul class="ham_list_sub hamContact">
-                <a href="#none"><li>매장정보</li></a>
-                <a href="#none"><li>오시는 길</li></a>
-            </ul>
+            </ul> --}}
+            <li class="ham_list"><a href="/sub/contact_us">Contact</a></li>
         </ul>
