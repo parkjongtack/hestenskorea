@@ -1,0 +1,28 @@
+
+mail.php(popup2.php) 수정시 post.php도 함께수정
+
+<iframe frameborder=0 width='640' height=600 name='sub_frame' src="/boxi/mail/mail.php" align='center'></iframe> 
+
+
+
+
+
+
+
+셀렉트
+
+
+
+<select class="box" type='text' name="제품군" required itemname='제품군'>
+
+<option value="홈네트워크">홈네트워크</option>
+<option value="홈오토메이션">홈오토메이션</option>
+<option value="TV폰">TV폰</option>
+<option value="디지털도어록">디지털도어록</option>
+<option value="비디오폰">비디오폰</option>
+<option value="인터폰/도어폰/인터컴">인터폰/도어폰/인터컴</option>
+<option value="CCTV">CCTV</option>
+<option value="방송장비">방송장비</option>
+<option value="너스콜">너스콜</option>
+
+</select>

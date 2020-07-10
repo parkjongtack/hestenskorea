@@ -1,0 +1,4 @@
+<div class="left"><a href="/"><img src="/img/inc/logo.png" border="0"></a></div>
+<div class="right" style="padding:25 10 0 0;">
+<div class="D11_99"><!--<a href="http://www.hastenskorea.com/index.php">홈</a><img src="/img/inc/line.gif"><a href="/bbs/board.php?bo_table=press">보도자료</a><img src="/img/inc/line.gif"><a href="/bbs/board.php?bo_table=notice">공지사항</a><img src="/img/inc/line.gif"><a href="/center/map.php">고객센터</a>&nbsp;&nbsp;&nbsp;--><a href="http://instagram.com/hastens_Seoul" target="_blank"><img src="/images/util05.gif"></a>&nbsp;&nbsp;<a href="http://blog.naver.com/hastenskorea" target="_blank"><img src="/images/util01.gif"></a>&nbsp;&nbsp;<a href="http://twitter.com/hastensglobal" target="_blank"><img src="/images/util02.gif"></a>&nbsp;&nbsp;<a href="http://www.facebook.com/hastensseoul" target="_blank"><img src="/images/util03.gif"></a>&nbsp;&nbsp;<a href="mailto:info@hastensseoul.com" target="_blank"><img src="/images/util04.gif"></a></div>
+</div>

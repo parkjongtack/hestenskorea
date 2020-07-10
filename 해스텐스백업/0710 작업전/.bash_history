@@ -1,0 +1,332 @@
+#1300081071
+ls
+#1300081074
+ls
+#1300081110
+ls
+#1300081119
+tar xfz gnu.tgz
+#1300081120
+ls
+#1300081149
+ls
+#1300081155
+chmod 777 board
+#1300081155
+ls
+#1300081175
+ls
+#1300081177
+exit
+#1345766913
+ls
+#1345766923
+cd inc
+#1345766923
+ls
+#1345766924
+cd ..
+#1345766925
+ls
+#1345766927
+vi dbconfig.php 
+#1345766933
+vi config.php 
+#1345766949
+vi index.php 
+#1345766958
+cd img
+#1345766958
+ls
+#1345766969
+cd swf
+#1345766970
+ls
+#1345766972
+cd ..
+#1345766973
+ls
+#1345766987
+cd sto
+#1345766988
+ls
+#1345766989
+cd ..
+#1345766989
+ls
+#1345766992
+cd sle
+#1345766992
+ls
+#1345766993
+cd ..
+#1345766994
+ls
+#1345766995
+cd han
+#1345766996
+ls
+#1345766997
+cd ..
+#1345766997
+ls
+#1345766999
+cd cen
+#1345766999
+ls
+#1345767000
+cd ..
+#1345767001
+ls
+#1345767003
+cd swf
+#1345767003
+ls
+#1345767003
+ll
+#1345767051
+pwd
+#1345767501
+exit
+#1345775634
+ls
+#1345776423
+ls
+#1345776714
+exit
+#1348039859
+ls
+#1348039871
+grep -lr "acc_main.php" *
+#1348039956
+vi inc/col/left_superiaII.php
+#1348039995
+vi inc/col/left_vividus.php
+#1348040005
+vi inc/col/left_luxuria.php
+#1348040024
+vi inc/col/left_citationII.php
+#1348040052
+vi inc/col/left_acc.php
+#1348040058
+vi inc/col/left_excelsiorII.php
+#1348040067
+vi inc/col/left_2000TII.php
+#1348040073
+vi inc/col/left_auroria.php
+#1348040079
+vi inc/col/left_proferia.php
+#1348043410
+exit
+#1348710959
+grep -lr "right_banner.php" * | more
+#1348710975
+grep -lr "right_banner.php" * | more
+#1348724166
+cls
+#1348724169
+clear
+#1348728837
+exit
+#1349765520
+ll
+#1349765523
+ls -la
+#1349765528
+vi index.php
+#1349765588
+cd bbs
+#1349765588
+ll
+#1349765590
+ls -la
+#1349765594
+vi board.php 
+#1349765633
+ls -la
+#1349765643
+cd ..
+#1349765643
+ll
+#1349765682
+vi tail.php 
+#1349765744
+ls -la
+#1349765756
+vi tail.php 
+#1349765767
+vi s1head.php 
+#1349765780
+vi s1head.php 
+#1349765866
+vi bbs/board.php 
+#1349765934
+egrep -r "DivMovingLayer.style.display" *
+#1349765946
+vi tail.php 
+#1349766197
+cd ~
+#1349766199
+du -sh *
+#1349766200
+du -sh
+#1349766272
+ls -la
+#1349766374
+exit
+#1380586068
+ls
+#1380586078
+grep -r -n "util02.gif" ./
+#1380586273
+exit
+#1381903029
+ls
+#1381903033
+clear
+#1381903038
+grep -r -n "topimg_acc_bg.png" ./
+#1381905266
+exit
+#1386680983
+ls -alrt
+#1386680989
+vim index.php
+#1386681033
+vim common.php 
+#1386681062
+vim index.php
+#1386681096
+ll
+#1386681098
+ls
+#1386681112
+find 
+#1386681114
+find .
+#1386681116
+id
+#1386681118
+ls -alrt
+#1386681121
+ll
+#1386681123
+touch a
+#1386681124
+rm a
+#1386681126
+ls -alrt
+#1386681127
+ll
+#1386681175
+vim 
+#1386681180
+vim index.php
+#1386681226
+vim head.php 
+#1386681248
+vim subhead.php 
+#1386681279
+cd images/
+#1386681279
+ll
+#1386681281
+ls -alrt
+#1386681349
+cd
+#1386681351
+ls -lart
+#1386681355
+tar cvf source.tar .
+#1386681505
+rm source.tar 
+#1386681506
+y
+#1386681570
+grep -iR main1104 *
+#1386681601
+grep -iR main1104 *.php
+#1386681609
+vim index.php
+#1386681674
+grep -iR about *.php
+#1386681683
+cd sleep/
+#1386681684
+vim about
+#1386681688
+vim about.php 
+#1386682326
+..
+#1386682328
+cd ..
+#1386682329
+ls -alrt
+#1386682336
+ls -alrt *.php
+#1386682343
+vim <?php
+#1386682343
+var_dump(6.1);
+#1386682347
+vim common.php 
+#1386682364
+ll
+#1386682365
+ls -alrt
+#1386682367
+ls -alrt *.php
+#1386682373
+vim tail.php 
+#1386682779
+ll
+#1386682783
+cd stores/
+#1386682784
+ll
+#1386682786
+vim cheongdam.php 
+#1386682881
+cd ..
+#1386682885
+vim index.php
+#1386682915
+vim menu_top1.php 
+#1387712036
+ls -alrt
+#1387712043
+ll
+#1387712044
+ls -alrt
+#1387712056
+find . -name 'menu*'
+#1387712060
+ll
+#1387712066
+ls -alrt | more
+#1387712080
+cd images/
+#1387712080
+ll
+#1387712083
+ls
+#1387712087
+cd ..
+#1387712089
+cd img
+#1387712089
+ll
+#1387712091
+ls
+#1387712096
+cd ..
+#1387712097
+ll
+#1440034893
+ls
+#1440034897
+clear
+#1440034901
+grep -r -n "util01.gif" ./ | more
+#1440034989
+exit

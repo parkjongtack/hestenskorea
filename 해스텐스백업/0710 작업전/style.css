@@ -1,0 +1,96 @@
+body, td, p, input, button, textarea, select, .c1 { font-family:Verdana,±¼¸²;letter-spacing:-0.5px; font-size:9pt; color:#222222; }
+a:link, a:visited, a:active { text-decoration:none; color:#000000;  }
+a:hover { color:#000000; }
+a.menu:link, a.menu:visited, a.menu:active { text-decoration:none; color:#454545; }
+a.menu:hover { text-decoration:none; }
+
+
+.top					{float:top;}
+.left					{float:left;}
+.right					{float:right;}
+.both					{clear:both;}
+
+.member {color:#434343;}
+.guest  {font-weight:normal;color:#888888;}
+
+.lh { line-height: 150%; }
+.jt { text-align:justify; }
+.li { font-weight:bold; font-size:18px; vertical-align:-4px; color:#66AEAD; }
+
+#boardline
+{background: #c9d0e5; height: 1px; padding: 0; margin: 0;}
+#boardline hr 
+{display: none;}
+
+.D11_99 {font-family: "Dotum"; color:#999999; font-size: 11px;letter-spacing:-0.5px ;line-height : 1.2;}
+.D11_99 a:link {color:#999999; text-decoration: none;}
+.D11_99 a:visited {color: #999999; text-decoration: none;}
+.D11_99 a:hover {color: #ffffff; text-decoration: none;}
+.D11_99 a:active {color: #999999; text-decoration: none;}
+
+.D11_55 {font-family: "Dotum"; color:#555; font-size: 11px;letter-spacing:-0.5px ;line-height : 1.2;}
+.D11_55 a:link {color:#555; text-decoration: none;}
+.D11_55 a:visited {color: #555; text-decoration: none;}
+.D11_55 a:hover {color: #ffffff; text-decoration: none;}
+.D11_55 a:active {color: #555; text-decoration: none;}
+
+.D11_66 {font-family: "Dotum"; color:#666666; font-size: 11px;letter-spacing:-1px ;line-height : 1.2;}
+.D11_66 a:link {color:#666666; text-decoration: none;}
+.D11_66 a:visited {color: #666666; text-decoration: none;}
+.D11_66 a:hover {color: #000; text-decoration: none;}
+.D11_66 a:active {color: #666666; text-decoration: none;}
+
+
+.D12B_blue {font-family: "Dotum"; color:#536097; font-size: 12px;letter-spacing:-0.5px ;line-height : 1.2;font-weight:bold;}
+.D12B_blue a:link {color:#536097; text-decoration: none;font-weight:bold;}
+.D12B_blue a:visited {color: #536097; text-decoration: none;font-weight:bold;}
+.D12B_blue a:hover {color: #000; text-decoration: none;font-weight:bold;}
+.D12B_blue a:active {color: #536097; text-decoration: none;font-weight:bold;}
+
+.D12B_FF {font-family: "Dotum"; color:#FFFFFF; font-size: 12px;letter-spacing:-0.5px ;line-height : 1.2;font-weight:bold;}
+.D12B_FF a:link {color:#FFFFFF; text-decoration: none;}
+.D12B_FF a:visited {color: #FFFFFF; text-decoration: none;}
+.D12B_FF a:hover {color: #556198; text-decoration: none;}
+.D12B_FF a:active {color: #FFFFFF; text-decoration: none;}
+
+.D12_43 {font-family: "Dotum"; color:#434343; font-size: 12px;letter-spacing:-0.5x ;line-height : 1.2;}
+.D12_43 a:link {color:#434343; text-decoration: none;}
+.D12_43 a:visited {color: #434343; text-decoration: none;}
+.D12_43 a:hover {color: #000; text-decoration: none;font-weight:bold;letter-spacing:-1px }
+.D12_43 a:active {color: #434343; text-decoration: none;}
+
+.D12_43_h {font-family: "Dotum"; color:#434343; font-size: 12px;letter-spacing:-0.5px ;line-height : 1.8;}
+.D12_43_h a:link {color:#434343; text-decoration: none;}
+.D12_43_h a:visited {color: #434343; text-decoration: none;}
+.D12_43_h a:hover {color: #000; text-decoration: none;font-weight:bold;letter-spacing:-1px }
+.D12_43_h a:active {color: #434343; text-decoration: none;}
+
+.D12_99 {font-family: "Dotum"; color:#999; font-size: 12px;letter-spacing:-1px ;line-height : 1.2;}
+.D12_99 a:link {color:#999; text-decoration: none;}
+.D12_99 a:visited {color: #999; text-decoration: none;}
+.D12_99 a:hover {color: #000; text-decoration: none;}
+.D12_99 a:active {color: #999; text-decoration: none;}
+.D12_99 B {font-weight:bold;}
+
+.D11_b6 {font-family: "Dotum"; color:#b6b6b6; font-size: 11px;letter-spacing:-1x ;line-height : 1.2;}
+.D11_b6 a:link {color:#b6b6b6; text-decoration: none;}
+.D11_b6 a:visited {color: #b6b6b6; text-decoration: none;}
+.D11_b6 a:hover {color: #4cbeff; text-decoration: none;letter-spacing:-1.8px }
+.D11_b6 a:active {color: #b6b6b6; text-decoration: none;}
+
+.input					{background:#EFEFEF;border:0px;font-family:Dotum;font-size:12px;color:#696969;}
+.input_search		{background:#FAFAFA;border:1px solid #C4C4C4;font-size:12px;font-family:dotum,gulim;color:#696969;}
+.input_w			    {background:#FFFFFF;border:1px solid #C4C4C4;font-size:12px;font-family:dotum,gulim;color:#696969;}
+.input_login		{background:#FAFAFA;border:1px solid #C4C4C4;font-size:12px;}
+.input_member	{background:#F5F5F5;border:1px solid #D8D8D8;font-size:12px;font-family:dotum,gulim;color:#696969;}
+.input_blue     	{background:#DAEDFF;border:1px solid #84a9ee;font-size:14px;font-family:dotum,gulim;color:#000000;font-weight:bold;text-align:center;padding-top:7px;}
+
+.ul { list-style-type:square; color:#66AEAD; }
+
+.ct { font-family: Verdana, ±¼¸²; color:#222222; } 
+
+.ed { border:1px solid #CCCCCC; } 
+.tx { border:1px solid #CCCCCC; } 
+
+.small { font-size:8pt; font-family:µ¸¿ò; }
+.cloudy, a.cloudy {color:#888888;} /* Èå¸² */

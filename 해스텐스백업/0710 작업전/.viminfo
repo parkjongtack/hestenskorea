@@ -1,0 +1,236 @@
+# 이 viminfo 파일은 빔이 만든 것입니다 Vim 7.0.
+# 조심만 한다면 고칠 수도 있습니다!
+
+# 이 파일이 저장되었을 때의 'encoding'의 값
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~H
+# Last Search Pattern:
+~MSle0~/1104
+
+# Last Substitute Search Pattern:
+~MSle0&acc_main.php
+
+# 마지막으로 바꾼 문자열:
+$acc_01.php
+
+# 명령 줄 히스토리 (새것부터 오래된 것 순):
+:q
+:q!
+:number
+:552
+:wq
+:%s/acc_main.php/acc_01.php/g
+
+# 찾을 문자열 히스토리 (새것부터 오래된 것 순):
+?/1104
+?/sub
+? \<title\>
+?/BED
+? acc_main.php
+?/acc_main
+?/swf
+
+# 표현 히스토리 (새것부터 오래된 것 순):
+
+# 입력 줄 히스토리 (새것부터 오래된 것 순):
+
+# 입력 줄 히스토리 (새것부터 오래된 것 순):
+
+# 레지스터:
+
+# 파일 마크:
+'0  237  0  ~/menu_top1.php
+'1  190  0  ~/index.php
+'2  48  7  ~/stores/cheongdam.php
+'3  187  0  ~/tail.php
+'4  528  0  ~/common.php
+'5  42  7  ~/sleep/about.php
+'6  1  0  ~/sleep/about
+'7  168  97  ~/index.php
+'8  24  24  ~/subhead.php
+'9  47  12  ~/head.php
+
+# 점프목록 (새것이 먼저):
+-'  237  0  ~/menu_top1.php
+-'  1  0  ~/menu_top1.php
+-'  190  0  ~/index.php
+-'  167  0  ~/index.php
+-'  168  0  ~/index.php
+-'  48  7  ~/stores/cheongdam.php
+-'  111  10  ~/stores/cheongdam.php
+-'  96  6  ~/stores/cheongdam.php
+-'  1  0  ~/stores/cheongdam.php
+-'  187  0  ~/tail.php
+-'  160  1  ~/tail.php
+-'  528  0  ~/common.php
+-'  523  0  ~/common.php
+-'  42  7  ~/sleep/about.php
+-'  1  0  ~/sleep/about.php
+-'  1  0  ~/sleep/about
+-'  10  0  ~/index.php
+-'  24  24  ~/subhead.php
+-'  1  0  ~/subhead.php
+-'  47  12  ~/head.php
+-'  1  0  ~/head.php
+-'  221  29  ~/index.php
+-'  112  32  ~/index.php
+-'  73  21  ~/index.php
+-'  20  14  ~/index.php
+-'  189  0  ~/index.php
+-'  1  0  ~/index.php
+-'  1  0  ~/common.php
+-'  222  0  ~/index.php
+-'  50  2  ~/index.php
+-'  49  1  ~/index.php
+-'  62  2  ~/index.php
+-'  58  0  ~/tail.php
+-'  227  38  ~/bbs/board.php
+-'  228  0  ~/bbs/board.php
+-'  1  0  ~/bbs/board.php
+-'  59  2  ~/s1head.php
+-'  1  0  ~/s1head.php
+-'  1  0  ~/tail.php
+-'  22  0  ~/index.php
+-'  15  7  ~/inc/col/left_proferia.php
+-'  1  0  ~/inc/col/left_proferia.php
+-'  15  8  ~/inc/col/left_auroria.php
+-'  1  0  ~/inc/col/left_auroria.php
+-'  15  3  ~/inc/col/left_2000TII.php
+-'  1  0  ~/inc/col/left_2000TII.php
+-'  15  7  ~/inc/col/left_excelsiorII.php
+-'  1  0  ~/inc/col/left_excelsiorII.php
+-'  15  8  ~/inc/col/left_acc.php
+-'  1  0  ~/inc/col/left_acc.php
+-'  15  8  ~/inc/col/left_citationII.php
+-'  2  0  ~/inc/col/left_citationII.php
+-'  1  0  ~/inc/col/left_citationII.php
+-'  15  56  ~/inc/col/left_luxuria.php
+-'  1  0  ~/inc/col/left_luxuria.php
+-'  17  7  ~/inc/col/left_vividus.php
+-'  2  7  ~/inc/col/left_vividus.php
+-'  1  0  ~/inc/col/left_vividus.php
+-'  15  56  ~/inc/col/left_superiaII.php
+-'  1  0  ~/inc/col/left_superiaII.php
+-'  21  127  ~/index.php
+-'  2  0  ~/index.php
+-'  1  0  ~/config.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/config.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/config.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/config.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/dbconfig.php
+-'  15  56  ~/inc/col/left_superiaII.php
+-'  1  0  ~/inc/col/left_superiaII.php
+-'  1  0  ~/config.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/config.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/config.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/config.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/dbconfig.php
+-'  17  7  ~/inc/col/left_vividus.php
+-'  2  7  ~/inc/col/left_vividus.php
+-'  1  0  ~/inc/col/left_vividus.php
+-'  15  56  ~/inc/col/left_superiaII.php
+-'  1  0  ~/inc/col/left_superiaII.php
+-'  1  0  ~/config.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/config.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/dbconfig.php
+-'  1  0  ~/config.php
+
+# 파일내의 마크 히스토리 (새것부터 오래된 순):
+
+> ~/menu_top1.php
+	"	237	0
+
+> ~/index.php
+	"	190	0
+
+> ~/stores/cheongdam.php
+	"	48	7
+
+> ~/tail.php
+	"	187	0
+
+> ~/common.php
+	"	528	0
+
+> ~/sleep/about.php
+	"	42	7
+
+> ~/sleep/about
+	"	1	0
+
+> ~/subhead.php
+	"	24	24
+
+> ~/head.php
+	"	47	12
+
+> ~/bbs/board.php
+	"	227	38
+
+> ~/s1head.php
+	"	59	2
+
+> ~/inc/col/left_proferia.php
+	"	15	7
+	.	15	0
+	+	15	0
+
+> ~/inc/col/left_auroria.php
+	"	15	8
+	.	15	0
+	+	15	0
+
+> ~/inc/col/left_2000TII.php
+	"	15	3
+	.	15	0
+	+	15	0
+
+> ~/inc/col/left_excelsiorII.php
+	"	15	7
+	.	15	0
+	+	15	0
+
+> ~/inc/col/left_acc.php
+	"	15	8
+	.	15	0
+	+	15	0
+
+> ~/inc/col/left_citationII.php
+	"	15	8
+	.	15	0
+	+	15	0
+
+> ~/inc/col/left_luxuria.php
+	"	15	56
+	^	15	57
+	.	15	51
+	+	15	51
+
+> ~/inc/col/left_vividus.php
+	"	17	7
+
+> ~/inc/col/left_superiaII.php
+	"	15	56
+	^	15	57
+	.	15	51
+	+	15	51
