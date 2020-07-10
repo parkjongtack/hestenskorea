@@ -2,13 +2,13 @@
 			<div id="main_sec">
                 <div class="swiper-container main_slider">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img class="mo_none" src="/img/main_slider_01.png" alt=""><img class="mo_block" src="/img/m_main_slider_01.png" alt=""></div>
-                        <div class="swiper-slide"><img class="mo_none" src="/img/main_slider_01.png" alt=""><img class="mo_block" src="/img/m_main_slider_01.png" alt=""></div>
-                        <div class="swiper-slide"><img class="mo_none" src="/img/main_slider_01.png" alt=""><img class="mo_block" src="/img/m_main_slider_01.png" alt=""></div>
+                        <div class="swiper-slide"><img class="mo_none" src="/img/main_slider_01.png" alt=""><img class="mo_block" src="/img/m_main_slider_01.png" alt=""><a href="#none" class="slider_more_btn">READ MORE</a></div>
+                        <div class="swiper-slide"><img class="mo_none" src="/img/main_slider_01.png" alt=""><img class="mo_block" src="/img/m_main_slider_01.png" alt=""><a href="#none" class="slider_more_btn">READ MORE</a></div>
+                        <div class="swiper-slide"><img class="mo_none" src="/img/main_slider_01.png" alt=""><img class="mo_block" src="/img/m_main_slider_01.png" alt=""><a href="#none" class="slider_more_btn">READ MORE</a></div>
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination"></div>
-                    <a href="#none" class="slider_more_btn">READ MORE</a>
+                    
                 </div>
                 <div class="bt_sec">
                     <p>BE AWAKE FOR THE FIRST TIME IN YOUR LIFE®</p>
@@ -55,7 +55,7 @@
                 <div class="news_sec">
                     <div class="title_box">
                         <h2>HERITAGE</h2>
-                        <p>READ MORE</p>
+                        <p><a href="#none" style="color: #00154a;">READ MORE</a></p>
                     </div>
                 </div>
             </div>
