@@ -7,7 +7,7 @@
                     <div class="swiper-container beds_sub_slide">
                         <div class="swiper-wrapper">
                             <div class="beds_detail swiper-slide">
-                                <img src="../img/sub/beds_sub_img01.png" alt="">
+                                <img src="/img/sub/beds_sub_img01.png" alt="">
                                 <div class="besd_explain">
                                     <div class="besd_explain_title">
                                         <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -19,7 +19,7 @@
                                 </div>
                             </div>
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -32,7 +32,7 @@
                                 </div>
                             
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -45,7 +45,7 @@
                                 </div>
                             
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -58,7 +58,7 @@
                                 </div>
                             
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -71,7 +71,7 @@
                                 </div>
                             
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -84,7 +84,7 @@
                                 </div>
                             
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -97,7 +97,7 @@
                                 </div>
                             
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -110,7 +110,7 @@
                                 </div>
                             
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -123,7 +123,7 @@
                                 </div>
                             
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -135,7 +135,7 @@
                                     </div>
                                 </div>
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -147,7 +147,7 @@
                                     </div>
                                 </div>
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -159,7 +159,7 @@
                                     </div>
                                 </div>
                                 <div class="beds_detail swiper-slide">
-                                    <img src="../img/sub/beds_sub_img01.png" alt="">
+                                    <img src="/img/sub/beds_sub_img01.png" alt="">
                                     <div class="besd_explain">
                                         <div class="besd_explain_title">
                                             <p class="beds_txt hei85p_kr">ONE BED.</p>
@@ -180,14 +180,14 @@
                             $(document).ready(function(){
                                 var pagi_list = $('.swiper-pagination-bullet');
                                 for(var i=0; i<pagi_list.length; i++){
-                                    $(pagi_list).eq(i).css({background:"url('../img/sub/beds_sub_img01_"+(i+1)+".png') no-repeat center"});
+                                    $(pagi_list).eq(i).css({background:"url('/img/sub/beds_sub_img01_"+(i+1)+".png') no-repeat center"});
                                     console.log($(pagi_list).eq(i))
                                 }
                             });
                         </script>
                     
                     <div class="beds_bot">
-                        <img src="../img/sub/beds_sub_bot.png" alt="">
+                        <img src="/img/sub/beds_sub_bot.png" alt="">
                     </div>
                 </div>
             </div>

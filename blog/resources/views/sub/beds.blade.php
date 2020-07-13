@@ -7,7 +7,7 @@
                             <p class="hastens_name hei85p">HÄSTENS</p>
                             <p class="beds_title hei85p_kr">VIVIDUS®</p>
                             <p class="beds_txt hei85p_kr">Our second most exclusive bed</p>
-                            <a class="beds_more hei85p_kr" href="/sub/beds_sub">SHOW ME THE BED</a>
+                            <a class="beds_more hei85p_kr" href="/sub/beds/sub">SHOW ME THE BED</a>
                         </div>
                     </div>
                 </div>
