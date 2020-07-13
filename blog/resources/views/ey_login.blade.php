@@ -13,7 +13,7 @@
 		<div id="login_con">
 			<div id="login_box">
 				<h1><img src="/img/logo.png"></h1>
-		        <form name="login_form" action="/ey_login_action" method="post" onsubmit="javascript:login_check();">
+		        <form name="login_form" action="/ey_admin/login_action" method="post" onsubmit="javascript:login_check();">
 					{{ csrf_field() }}
 		            <input type="text" name="id" placeholder="아이디" required>
 		            <input type="password" name="pw" placeholder="비밀번호" required>

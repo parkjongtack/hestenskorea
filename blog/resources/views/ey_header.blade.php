@@ -1,9 +1,9 @@
-{{-- @if(!session('user_id'))
+@if(!session('user_id'))
 	<script type="text/javascript">
 		alert('로그인 해주세요.');
-		location.href = '/ey_login';
+		location.href = '/ey_admin/login';
 	</script>
-@endif --}}
+@endif
 <!DOCTYPE html>
 <html lang="ko">
     <head>

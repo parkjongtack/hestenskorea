@@ -32,14 +32,17 @@ Route::get('/sub/news', 'Sub@news');
 Route::get('/sub/contact_us', 'Sub@contact_us');
 
 
-Route::get('/ey_admin/write_board_form', 'ey_admin@write_board_form');
-Route::get('/ey_admin/login', 'ey_admin@ey_login');
-Route::get('/ey_admin/acc', 'ey_admin@ey_acc');
-Route::get('/ey_admin/beds', 'ey_admin@ey_press');
-Route::get('/ey_admin/media', 'ey_admin@ey_media');
-Route::get('/ey_admin/pcslider', 'ey_admin@ey_pcslider');
-Route::get('/ey_admin/moslider', 'ey_admin@ey_moslider');
-Route::get('/ey_admin/pcpopup', 'ey_admin@ey_pcpopup');
-Route::get('/ey_admin/mopopup', 'ey_admin@ey_mopopup');
-Route::get('/ey_admin/acc', 'ey_admin@ey_acc');
+Route::get('/ey_admin/write_board_form', 'Ey_admin@write_board_form');
+
+Route::get('/ey_admin/login', 'Ey_admin@ey_login');
+Route::post('/ey_admin/login_action', 'Ey_admin@ey_login_action');
+
+Route::get('/ey_admin/acc', 'Ey_admin@ey_acc');
+Route::get('/ey_admin/beds', 'Ey_admin@ey_press');
+Route::get('/ey_admin/media', 'Ey_admin@ey_media');
+Route::get('/ey_admin/pcslider', 'Ey_admin@ey_pcslider');
+Route::get('/ey_admin/moslider', 'Ey_admin@ey_moslider');
+Route::get('/ey_admin/pcpopup', 'Ey_admin@ey_pcpopup');
+Route::get('/ey_admin/mopopup', 'Ey_admin@ey_mopopup');
+Route::get('/ey_admin/acc', 'Ey_admin@ey_acc');
 
