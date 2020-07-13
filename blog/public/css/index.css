@@ -189,6 +189,7 @@ img{max-width: 100%; display: block; margin: 0 auto;}
 #footer .inner{padding: 35px; color: #999999; text-transform:uppercase;font-size: 14px; display: flex; justify-content: space-between;}
 #footer ul li{line-height: 23px;}
 #footer ul li:last-child{font-size: 12px; font-weight: lighter; margin-top: 9px;}
+#footer .inner.mo_block{display: none;}
 #footer .inner > div a{margin-left: 6px;}
 #footer .inner > div a img{display: inline;}
 
@@ -740,6 +741,31 @@ img{max-width: 100%; display: block; margin: 0 auto;}
   #ham_nav .hamburger{margin-right: 5.5556vw;}
   #ham_nav #hamburger-1 .line:nth-child(1){transform: translateY(2.5000vw) rotate(45deg);}
   #ham_nav #hamburger-1 .line:nth-child(3){transform: translateY(-2.5000vw) rotate(-45deg);}
+
+  #sub_sec{margin-top: 44px;}
+
+  /*beds*/
+  .beds_sub.inner{width: 100%;}
+  .beds .beds_detail .besd_explain{position: absolute; top: 50px; left: 50%; transform: translateX(-50%); text-align: center; color: #fff; width: 100%;}
+  .beds .besd_explain p{width: 100%;}
+  .beds .hastens_name{font-size: 16px; font-weight: 700;}
+  .beds .beds_title{font-size: 36px; font-weight: 500; line-height: 36px;}
+  .beds .beds_txt{font-size: 20px; font-weight: 300;}
+  .beds .beds_more{font-size: 16px; font-weight: 400; color: #3a9bff; display: block; position: relative;}
+  .beds .beds_more::after{content: ">"; display: inline-block; font-size: 16px; position: relative; top: 0; left: 0; transform: translateY(0%) scale(0.5, 1.2); margin-top: 3px;}
+  .beds_sub_slide .swiper-button-next, .beds_sub_slide .swiper-button-prev{width: 8px; height: 12px; top: 43%;}
+  .beds_sub_slide .swiper-button-next{right: 20px;}
+  .beds_sub_slide .swiper-button-prev{left: 20px;}
+  .beds_sub_slide .besd_explain_title{font-size: 36px; line-height: 36px; width: 100%; text-align: center; top:44px;}
+  .beds_sub_slide .besd_explain_detail{font-size: 14px; bottom: 150px;}
+  .beds_sub_slide .swiper-pagination-bullet{width: 43px; height: 43px;}
+  .beds_sub_slide .swiper-pagination{bottom: 50px !important; max-width: 330px;left: 50% !important; transform: translateX(-50%);}
+  .beds_sub_slide>.swiper-pagination-bullets .swiper-pagination-bullet{margin: 0 2px !important;}
+
+
+
+
+
 
   .main_slider{height: 56.9444vw;}
   .main_slider .slider_more_btn{width: 41.6667vw; height: 10.0000vw; line-height: 10.0000vw; font-size: 4.4444vw;}
