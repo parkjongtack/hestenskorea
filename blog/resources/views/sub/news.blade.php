@@ -7,83 +7,107 @@
                     <div class="news_content inner">
                         <ul class="news_tabs_01 news_tabs_">
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>                                    
                                 </div>
                             </li>
                             <!-- <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
@@ -105,84 +129,108 @@
 
                         <ul class="news_tabs_02 news_tabs_">
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">1</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
                             </li>
                             <li class="half">
-                                <img src="../img/news.png" alt="">
+                                <div class="youtube_img">
+                                    <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
+                                </div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
                                     

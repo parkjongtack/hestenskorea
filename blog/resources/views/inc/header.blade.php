@@ -66,7 +66,7 @@
                 <a href="/sub/heritage02"><li>Blue Check</li></a>
                 <a href="/sub/heritage03"><li>Royal Court</li></a>
             </ul>
-            <li class="ham_list"><a href="/sub/news">News</a></li>
+            <li class="ham_list"><a href="/sub/news?tab=1">News</a></li>
             {{-- <ul class="ham_list_sub hamNews">
                 <a href="#none"><li>PRESS</li></a>
                 <a href="#none"><li>MEDIA</li></a>

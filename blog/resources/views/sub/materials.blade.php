@@ -2,10 +2,11 @@
 			<div id="sub_sec">
                 <div class="material_sub">
                     <div class="material_sub_img">
-                        <img src="../img/sub/material_01.png" alt="">
+                        <img class="mo_none" src="../img/sub/material_01.png" alt="">
+                        <img class="mo_block" src="../img/sub/m_material_01.png" alt="">
                         <div class="material_img_txt">
                             <h2>MATERIALS</h2>
-                            <p class="toggle_text">
+                            <p class="toggle_text mo_first">
                                 해스텐스는 숙면을 위한 최고의 천연소재만을 고집합니다.<br>
                                 <span>윤리적인 방법으로 채취하는 충전재는 매일 당신의 새로운 아침을 선사합니다.</span>
                             </p>
@@ -14,7 +15,8 @@
                 </div>
                 <div class="material_sub">
                     <div class="material_sub_img">
-                        <img src="../img/sub/material_02.png" alt="">
+                        <img class="mo_none" src="../img/sub/material_02.png" alt="">
+                        <img class="mo_block" src="../img/sub/m_material_02.png" alt="">
                         <div class="material_img_txt">
                             <h2>HORSEHAIR</h2>
                             <P></P><br>
@@ -37,7 +39,8 @@
                 </div>
                 <div class="material_sub">
                     <div class="material_sub_img">
-                        <img src="../img/sub/material_03.png" alt="">
+                        <img class="mo_none" src="../img/sub/material_03.png" alt="">
+                        <img class="mo_block" src="../img/sub/m_material_03.png" alt="">
                         <div class="material_img_txt">
                             <h2>COTTON</h2>
                             <P></P><br>
@@ -59,7 +62,8 @@
                 </div>
                 <div class="material_sub">
                     <div class="material_sub_img">
-                        <img src="../img/sub/material_04.png" alt="">
+                        <img class="mo_none" src="../img/sub/material_04.png" alt="">
+                        <img class="mo_block" src="../img/sub/m_material_04.png" alt="">
                         <div class="material_img_txt">
                             <h2>WOOL</h2>
                             <P></P><br>
@@ -82,7 +86,8 @@
                 </div>
                 <div class="material_sub">
                     <div class="material_sub_img">
-                        <img src="../img/sub/material_05.png" alt="">
+                        <img class="mo_none" src="../img/sub/material_05.png" alt="">
+                        <img class="mo_block" src="../img/sub/m_material_05.png" alt="">
                         <div class="material_img_txt">
                             <h2>FLAX</h2>
                             <P></P><br>
@@ -103,7 +108,8 @@
                 </div>
                 <div class="material_sub">
                     <div class="material_sub_img">
-                        <img src="../img/sub/material_06.png" alt="">
+                        <img class="mo_none" src="../img/sub/material_06.png" alt="">
+                        <img class="mo_block" src="../img/sub/m_material_06.png" alt="">
                         <div class="material_img_txt">
                             <h2>PINE</h2>
                             <P></P><br>
@@ -124,7 +130,8 @@
                 </div>
                 <div class="material_sub">
                     <div class="material_sub_img">
-                        <img src="../img/sub/material_07.png" alt="">
+                        <img class="mo_none" src="../img/sub/material_07.png" alt="">
+                        <img class="mo_block" src="../img/sub/m_material_07.png" alt="">
                         <div class="material_img_txt">
                             <h2>SPRINGS</h2>
                             <P></P><br>
