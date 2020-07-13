@@ -15,8 +15,8 @@
 							<input type="text" name="category" value="PC슬라이더" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'press')
 							<input type="text" name="category" value="PRESS" readonly style="border:none;" />
-						@elseif(request()->segment(2) == 'happy_call')
-							<input type="text" name="category" value="해피콜상담신청" readonly style="border:none;" />
+						@elseif(request()->segment(2) == 'beds')
+							<input type="text" name="category" value="BEDS" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'ey_pcpopup')
 							<input type="text" name="category" value="PC팝업" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'ey_pcslider')
@@ -36,6 +36,19 @@
 						</div>
                 </div>
             </div>
+			@if(request()->segment(2) == 'beds')
+            <div class="write_line">
+                <div class="all_line">
+						<div class="line_title">
+							제목2
+						</div>
+						<div class="line_content">
+							<input type="text" name="subject2" />
+						</div>
+                </div>
+            </div>
+			@endif
+			@if(request()->segment(2) != 'beds')
             <div class="write_line">
                 <div class="all_line">
                     <div class="line_title">
@@ -47,7 +60,8 @@
                     </div>
                 </div>
             </div>
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press')
+			@endif
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds')
             <div class="write_line">
                 <div class="all_line">
 						<div class="line_title" style="vertical-align:top;">내용</div>
@@ -73,7 +87,7 @@
                         </div>
                 </div>
             </div>
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds')
             <div class="write_line cate_file">
                 <div class="all_line">
                     <div class="line_title">
@@ -118,7 +132,7 @@
                         </div>
                         <div class="line_content">
                             <input type="file" name="writer_file" />
-							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press')
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
 							@endif
                         </div>
@@ -133,8 +147,10 @@
                             서브파일선택
                         </div>
                         <div class="line_content">
+							소제목 : <input type="text" name="sub_subject" />
+							소제목2 : <input type="text" name="sub_subject2" />
                             <input type="file" name="writer_file" />
-                            <span style="cursor: pointer" class="add_file_sub">파일추가 +</span>
+                            <span style="cursor: pointer" class="add_file_sub">서브항목추가 +</span>
                         </div>
                     </div>
                 </div>
@@ -232,12 +248,25 @@
 			  monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] // 월의 한글 형식.
 		 });
 
-        var append_item = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><div class="line_content">&nbsp;<input type="file" name="writer_file" /></div></div></div>'
+        var append_item = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><div class="line_content">&nbsp;소제목 : <input type="text" name="sub_subject" />소제목2 : <input type="text" name="sub_subject2" /><input type="file" name="writer_file" /></div></div></div>'
         $('.add_file').click(function(){
             $(append_item).appendTo("#append_target")
         });
+		
+		var i = 1;
         $('.add_file_sub').click(function(){
-            $(append_item).appendTo("#append_target_sub")
+
+			i = i + 1;
+
+			if(i > 19) {
+				alert('더이상 추가할 수 없습니다.');
+				return;
+			}
+			
+	        var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><div class="line_content">&nbsp;소제목 : <input type="text" name="sub_subject_'+i+'" />소제목2 : <input type="text" name="sub_subject2_'+i+'" /><input type="file" name="writer_file_'+i+'" /></div></div></div>'
+			
+            $(append_item2).appendTo("#append_target_sub");
+
         });
     })
 </script>

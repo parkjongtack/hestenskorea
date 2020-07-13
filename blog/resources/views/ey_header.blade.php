@@ -40,7 +40,7 @@
                     </div>
                     <div class="na_title nav_img"><i class="fas fa-comments"></i>카테고리</div>
                     <div class="na_title dep2">
-                        <div class="nav_sub"><a href="/ey_faq">beds</a></div>
+                        <div class="nav_sub"><a href="/ey_admin/beds">beds</a></div>
                         <div class="nav_sub"><a href="/ey_notice">acc</a></div>
 						<div class="nav_sub"><a href="/ey_admin/press/">press</a></div>
                         <div class="nav_sub"><a href="/ey_admin/media/">media</a></div>
