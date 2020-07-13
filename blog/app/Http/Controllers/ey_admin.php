@@ -255,7 +255,7 @@ class Ey_admin extends Controller
 
     }
     
-    public function ey_pcslider(Request $request) {
+    public function ey_board_list(Request $request) {
 
 		if(request()->segment(2) != "notice") {
 			$boardType = request()->segment(2);
@@ -357,13 +357,7 @@ class Ey_admin extends Controller
 		$return_list["page"] = $thisPage;
 		$return_list["key"] = $request->key;
 
-		if(request()->segment(2) == "pcslider") {
-			return view("ey_pcslider", $return_list);
-		} else {
-			return view("board/notice_list", $return_list);
-		}		
-
-		return view('ey_pcslider'); 
+		return view("ey_board_list", $return_list);
 
     }
     

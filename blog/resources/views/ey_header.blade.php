@@ -42,8 +42,8 @@
                     <div class="na_title dep2">
                         <div class="nav_sub"><a href="/ey_faq">beds</a></div>
                         <div class="nav_sub"><a href="/ey_notice">acc</a></div>
-						<div class="nav_sub"><a href="/ey_newsletter">press</a></div>
-                        <div class="nav_sub"><a href="/happy_call/happy_call_list">media</a></div>
+						<div class="nav_sub"><a href="/ey_admin/press/">press</a></div>
+                        <div class="nav_sub"><a href="/ey_admin/media/">media</a></div>
                     </div>
                     <div class="na_title nav_img"><i class="far fa-chart-bar"></i>통계 현황</div>
                     <div class="na_title dep2">

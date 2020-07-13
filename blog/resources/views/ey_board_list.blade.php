@@ -32,23 +32,29 @@
                 </tr>
             </thead>
             <tbody>
-				@foreach($data as $data)
-                <tr>
-                    <td>{{ $number-- }}</td>
-                    <td>{{ $data->subject }}</td>
-                    <td><a href="#none"><img src="/storage/app/images/{{ $data->attach_file }}" alt="" width="100%"></a></td>
-                    <td>{{ $data->start_period }} ~ {{ $data->end_period }}</td>
-                    <td>{{ $data->reg_date }}</td>
-                    <td>
-						@if($data->use_status == 'Y')
-							사용
-						@else
-							중지
-						@endif
-                    </td>
-                    <td class="delete_box"><a href="javascript:control('{{ $data->idx }}');">삭제</a><a href="/ey_admin/{{ request()->segment(2) }}/write_board_form/modify/?board_idx={{ $data->idx }}" style="background-color: #08AEEA; border:1px solid #0faeea; color: #fff;">수정</a></td>
-                </tr>
-				@endforeach
+				@if($totalCount == '0')
+					<tr>
+						<td colspan="7">게시글이 없습니다.</td>
+					</tr>
+				@else
+					@foreach($data as $data)
+						<tr>
+							<td>{{ $number-- }}</td>
+							<td>{{ $data->subject }}</td>
+							<td><a href="#none"><img src="/storage/app/images/{{ $data->attach_file }}" alt="" width="100%"></a></td>
+							<td>{{ $data->start_period }} ~ {{ $data->end_period }}</td>
+							<td>{{ $data->reg_date }}</td>
+							<td>
+								@if($data->use_status == 'Y')
+									사용
+								@else
+									중지
+								@endif
+							</td>
+							<td class="delete_box"><a href="javascript:control('{{ $data->idx }}');">삭제</a><a href="/ey_admin/{{ request()->segment(2) }}/write_board_form/modify/?board_idx={{ $data->idx }}" style="background-color: #08AEEA; border:1px solid #0faeea; color: #fff;">수정</a></td>
+						</tr>
+					@endforeach
+				@endif
                 <!-- <tr>
                     <td>1</td>
                     <td>서브</td>
