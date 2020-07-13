@@ -16,7 +16,7 @@ use Auth;
 use DB;
 use App\Classes\jsonRPCClient;
 
-class ey_admin extends Controller
+class Ey_admin extends Controller
 {
 
     public function ey_login(Request $request) {
