@@ -32,23 +32,15 @@
                 </tr>
             </thead>
             <tbody>
-				@foreach($data as $data)
                 <tr>
-                    <td>{{ $number-- }}</td>
-                    <td>{{ $data->subject }}</td>
-                    <td><a href="#none"><img src="/storage/app/images/{{ $data->attach_file }}" alt="" width="100%"></a></td>
-                    <td>{{ $data->start_period }} ~ {{ $data->end_period }}</td>
-                    <td>{{ $data->reg_date }}</td>
-                    <td>
-						@if($data->use_status == 'Y')
-							사용
-						@else
-							중지
-						@endif
-                    </td>
-                    <td class="delete_box"><a href="javascript:control('{{ $data->idx }}');">삭제</a><a href="/ey_admin/{{ request()->segment(2) }}/write_board_form/modify/?board_idx={{ $data->idx }}" style="background-color: #08AEEA; border:1px solid #0faeea; color: #fff;">수정</a></td>
+                    <td>1</td>
+                    <td>메인</td>
+                    <td><a href="#none"><img src="img/main_slide_01.png" alt="" width="100%"></a></td>
+                    <td>2020-04-10 ~ 2020-05-10</td>
+                    <td>2020-04-10</td>
+                    <td>사용</td>
+                    <td class="delete_box"><a href="#none">삭제</a><a href="/ey_write_gallery" style="background-color: #08AEEA; border:1px solid #0faeea; color: #fff;">수정</a></td>
                 </tr>
-				@endforeach
                 <!-- <tr>
                     <td>1</td>
                     <td>서브</td>
@@ -89,17 +81,16 @@
                 <li class="page page_next move_page"><a href="#none"></a></li>
                 <li class="page page_end move_page"><a href="#none"></a></li>
             </ul> -->
-			{!! $paging_view !!}
 		</div>
         <div class="create" style="padding-bottom:10px;">
-			<a href="/ey_admin/{{ request()->segment(2) }}/write_board_form">등록</a>
+			<a href="/ey_admin/ey_write_notice">등록</a>
             <!-- <a href="/ey_write_gallery">등록</a> -->
         </div>
     </form>
 </div>
 <script type="text/javascript">
 
-	function control(idx) {
+	function notice_control(idx) {
 
 		if(confirm("삭제하시겠습니까?")) {
 			var formData = new FormData();
@@ -108,7 +99,7 @@
 
 			$.ajax({
 				type: 'post',
-				url: '/ey_admin/{{ request()->segment(2) }}/control',
+				url: '/{{ request()->segment(1) }}/ey_notice_control',
 				processData: false,
 				contentType: false,
 				data: formData,

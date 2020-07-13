@@ -2,6 +2,7 @@
 <div class="con_main">
     <form action="/ey_admin/{{ request()->segment(2) }}/write_board_action" name="board_write_form" method="post" enctype="multipart/form-data" onsubmit="return submit_check();" >
 		{{ csrf_field() }}
+		<input type="hidden" name="board_idx" value="{{ request()->board_idx }}" />
 		<input type="hidden" name="board_type" value="{{ request()->segment(2) }}" />
 		<input type="hidden" name="write_type" value="{{ request()->segment(4) }}" />
         <div class="write_box">
@@ -32,7 +33,7 @@
 							제목
 						</div>
 						<div class="line_content">
-							<input type="text" name="subject" />
+							<input type="text" name="subject" value="{{ $data->subject }}" />
 						</div>
                 </div>
             </div>
@@ -42,8 +43,8 @@
                         기간
                     </div>
                     <div class="line_content">
-                        <input type="text" id="start_period" name="start_period" /> ~
-                        <input type="text" id="end_period" name="end_period" />
+                        <input type="text" id="start_period" name="start_period" value="{{ $data->start_period }}" /> ~
+                        <input type="text" id="end_period" name="end_period" value="{{ $data->end_period }}" />
                     </div>
                 </div>
             </div>
@@ -61,7 +62,7 @@
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">링크</div>
 						<div class="line_content">
-							<input type="text" name="link_value" />
+							<input type="text" name="link_value" value="{{ $data->link_value }}" />
                         </div>
                 </div>
             </div>
@@ -69,7 +70,7 @@
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">우선순위</div>
 						<div class="line_content">
-							<input type="number" name="priority" />
+							<input type="number" name="priority" value="{{ $data->priority }}" />
                         </div>
                 </div>
             </div>
@@ -118,6 +119,7 @@
                         </div>
                         <div class="line_content">
                             <input type="file" name="writer_file" />
+							<a href="/storage/app/images/{{ $data->attach_file }}" target="_blank">[첨부파일]</a>
 							@if(request()->segment(2) != 'pcslider')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
 							@endif
@@ -146,8 +148,8 @@
 							노출여부
 						</div>
 						<div class="line_content">
-							<input type="radio" name="use_status" value="Y" checked> 사용
-							<input type="radio" name="use_status" value="N"> 중지
+							<input type="radio" name="use_status" value="Y" @if($data->use_status == 'Y') checked @endif > 사용
+							<input type="radio" name="use_status" value="N" @if($data->use_status == 'N') checked @endif > 중지
 						</div>
 					</div>
 				</div>
@@ -157,7 +159,7 @@
                         작성자
                     </div>
                     <div class="line_content">
-                        <input type="text" name="writer" value="admin" readonly style="border:none;">
+                        <input type="text" name="writer" value="{{ session('user_id') }}" readonly style="border:none;">
                     </div>
                 </div>
             </div>
