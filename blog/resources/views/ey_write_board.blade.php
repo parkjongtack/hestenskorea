@@ -13,8 +13,8 @@
                     <div class="line_content">
 						@if(request()->segment(2) == 'pcslider')
 							<input type="text" name="category" value="PC슬라이더" readonly style="border:none;" />
-						@elseif(request()->segment(2) == 'ey_newsletter')
-							<input type="text" name="category" value="뉴스레터" readonly style="border:none;" />
+						@elseif(request()->segment(2) == 'press')
+							<input type="text" name="category" value="PRESS" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'happy_call')
 							<input type="text" name="category" value="해피콜상담신청" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'ey_pcpopup')
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-			@if(request()->segment(2) != 'pcslider')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press')
             <div class="write_line">
                 <div class="all_line">
 						<div class="line_title" style="vertical-align:top;">내용</div>
@@ -73,7 +73,7 @@
                         </div>
                 </div>
             </div>
-			@if(request()->segment(2) != 'pcslider')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press')
             <div class="write_line cate_file">
                 <div class="all_line">
                     <div class="line_title">
@@ -118,14 +118,14 @@
                         </div>
                         <div class="line_content">
                             <input type="file" name="writer_file" />
-							@if(request()->segment(2) != 'pcslider')
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
 							@endif
                         </div>
                     </div>
                 </div>
             </span>
-			@if(request()->segment(2) != 'pcslider')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press')
 			<span id="append_target_sub">
                 <div class="write_line cate_file">
                     <div class="all_line">
@@ -174,7 +174,7 @@
 
 		var form = document.board_write_form;
 
-		@if(request()->segment(2) == 'pcslider')
+		@if(request()->segment(2) == 'pcslider' || request()->segment(2) == 'press')
 
 			if(form.subject.value == "") {
 				alert('제목을 입력해주세요.');

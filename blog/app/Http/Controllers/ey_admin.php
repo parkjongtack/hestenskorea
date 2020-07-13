@@ -131,7 +131,7 @@ class Ey_admin extends Controller
 		}
 
 
-		if(request()->segment(2) == "pcslider") {
+		if(request()->segment(2) == "pcslider" || request()->segment(2) == "press") {
 
 			if($request->write_type == "modify") {
 				

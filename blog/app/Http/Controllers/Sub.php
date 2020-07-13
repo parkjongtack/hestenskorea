@@ -63,7 +63,20 @@ class Sub extends Controller
 
 	public function news(Request $request) {
 
-		return view('sub/news'); 
+		if($request->tab == 1) {
+			$board_type = 'press';
+		} else {
+			$board_type = 'media';
+		}
+
+		$board_inform = DB::table('board')
+					->select(DB::raw('*'))
+					->where('board_type', $board_type)
+					->get();
+
+		$return_list['data'] = $board_inform;
+		
+		return view('sub/news', $return_list); 
 
 	}
 

@@ -2,18 +2,17 @@
 			<div id="sub_sec">
                 <div class="news">
                     <div class="news_tabs">
-                        <a href="#tab1" class="tans01 hei85p on">PRESS</a><a href="#tab2" class="tans02 hei85p">MEDIA</a>
+                        <a href="{{ $_SERVER['REDIRECT_URL'] }}/?tab=1" class="tans01 hei85p @if($_SERVER['REQUEST_URI'] == '/sub/news?tab=1') on @endif">PRESS</a><a href="{{ $_SERVER['REDIRECT_URL'] }}/?tab=2" class="tans02 hei85p @if($_SERVER['REQUEST_URI'] == '/sub/news?tab=2') on @endif">MEDIA</a>
                     </div>
                     <div class="news_content inner">
                         <ul class="news_tabs_01 news_tabs_">
                             <li class="half">
                                 <img src="../img/news.png" alt="">
                                 <div class="acc_content_text">
-                                    <p class="hei85" style="text-align: center;">2</p>
-                                    
+                                    <p class="hei85" style="text-align: center;">2</p>                                    
                                 </div>
                             </li>
-                            <li class="half">
+                            <!-- <li class="half">
                                 <img src="../img/news.png" alt="">
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">2</p>
@@ -89,7 +88,7 @@
                                     <p class="hei85" style="text-align: center;">2</p>
                                     
                                 </div>
-                            </li>
+                            </li> -->
                         </ul>
                         <div class="pag_write news_tabs_01">
                             <ul>
