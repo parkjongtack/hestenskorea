@@ -21,7 +21,18 @@ class Main extends Controller
 
 	public function main(Request $request) {
 
-		return view('index'); 
+		$board_list_pcslider_main = DB::table('board') 
+								->select(DB::raw('*, substr(reg_date, 1, 10) as reg_date_cut'))
+								->where('board_type', 'pcslider')
+								->where('start_period', '<=', date("Y-m-d"))
+								->where('end_period', '>=', date("Y-m-d"))
+								->where('use_status', 'Y')
+								->orderBy('priority','asc')
+								->get();			
+
+		$return_list['data'] = $board_list_pcslider_main;
+
+		return view('index', $return_list); 
 
 	}
 
