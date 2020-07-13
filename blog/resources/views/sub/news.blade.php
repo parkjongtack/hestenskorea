@@ -6,12 +6,14 @@
                     </div>
                     <div class="news_content inner">
                         <ul class="news_tabs_01 news_tabs_">
-                            <li class="half">
-                                <img src="../img/news.png" alt="">
+							@foreach($data as $data)
+                            <li class="half" style="cursor:pointer;" onclick="javascript:location.href='{{ $data->link_value }}';">
+                                <img src="/storage/app/images/{{ $data->attach_file }}" alt="">
                                 <div class="acc_content_text">
-                                    <p class="hei85" style="text-align: center;">2</p>                                    
+                                    <p class="hei85" style="text-align: center;">{{ $data->subject }}</p>                                    
                                 </div>
                             </li>
+							@endforeach
                             <!-- <li class="half">
                                 <img src="../img/news.png" alt="">
                                 <div class="acc_content_text">
@@ -91,7 +93,7 @@
                             </li> -->
                         </ul>
                         <div class="pag_write news_tabs_01">
-                            <ul>
+                            <!-- <ul>
                                 <li><a href="#none"><</a></li>
                                 <li class="on"><a href="#none">1</a></li>
                                 <li><a href="#none">2</a></li>
@@ -100,7 +102,8 @@
                                 <li><a href="#none">5</a></li>
                                 <li><a href="#none">6</a></li>
                                 <li><a href="#none">></a></li>
-                            </ul>
+                            </ul> -->
+							{!! $paging_view !!}
                         </div>
 
                         <ul class="news_tabs_02 news_tabs_">
