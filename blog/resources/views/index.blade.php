@@ -3,7 +3,7 @@
                 <div class="swiper-container main_slider">
                     <div class="swiper-wrapper">
 						@foreach($data as $data)
-                        <div class="swiper-slide"><img class="mo_none" src="/storage/app/images/{{ $data->attach_file }}" alt=""><img class="mo_block" src="/img/m_main_slider_01.png" alt=""><a href="{{ $data->link_value }}" target="_blank" class="slider_more_btn">READ MORE</a></div>
+                        <div class="swiper-slide"><img class="mo_none" src="/storage/app/images/{{ $data->attach_file }}" alt=""><img class="mo_block" src="/storage/app/images/{{ $data->attach_file2 }}" alt=""><a href="{{ $data->link_value }}" target="_blank" class="slider_more_btn">READ MORE</a></div>
                         @endforeach
 						<!-- <div class="swiper-slide"><img class="mo_none" src="/img/main_slider_01.png" alt=""><img class="mo_block" src="/img/m_main_slider_01.png" alt=""><a href="#none" class="slider_more_btn">READ MORE</a></div>
                         <div class="swiper-slide"><img class="mo_none" src="/img/main_slider_01.png" alt=""><img class="mo_block" src="/img/m_main_slider_01.png" alt=""><a href="#none" class="slider_more_btn">READ MORE</a></div> -->

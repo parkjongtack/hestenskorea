@@ -20,9 +20,10 @@
 							<input type="text" name="category" value="BEDS" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'acc')
 							<input type="text" name="category" value="ACC" readonly style="border:none;" />
-						@elseif(request()->segment(2) == 'ey_pcslider')
-							<input type="radio" name="category" value="main" checked> 메인
-							<input type="radio" name="category" value="sub"> 서브
+						@elseif(request()->segment(2) == 'media')
+							<input type="text" name="category" value="MEDIA" readonly style="border:none;" />
+						@elseif(request()->segment(2) == 'popup')
+							<input type="text" name="category" value="POPUP" readonly style="border:none;" />
 						@endif
                     </div>
                 </div>
@@ -60,7 +61,7 @@
                     </div>
                 </div>
             </div> -->
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
             <div class="write_line">
                 <div class="all_line">
 						<div class="line_title" style="vertical-align:top;">내용</div>
@@ -70,7 +71,7 @@
                 </div>
             </div>
 			@endif
-			@if(request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
+			@if(request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
             <div class="write_line">
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">링크</div>
@@ -95,10 +96,10 @@
                         팝업위치
                     </div>
                     <div class="line_content">
-                        <input type="radio" name="pop_position" value="lefttop" />좌측상단
-                        <input type="radio" name="pop_position" value="righttop" />우측상단
-                        <input type="radio" name="pop_position" value="leftbot" />좌측하단
-                        <input type="radio" name="pop_position" value="rightbot" />우측하단
+                        <input type="radio" name="pop_position" value="lefttop" @if($data->pop_position == 'lefttop') checked @endif />좌측상단
+                        <input type="radio" name="pop_position" value="righttop" @if($data->pop_position == 'righttop') checked @endif />우측상단
+                        <input type="radio" name="pop_position" value="leftbot" @if($data->pop_position == 'leftbot') checked @endif />좌측하단
+                        <input type="radio" name="pop_position" value="rightbot" @if($data->pop_position == 'rightbot') checked @endif />우측하단
                     </div>
                 </div>
             </div>			
@@ -108,8 +109,8 @@
                         팝업크기
                     </div>
                     <div class="line_content">
-                        가로 : <input type="number" name="i_width" />
-                        세로 : <input type="number" name="i_height" />
+                        가로 : <input type="number" name="i_width" value="{{ $data->i_width }}" />
+                        세로 : <input type="number" name="i_height" value="{{ $data->i_height }}" />
                     </div>
                 </div>
             </div>
@@ -119,8 +120,8 @@
                         팝업여백
                     </div>
                     <div class="line_content">
-                        가로 : <input type="number" name="m_width" />
-                        세로 : <input type="number" name="m_height" />
+                        가로 : <input type="number" name="m_width" value="{{ $data->m_width }}" />
+                        세로 : <input type="number" name="m_height" value="{{ $data->m_height }}" />
                     </div>
                 </div>
             </div>
@@ -129,7 +130,7 @@
                 <div class="write_line cate_file">
                     <div class="all_line">
                         <div class="line_title">
-                            파일선택@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc')(PC)@endif
+                            파일선택@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc' || request()->segment(2) == 'pcslider')(PC)@endif
                         </div>
                         <div class="line_content">
                             <input type="file" name="writer_file" />
@@ -137,24 +138,24 @@
 							@if(request()->segment(2) == 'acc')
 								<input type="checkbox" name="all_type" value="Y" @if($data->all_type == 'Y') checked @endif />가로전체 채우기
 							@endif
-							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
 							@endif
                         </div>
                     </div>
                 </div>
             </span>
-			@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc')
+			@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc' || request()->segment(2) == 'pcslider')
             <span id="append_target_mobile">
                 <div class="write_line cate_file">
                     <div class="all_line">
                         <div class="line_title">
-                            파일선택@if(request()->segment(2) == 'beds')(MOBILE)@endif
+                            파일선택@if(request()->segment(2) == 'beds' || request()->segment(2) == 'pcslider' || request()->segment(2) == 'popup')(MOBILE)@endif
                         </div>
                         <div class="line_content">
                             <input type="file" name="writer_file_mobile" />
 							<a href="/storage/app/images/{{ $data->attach_file2 }}" target="_blank">[첨부파일2]</a>
-							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
 							@endif
                         </div>
@@ -162,7 +163,7 @@
                 </div>
             </span>
 			@endif
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
 			<span id="append_target_sub">
                 <div class="write_line cate_file">
                     <div class="all_line">

@@ -24,8 +24,8 @@ class Main extends Controller
 		$board_list_pcslider_main = DB::table('board') 
 								->select(DB::raw('*, substr(reg_date, 1, 10) as reg_date_cut'))
 								->where('board_type', 'pcslider')
-								->where('start_period', '<=', date("Y-m-d"))
-								->where('end_period', '>=', date("Y-m-d"))
+								//->where('start_period', '<=', date("Y-m-d"))
+								//->where('end_period', '>=', date("Y-m-d"))
 								->where('use_status', 'Y')
 								->orderBy('priority','asc')
 								->get();			

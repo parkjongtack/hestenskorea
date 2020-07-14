@@ -1,3 +1,126 @@
+		<style>
+		.poplayer{position:fixed;z-index:9999;}
+		.poplayer img{display:block;}
+		.poplayer a{float:right;text-align:right;padding:10px 5px;color:#000;}
+		.poplayer .close_box{background-color:#dfdfdf;height:41px;}
+		</style>
+		<?php
+
+			error_reporting(0);
+
+			/*
+			$db_host = "promalldb3.godomall.com"; 
+			$db_user = "kim1988"; 
+			$db_passwd = "kilool8681";
+			$db_name = "every091_godomall_com"; 
+			$conn = mysqli_connect($db_host,$db_user,$db_passwd,$db_name);
+
+			if (mysqli_connect_errno($conn)) {
+			//echo "데이터베이스 연결 실패: " . mysqli_connect_error();
+			} else {
+			//echo "성공~!!!";
+			}
+			*/
+
+			$host_local = "localhost";
+			$host_name = "root";
+			$host_pass = "adwiz1234";
+			$host_db = "hastenskorea";
+
+			$db = new mysqli($host_local,$host_name,$host_pass,$host_db);
+			$db->set_charset("utf8");
+			function mq($sql)
+			{
+				global $db;
+				return $db->query($sql);
+			}
+
+			$sql = "SELECT * FROM board WHERE use_status='Y' order by priority asc";
+			$result = mysqli_query($db, $sql);
+			$i = 1;
+			while($img = mysqli_fetch_array($result)){
+				$img_length = 1;
+				$imgsrc = '/storage/app/images/'.$img['attach_file'];
+				if($img['pop_position'] == 'lefttop'){
+					echo"<div class='poplayer poplayer".$img['idx']."' style='top:".$img['m_height']."px;left:".$img['m_width']."px'>";
+					echo"<img src=".$imgsrc." style='width:".$img['i_width']."px; height:".$img['i_height']."px;' alt=''>";
+					echo'<div class="close_box">';
+					echo'<a class="close1'.$img['idx'].'" href="#">[닫기]</a>';
+					echo'<a class="24h'.$img['idx'].'" href="#">하루동안 보지 않기</a>';
+					echo'</div>';
+					echo"</div>";
+				}else if($img['pop_position'] == 'leftbot'){
+					echo"<div class='poplayer poplayer".$img['idx']."' style='bottom:".$img['m_height']."px;left:".$img['m_width']."px'>";
+					echo"<img src=".$imgsrc." style='width:".$img['i_width']."px; height:".$img['i_height']."px;' alt=''>";
+					echo'<div class="close_box">';
+					echo'<a class="close1'.$img['idx'].'" href="#">[닫기]</a>';
+					echo'<a class="24h'.$img['idx'].'" href="#">하루동안 보지 않기</a>';
+					echo'</div>';
+					echo"</div>";
+				}else if($img['pop_position'] == 'righttop'){
+					echo"<div class='poplayer poplayer".$img['idx']."' style='top:".$img['m_height']."px;right:".$img['m_width']."px'>";
+					echo"<img src=".$imgsrc." style='width:".$img['i_width']."px; height:".$img['i_height']."px;' alt=''>";
+					echo'<div class="close_box">';
+					echo'<a class="close1'.$img['idx'].'" href="#">[닫기]</a>';
+					echo'<a class="24h'.$img['idx'].'" href="#">하루동안 보지 않기</a>';
+					echo'</div>';
+					echo"</div>";
+				}else if($img['pop_position'] == 'rightbot'){
+					echo"<div class='poplayer poplayer".$img['idx']."' style='bottom:".$img['m_height']."px;right:".$img['m_width']."px'>";
+					echo"<img src=".$imgsrc." style='width:".$img['i_width']."px; height:".$img['i_height']."px;' alt=''>";
+					echo'<div class="close_box">';
+					echo'<a class="close1'.$img['idx'].'" href="#">[닫기]</a>';
+					echo'<a class="24h'.$img['idx'].'" href="#">하루동안 보지 않기</a>';
+					echo'</div>';
+					echo"</div>";
+				}
+		?>
+				<script type="text/javascript">
+
+					$(function(){
+						var cookiedata = document.cookie;
+						function setCookie(name, value, expirehours) {
+							var todayDate = new Date();
+							todayDate.setHours(todayDate.getHours() + expirehours);
+							document.cookie = name + "=" + escape(value) + ";path=/;expires=" + todayDate.toGMTString() + ";"
+						}
+						
+						if (cookiedata.indexOf("ncookie<?=$img['idx']?>=done") < 0) {
+							$('.poplayer<?=$img["idx"]?>').show();
+						} else {
+							$('.poplayer<?=$img["idx"]?>').hide();
+						}
+						function Pop_close() {
+							var par = $(this).parents('div.poplayer<?=$img["idx"]?>');
+							$(par).hide();
+						}
+						$('.close1<?=$img["idx"]?>').click(function(){
+							var par = $(this).parents('div.poplayer<?=$img["idx"]?>');
+							$(par).hide();
+						});
+						function todaycloseWin<?=$img['idx']?>() {
+								setCookie("ncookie<?=$img['idx']?>", "done", 24);
+								$('.poplayer<?=$img["idx"]?>').hide();
+						}
+						$('.24h<?=$img["idx"]?>').click(function(){
+							todaycloseWin<?=$img['idx']?>();
+						});
+						// 팝업모바일
+						var popbox = $('.poplayer');
+						var popimg = $('.poplayer img');
+					
+						if($(document).width()<769){
+							$(popimg).css({width:'100%',height:'auto'});
+							$(popbox).css({width:'calc(100% - 20px)',top:'60px',left:'10px'});
+						}
+					});
+
+				</script>
+
+		<?php
+				$i++;
+			}
+		?>
 <body>
     <div id="container">
         <div id="header">

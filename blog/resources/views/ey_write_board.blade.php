@@ -21,6 +21,8 @@
 							<input type="text" name="category" value="ACC" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'media')
 							<input type="text" name="category" value="MEDIA" readonly style="border:none;" />
+						@elseif(request()->segment(2) == 'popup')
+							<input type="text" name="category" value="POPUP" readonly style="border:none;" />
 						@endif
                     </div>
                 </div>
@@ -58,7 +60,7 @@
                     </div>
                 </div>
             </div> -->
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'acc' && request()->segment(2) != 'media')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'acc' && request()->segment(2) != 'media' && request()->segment(2) != 'popup')
             <div class="write_line">
                 <div class="all_line">
 						<div class="line_title" style="vertical-align:top;">내용</div>
@@ -68,7 +70,7 @@
                 </div>
             </div>
 			@endif
-			@if(request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
+			@if(request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
             <div class="write_line">
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">링크</div>
@@ -128,10 +130,10 @@
                 <div class="write_line cate_file">
                     <div class="all_line">
                         <div class="line_title">
-                            파일선택@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc')(PC)@endif
+                            파일선택@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc' || request()->segment(2) == 'pcslider')(PC)@endif
                         </div>
                         <div class="line_content">
-							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
                             <input type="file" name="writer_file[]" />
 							<span style="cursor: pointer" class="add_file2">파일추가 +</span>
 							@else
@@ -145,20 +147,20 @@
                 </div>
             </span>
 			@endif
-			@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc')
+			@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc' || request()->segment(2) == 'pcslider')
             <span id="append_target_mobile">
                 <div class="write_line cate_file">
                     <div class="all_line">
                         <div class="line_title">
-                            파일선택@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc')(MOBILE)@endif
+                            파일선택@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc' || request()->segment(2) == 'pcslider' || request()->segment(2) == 'popup')(MOBILE)@endif
                         </div>
                         <div class="line_content">
-							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
                             <input type="file" name="writer_file_mobile[]" />
 							@else
                             <input type="file" name="writer_file_mobile" />
 							@endif
-							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds')
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'popup')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
 							@endif
                         </div>
@@ -168,7 +170,7 @@
 			@endif
 			
 			<span id="append_target_sub">
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc' && request()->segment(2) != 'media')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc' && request()->segment(2) != 'media' && request()->segment(2) != 'popup')
                 <div class="write_line cate_file">
                     <div class="all_line">
                         <div class="line_title">

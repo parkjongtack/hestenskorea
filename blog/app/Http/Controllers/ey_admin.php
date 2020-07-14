@@ -64,6 +64,11 @@ class Ey_admin extends Controller
 		return true;
 	}	
 
+	public function ey_control2(Request $request) {
+		DB::table('poplayer')->where('idx', $request->idx)->delete();
+		return true;
+	}	
+
 	public function ey_control_file(Request $request) {
 		DB::table('file_list')->where('idx', $request->idx)->delete();
 		return true;
@@ -147,7 +152,7 @@ class Ey_admin extends Controller
 		}
 
 
-		if(request()->segment(2) == "pcslider" || request()->segment(2) == "press" || request()->segment(2) == "media") {
+		if(request()->segment(2) == "press" || request()->segment(2) == "media") {
 
 			if($request->write_type == "modify") {
 				
@@ -245,7 +250,7 @@ class Ey_admin extends Controller
 
 			}
 		
-		} else if(request()->segment(2) == "beds" || request()->segment(2) == "acc") {
+		} else if(request()->segment(2) == "beds" || request()->segment(2) == "acc" || request()->segment(2) == "pcslider" || request()->segment(2) == "popup") {
 			
 			if($request->write_type == "modify") {
 				
@@ -289,6 +294,11 @@ class Ey_admin extends Controller
 							'end_period' => $request->end_period,
 							'use_status' => $request->use_status,
 							'priority' => $request->priority,
+							'i_width' => $request->i_width,
+							'i_height' => $request->i_height,
+							'pop_position' => $request->pop_position,
+							'm_width' => $request->m_width,
+							'm_height' => $request->m_height,
 							'link_value' => $request->link_value,
 							'all_type' => $all_type,
 							'reg_date' => \Carbon\Carbon::now(),
@@ -312,6 +322,11 @@ class Ey_admin extends Controller
 							'end_period' => $request->end_period,
 							'use_status' => $request->use_status,
 							'priority' => $request->priority,
+							'i_width' => $request->i_width,
+							'i_height' => $request->i_height,
+							'pop_position' => $request->pop_position,
+							'm_width' => $request->m_width,
+							'm_height' => $request->m_height,
 							'link_value' => $request->link_value,
 							'all_type' => $all_type,
 							'reg_date' => \Carbon\Carbon::now(),
@@ -330,7 +345,7 @@ class Ey_admin extends Controller
 
 				}
 
-				if(request()->segment(2) != 'acc') {
+				if(request()->segment(2) != 'acc' && request()->segment(2) != 'pcslider' && request()->segment(2) != 'popup') {
 
 					$insert_id = $request->board_idx;
 
@@ -482,12 +497,17 @@ class Ey_admin extends Controller
 						'end_period' => $request->end_period,
 						'use_status' => $request->use_status,
 						'priority' => $request->priority,
+						'i_width' => $request->i_width,
+						'i_height' => $request->i_height,
+						'pop_position' => $request->pop_position,
+						'm_width' => $request->m_width,
+						'm_height' => $request->m_height,
 						'all_type' => $all_type,
 						'reg_date' => \Carbon\Carbon::now(),
 					]
 				);
 
-				if(request()->segment(2) != 'acc') {
+				if(request()->segment(2) != 'acc' && request()->segment(2) != 'pcslider' && request()->segment(2) != 'popup') {
 				
 					$file = array();
 					$i = 0;

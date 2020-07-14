@@ -23,20 +23,20 @@
             <div class="nav_space"></div>
             <div id="nav">
                 <div class="logo">
-                    <a href="#none">
+                    <a href="/ey_admin/pcslider">
                         <img src="/img/logo.png" alt="로고" width="100%">
                     </a>
                 </div>
                 <div class="nav_title">
-                    <span>ADMIN</span><a href="#none"><i class="fas fa-sign-out-alt"></i></a>
+                    <span>ADMIN</span><a href="/ey_admin/pcslider"><i class="fas fa-sign-out-alt"></i></a>
                 </div>
                 <div class="nav_con">
                     <div class="na_title nav_img"><i class="fas fa-desktop"></i>메인페이지 설정</div>
                     <div class="na_title dep2">
-                        <div class="nav_sub"><a href="/ey_admin/pcslider">PC 슬라이드</a></div>
-                        <div class="nav_sub"><a href="/ey_pcpopup">PC 팝업</a></div>
-                        <div class="nav_sub"><a href="/ey_moslider">MOBILE 슬라이드</a></div>
-                        <div class="nav_sub"><a href="/ey_mopopup">MOBILE 팝업</a></div>
+                        <div class="nav_sub"><a href="/ey_admin/pcslider">슬라이드</a></div>
+                        <div class="nav_sub"><a href="/ey_admin/popup">팝업</a></div>
+                        <!-- <div class="nav_sub"><a href="/ey_moslider">MOBILE 슬라이드</a></div>
+                        <div class="nav_sub"><a href="/ey_mopopup">MOBILE 팝업</a></div> -->
                     </div>
                     <div class="na_title nav_img"><i class="fas fa-comments"></i>카테고리</div>
                     <div class="na_title dep2">

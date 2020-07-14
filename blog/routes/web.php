@@ -44,6 +44,12 @@ Route::get('/ey_admin/pcslider/write_board_form', 'Ey_admin@write_board_form');
 Route::post('/ey_admin/pcslider/write_board_action', 'Ey_admin@write_board_action');
 Route::get('/ey_admin/pcslider/write_board_form/modify', 'Ey_admin@write_board_form');
 
+Route::get('/ey_admin/popup', 'Ey_admin@ey_board_list');
+Route::post('/ey_admin/popup/control', 'Ey_admin@ey_control');
+Route::get('/ey_admin/popup/write_board_form', 'Ey_admin@write_board_form');
+Route::post('/ey_admin/popup/write_board_action', 'Ey_admin@write_board_action');
+Route::get('/ey_admin/popup/write_board_form/modify', 'Ey_admin@write_board_form');
+
 Route::get('/ey_admin/press', 'Ey_admin@ey_board_list');
 Route::post('/ey_admin/press/control', 'Ey_admin@ey_control');
 Route::get('/ey_admin/press/write_board_form', 'Ey_admin@write_board_form');
