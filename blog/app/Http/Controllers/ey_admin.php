@@ -502,6 +502,7 @@ class Ey_admin extends Controller
 						'pop_position' => $request->pop_position,
 						'm_width' => $request->m_width,
 						'm_height' => $request->m_height,
+						'link_value' => $request->link_value,
 						'all_type' => $all_type,
 						'reg_date' => \Carbon\Carbon::now(),
 					]

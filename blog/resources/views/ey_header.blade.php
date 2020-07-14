@@ -45,11 +45,11 @@
 						<div class="nav_sub"><a href="/ey_admin/press/">press</a></div>
                         <div class="nav_sub"><a href="/ey_admin/media/">media</a></div>
                     </div>
-                    <div class="na_title nav_img"><i class="far fa-chart-bar"></i>통계 현황</div>
+                    <!-- <div class="na_title nav_img"><i class="far fa-chart-bar"></i>통계 현황</div>
                     <div class="na_title dep2">
                         <div class="nav_sub"><a href="#">접속 통계</a></div>
                         <div class="nav_sub"><a href="#">유입 경로</a></div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div id="con">
