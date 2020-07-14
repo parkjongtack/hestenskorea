@@ -20,7 +20,7 @@
 					@else
                     <th>카테고리</th>
 					@endif
-                    <th>이미지</th>
+                    <th>@if(request()->segment(2) == 'media')링크@else이미지@endif</th>
 					@if(request()->segment(1) == 'ey_pcpopup')
                     <th>팝업크기/여백</th>
 					@else
@@ -41,7 +41,7 @@
 						<tr>
 							<td>{{ $number-- }}</td>
 							<td>{{ $data->subject }}</td>
-							<td><a href="#none"><img src="/storage/app/images/{{ $data->attach_file }}" alt="" width="100%"></a></td>
+							<td>@if(request()->segment(2) == 'media')<a href="{{ $data->link_value }}" target="_blank">{{ $data->link_value }}</a>@else<a href="#none"><img src="/storage/app/images/{{ $data->attach_file }}" alt="" width="100%"></a>@endif</td>
 							<!-- <td>{{ $data->start_period }} ~ {{ $data->end_period }}</td> -->
 							<td>{{ $data->reg_date }}</td>
 							<td>

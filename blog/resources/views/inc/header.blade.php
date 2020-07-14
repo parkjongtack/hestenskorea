@@ -10,7 +10,7 @@
                     <a href="/sub/acc"><li>Acc</li></a>
                     <a href="/sub/materials"><li>Material</li></a>
                     <a href="/sub/heritage01"><li>Heritage</li></a>
-                    <a href="/sub/news/?tab=1"><li>News</li></a>
+                    <a href="/sub/press/?tab=1"><li>News</li></a>
                     <a href="/sub/contact_us"><li>Contact</li></a>
                 </ul>
                 <div class="hamburger" id="hamburger-1">
@@ -35,8 +35,8 @@
             </div>
             <div class="sub_nav News">
                 <ul class="">
-                    <a href="/sub/news/?tab=1"><li>PRESS</li></a>
-                    <a href="/sub/news/?tab=2"><li>MEDIA</li></a>
+                    <a href="/sub/press/?tab=1"><li>PRESS</li></a>
+                    <a href="/sub/media/?tab=2"><li>MEDIA</li></a>
                 </ul>
             </div>
             <div class="sub_nav Contact">

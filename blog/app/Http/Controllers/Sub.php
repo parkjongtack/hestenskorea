@@ -113,6 +113,7 @@ class Sub extends Controller
 		$return_list["board_top_count"] = $board_top_count;
 		$return_list["board_top_list"] = $board_top_list;
 		$return_list["data"] = $list;
+		$return_list["data2"] = $list;
 		$return_list["number"] = $number;
 		$return_list["key"] = $request->key;
 		$return_list["totalCount"] = $totalCount;
@@ -346,7 +347,7 @@ class Sub extends Controller
 		$paging_view = $paging->paging($totalCount, $thisPage, "page");
 		
 		$query = DB::table('board')
-				->select(DB::raw('*, substr(reg_date, 1, 10) as reg_date_cut'))
+				->select(DB::raw('*, substr(reg_date, 1, 10) as reg_date_cut, substring_index(link_value,"/",-1) as link_key'))
 				->orderBy('priority', 'asc');
 				
 		if($request->key != "") {
@@ -399,6 +400,7 @@ class Sub extends Controller
 		$return_list["board_top_count"] = $board_top_count;
 		$return_list["board_top_list"] = $board_top_list;
 		$return_list["data"] = $list;
+		$return_list["data2"] = $list;
 		$return_list["number"] = $number;
 		$return_list["key"] = $request->key;
 		$return_list["totalCount"] = $totalCount;

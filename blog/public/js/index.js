@@ -270,7 +270,7 @@ $(function(){
     //news
     var now_url = document.location.href;
     
-    if(now_url.indexOf("news?tab=1") != -1){
+    if(now_url.indexOf("press?tab=1") != -1){
         $('.news_content ul.news_tabs_').hide();
         $('.news_content ul.news_tabs_').eq(0).show();
     }else{

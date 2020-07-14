@@ -19,9 +19,8 @@
 							<input type="text" name="category" value="BEDS" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'acc')
 							<input type="text" name="category" value="ACC" readonly style="border:none;" />
-						@elseif(request()->segment(2) == 'ey_pcslider')
-							<input type="radio" name="category" value="main" checked> 메인
-							<input type="radio" name="category" value="sub"> 서브
+						@elseif(request()->segment(2) == 'media')
+							<input type="text" name="category" value="MEDIA" readonly style="border:none;" />
 						@endif
                     </div>
                 </div>
@@ -59,7 +58,7 @@
                     </div>
                 </div>
             </div> -->
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'acc' && request()->segment(2) != 'media')
             <div class="write_line">
                 <div class="all_line">
 						<div class="line_title" style="vertical-align:top;">내용</div>
@@ -74,7 +73,7 @@
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">링크</div>
 						<div class="line_content">
-							<input type="text" name="link_value" />
+							<input type="text" name="link_value" />(광고가 끝나후에 나오는 본 동영상에서 <span style="color:red;">마우스 우클릭</span>를하여 나오는 <span style="color:red;">동영상 URL 복사</span>를 클릭 후 주소를 넣으세요)
                         </div>
                 </div>
             </div>
@@ -87,7 +86,7 @@
                         </div>
                 </div>
             </div>
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'media')
             <div class="write_line cate_file">
                 <div class="all_line">
                     <div class="line_title">
@@ -124,6 +123,7 @@
                 </div>
             </div>
 			@endif
+			@if(request()->segment(2) != 'media')
             <span id="append_target">
                 <div class="write_line cate_file">
                     <div class="all_line">
@@ -144,6 +144,7 @@
                     </div>
                 </div>
             </span>
+			@endif
 			@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc')
             <span id="append_target_mobile">
                 <div class="write_line cate_file">
@@ -167,7 +168,7 @@
 			@endif
 			
 			<span id="append_target_sub">
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc' && request()->segment(2) != 'media')
                 <div class="write_line cate_file">
                     <div class="all_line">
                         <div class="line_title">
