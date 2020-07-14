@@ -319,9 +319,10 @@ img{max-width: 100%; display: block; margin: 0 auto;}
 .news .news_tabs a.on{color: #fff; background-color: #00154a;}
 
 .news_content{font-size: 0;}
-.news_content .news_tabs_ li{display: inline-block; font-size: 20px;margin-bottom: 100px; width: 440px;}
+.news_content .news_tabs_ li{display: inline-block; font-size: 20px;margin-bottom: 100px; width: 440px; vertical-align: top;}
 .news_content .news_tabs_ li:nth-of-type(3n+2){margin: 0 40px;}
 .news_content .acc_content_text{margin-top: 20px;}
+/* .news_content .youtube_img{height: 422px;} */
 .news_tabs_02{display: none;}
 .pag_write{}
 .pag_write{font-size: 0; margin-top: 0; text-align: center;position: relative; top: -50px;}
