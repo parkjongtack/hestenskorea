@@ -51,6 +51,7 @@ Route::get('/ey_admin/press/write_board_form/modify', 'Ey_admin@write_board_form
 
 Route::get('/ey_admin/beds', 'Ey_admin@ey_board_list');
 Route::post('/ey_admin/beds/control', 'Ey_admin@ey_control');
+Route::post('/ey_admin/beds/control_file', 'Ey_admin@ey_control_file');
 Route::get('/ey_admin/beds/write_board_form', 'Ey_admin@write_board_form');
 Route::post('/ey_admin/beds/write_board_action', 'Ey_admin@write_board_action');
 Route::get('/ey_admin/beds/write_board_form/modify', 'Ey_admin@write_board_form');

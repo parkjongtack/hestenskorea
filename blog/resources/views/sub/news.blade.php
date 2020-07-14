@@ -6,16 +6,13 @@
                     </div>
                     <div class="news_content inner">
                         <ul class="news_tabs_01 news_tabs_">
-<<<<<<< HEAD
                             <li class="half">
                                 <div class="youtube_img">
                                     <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
                                 </div>
-=======
 							@foreach($data as $data)
                             <li class="half" style="cursor:pointer;" onclick="javascript:location.href='{{ $data->link_value }}';">
                                 <img src="/storage/app/images/{{ $data->attach_file }}" alt="">
->>>>>>> 9e1203cdfae4c4fd49c908fd4cd18a071baeb621
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">{{ $data->subject }}</p>                                    
                                 </div>

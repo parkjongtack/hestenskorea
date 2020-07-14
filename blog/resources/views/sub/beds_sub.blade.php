@@ -6,19 +6,22 @@
 					</div>
                     <div class="swiper-container beds_sub_slide">
                         <div class="swiper-wrapper">
+							@foreach($data as $data)
                             <div class="beds_detail swiper-slide">
-                                <img class="mo_none" src="/img/sub/beds_sub_img01.png" alt="">
-                                <img class="mo_block" src="/img/sub/m_beds_sub_img01.png" alt="">
+                                <img class="mo_none" src="/storage/app/images/{{ $data->real_file_name }}" alt="">
+                                <img class="mo_block" src="/storage/app/images/{{ $data->real_file_name2 }}" alt="">
                                 <div class="besd_explain">
                                     <div class="besd_explain_title">
-                                        <p class="beds_txt hei85p_kr">ONE BED.</p>
-                                        <p class="beds_txt hei85p_kr">MANY COLORS.</p>
+                                        <p class="beds_txt hei85p_kr">{{ $data->sub_subject }}</p>
+                                        <p class="beds_txt hei85p_kr">{{ $data->sub_subject2 }}</p>
                                     </div>
                                     <div class="besd_explain_detail">
-                                        COLOR : <b>Blue Check</b>
+                                        COLOR : <b>{{ $data->sub_subject3 }}</b>
                                     </div>
                                 </div>
                             </div>
+							@endforeach
+							<!-- 
                                 <div class="beds_detail swiper-slide">
                                     <img class="mo_none" src="/img/sub/beds_sub_img01.png" alt="">
                                     <img class="mo_block" src="/img/sub/m_beds_sub_img01.png" alt="">
@@ -182,7 +185,7 @@
                                             COLOR : <b>Blue Check</b>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         <div class="swiper-pagination"></div>
                         <!-- Add Arrows -->
@@ -192,10 +195,30 @@
                         <script>
                             $(document).ready(function(){
                                 var pagi_list = $('.swiper-pagination-bullet');
-                                for(var i=0; i<pagi_list.length; i++){
-                                    $(pagi_list).eq(i).css({background:"url('/img/sub/beds_sub_img01_"+(i+1)+".png') no-repeat center"});
-                                    console.log($(pagi_list).eq(i))
-                                }
+								var w_width = $(document).width();
+								if(w_width > 769){
+									var i = 0;
+	                                @foreach($data2 as $data2)
+										$(pagi_list).eq(i).css({background:"url('/storage/app/images/{{ $data2->real_file_name }}') no-repeat center"});
+										i = i + 1;
+									@endforeach
+									//for(var i=0; i<pagi_list.length; i++){
+	                                //    $(pagi_list).eq(i).css({background:"url('/img/sub/beds_sub_img01_"+(i+1)+".png') no-repeat center"});
+	                                //    //console.log($(pagi_list).eq(i))
+	                                //}
+								}else{
+
+									var i = 0;
+	                                @foreach($data3 as $data3)
+										$(pagi_list).eq(i).css({background:"url('/storage/app/images/{{ $data3->real_file_name2 }}') no-repeat center"});
+										i = i + 1;
+									@endforeach
+
+									//for(var i=0; i<pagi_list.length; i++){
+	                                //    $(pagi_list).eq(i).css({background:"url('/img/sub/beds_sub_img01_"+(i+1)+".png') no-repeat center"});
+	                                //    //console.log($(pagi_list).eq(i))
+	                                //}
+								}
                             });
                         </script>
                     

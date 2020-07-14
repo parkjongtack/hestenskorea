@@ -48,7 +48,6 @@
                 </div>
             </div>
 			@endif
-			@if(request()->segment(2) != 'beds')
             <div class="write_line">
                 <div class="all_line">
                     <div class="line_title">
@@ -60,7 +59,6 @@
                     </div>
                 </div>
             </div>
-			@endif
 			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds')
             <div class="write_line">
                 <div class="all_line">
@@ -71,6 +69,7 @@
                 </div>
             </div>
 			@endif
+			@if(request()->segment(2) != 'beds')
             <div class="write_line">
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">링크</div>
@@ -79,6 +78,7 @@
                         </div>
                 </div>
             </div>
+			@endif
             <div class="write_line">
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">우선순위</div>
@@ -128,7 +128,7 @@
                 <div class="write_line cate_file">
                     <div class="all_line">
                         <div class="line_title">
-                            파일선택
+                            파일선택@if(request()->segment(2) == 'beds')(PC)@endif
                         </div>
                         <div class="line_content">
                             <input type="file" name="writer_file" />
@@ -139,6 +139,23 @@
                     </div>
                 </div>
             </span>
+			@if(request()->segment(2) == 'beds')
+            <span id="append_target_mobile">
+                <div class="write_line cate_file">
+                    <div class="all_line">
+                        <div class="line_title">
+                            파일선택@if(request()->segment(2) == 'beds')(MOBILE)@endif
+                        </div>
+                        <div class="line_content">
+                            <input type="file" name="writer_file_mobile" />
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds')
+                            <span style="cursor: pointer" class="add_file">파일추가 +</span>
+							@endif
+                        </div>
+                    </div>
+                </div>
+            </span>
+			@endif
 			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press')
 			<span id="append_target_sub">
                 <div class="write_line cate_file">
@@ -147,9 +164,11 @@
                             서브파일선택
                         </div>
                         <div class="line_content">
-							소제목 : <input type="text" name="sub_subject" />
-							소제목2 : <input type="text" name="sub_subject2" />
-                            <input type="file" name="writer_file" />
+							소제목 : <input type="text" name="sub_subject[]" />
+							소제목2 : <input type="text" name="sub_subject2[]" />
+							소제목3 : <input type="text" name="sub_subject3[]" />
+                            PC : <input type="file" name="writer_file2[]" />
+							MOBILE : <input type="file" name="writer_file_mobile2[]" />
                             <span style="cursor: pointer" class="add_file_sub">서브항목추가 +</span>
                         </div>
                     </div>
@@ -222,6 +241,78 @@
 				return false;
 			}
 
+		@elseif(request()->segment(2) == 'beds')
+			
+			if(form.subject.value == "") {
+				alert('제목을 입력해주세요.');
+				form.subject.focus();
+				return false;
+			}
+
+			if(form.subject2.value == "") {
+				alert('제목2를 입력해주세요.');
+				form.subject2.focus();
+				return false;
+			}
+		
+			if(form.subject2.value == "") {
+				alert('제목2를 입력해주세요.');
+				form.subject2.focus();
+				return false;
+			}			
+
+			if(form.start_period.value == "") {
+				alert('시작기간을 입력해주세요.');
+				form.start_period.focus();
+				return false;
+			}
+
+			if(form.end_period.value == "") {
+				alert('마지막기간을 입력해주세요.');
+				form.end_period.focus();
+				return false;
+			}
+
+			if(form.priority.value == "") {
+				alert('우선순위을 입력해주세요.');
+				form.priority.focus();
+				return false;
+			}			
+
+			if(form.writer_file.value == "") {
+				alert('이미지를 선택해주세요.');
+				form.writer_file.focus();
+				return false;
+			}	
+
+			var validate = false;
+			$("input[name='writer_file2[]']").each(function (index, item) {
+
+				if($(item).val() != "") {
+					validate = true;
+				}
+				
+			});
+
+			if(validate == false) {
+				alert('서브이미지(PC)는 하나이상 선택하셔야 합니다.');
+				return false;
+			}
+			
+			var validate = false;
+			$("input[name='writer_file_mobile2[]']").each(function (index, item) {
+
+				if($(item).val() != "") {
+					validate = true;
+				}
+				
+			});
+
+			if(validate == false) {
+				alert('서브이미지(MOBILE)은 하나이상 선택하셔야 합니다.');
+				return false;
+			}
+
 		@endif
 
 	}
@@ -253,17 +344,18 @@
             $(append_item).appendTo("#append_target")
         });
 		
-		var i = 1;
+		var i = 0;
         $('.add_file_sub').click(function(){
 
 			i = i + 1;
 
-			if(i > 19) {
+			if(i > 18) {
 				alert('더이상 추가할 수 없습니다.');
+				i = 18;
 				return;
 			}
 			
-	        var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><div class="line_content">&nbsp;소제목 : <input type="text" name="sub_subject_'+i+'" />소제목2 : <input type="text" name="sub_subject2_'+i+'" /><input type="file" name="writer_file_'+i+'" /></div></div></div>'
+	        var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><div class="line_content">&nbsp;소제목 : <input type="text" name="sub_subject[]" />소제목2 : <input type="text" name="sub_subject2[]" />소제목3 : <input type="text" name="sub_subject3[]" /> PC : <input type="file" name="writer_file2[]" />MOBILE : <input type="file" name="writer_file_mobile2[]" /></div></div></div>'
 			
             $(append_item2).appendTo("#append_target_sub");
 
