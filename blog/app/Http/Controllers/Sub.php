@@ -303,6 +303,12 @@ class Sub extends Controller
 
 	}
 
+	public function media_view(Request $request) {
+
+		return view('sub/media_view'); 
+
+	}
+
 	public function news(Request $request) {
 
 		if($request->tab == 1) {

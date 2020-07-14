@@ -28,6 +28,7 @@ Route::get('/sub/heritage01', 'Sub@heritage01');
 Route::get('/sub/heritage02', 'Sub@heritage02');
 Route::get('/sub/heritage03', 'Sub@heritage03');
 Route::get('/sub/materials', 'Sub@materials');
+Route::get('/sub/media_view', 'Sub@media_view');
 Route::get('/sub/press', 'Sub@news');
 Route::get('/sub/media', 'Sub@news');
 Route::get('/sub/contact_us', 'Sub@contact_us');
