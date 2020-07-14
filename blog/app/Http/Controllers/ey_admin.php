@@ -18,7 +18,22 @@ use App\Classes\jsonRPCClient;
 
 class Ey_admin extends Controller
 {
+	public function file_upload(Request $request) {
 
+		if($request->upfiles) {
+			$file = $request->upfiles->store('images');
+			$file_array = explode("/", $file);
+			copy("../storage/app/images/".$file_array[1], "./sample/editor/html/popular/".$file_array[1]);
+		} else {
+			$file_array[1] = null;
+		}
+
+		$response = new \StdClass;
+		//$response->link = Director::absoluteBaseURL() . "" . $file->Filename;
+		$response->link = "/sample/editor/html/popular/" . $file_array[1];
+		echo stripslashes(json_encode($response));
+	}
+	
 	public function __construct()
 	{
 		
