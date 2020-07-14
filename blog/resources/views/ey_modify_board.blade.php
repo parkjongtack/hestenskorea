@@ -18,8 +18,8 @@
 							<input type="text" name="category" value="PRESS" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'beds')
 							<input type="text" name="category" value="BEDS" readonly style="border:none;" />
-						@elseif(request()->segment(2) == 'ey_pcpopup')
-							<input type="text" name="category" value="PC팝업" readonly style="border:none;" />
+						@elseif(request()->segment(2) == 'acc')
+							<input type="text" name="category" value="ACC" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'ey_pcslider')
 							<input type="radio" name="category" value="main" checked> 메인
 							<input type="radio" name="category" value="sub"> 서브
@@ -49,7 +49,7 @@
                 </div>
             </div>
 			@endif
-            <div class="write_line">
+            <!-- <div class="write_line">
                 <div class="all_line">
                     <div class="line_title">
                         기간
@@ -59,8 +59,8 @@
                         <input type="text" id="end_period" name="end_period" value="{{ $data->end_period }}" />
                     </div>
                 </div>
-            </div>
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds')
+            </div> -->
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
             <div class="write_line">
                 <div class="all_line">
 						<div class="line_title" style="vertical-align:top;">내용</div>
@@ -70,7 +70,7 @@
                 </div>
             </div>
 			@endif
-			@if(request()->segment(2) != 'beds')
+			@if(request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
             <div class="write_line">
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">링크</div>
@@ -88,7 +88,7 @@
                         </div>
                 </div>
             </div>
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
             <div class="write_line cate_file">
                 <div class="all_line">
                     <div class="line_title">
@@ -129,19 +129,22 @@
                 <div class="write_line cate_file">
                     <div class="all_line">
                         <div class="line_title">
-                            파일선택@if(request()->segment(2) == 'beds')(PC)@endif
+                            파일선택@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc')(PC)@endif
                         </div>
                         <div class="line_content">
                             <input type="file" name="writer_file" />
 							<a href="/storage/app/images/{{ $data->attach_file }}" target="_blank">[첨부파일]</a>
-							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds')
+							@if(request()->segment(2) == 'acc')
+								<input type="checkbox" name="all_type" value="Y" @if($data->all_type == 'Y') checked @endif />가로전체 채우기
+							@endif
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
 							@endif
                         </div>
                     </div>
                 </div>
             </span>
-			@if(request()->segment(2) == 'beds')
+			@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc')
             <span id="append_target_mobile">
                 <div class="write_line cate_file">
                     <div class="all_line">
@@ -151,7 +154,7 @@
                         <div class="line_content">
                             <input type="file" name="writer_file_mobile" />
 							<a href="/storage/app/images/{{ $data->attach_file2 }}" target="_blank">[첨부파일2]</a>
-							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds')
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
 							@endif
                         </div>
@@ -159,7 +162,7 @@
                 </div>
             </span>
 			@endif
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc')
 			<span id="append_target_sub">
                 <div class="write_line cate_file">
                     <div class="all_line">

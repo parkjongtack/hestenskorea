@@ -21,7 +21,106 @@ class Sub extends Controller
 
 	public function acc(Request $request) {
 
-		return view('sub/acc'); 
+		$boardType = request()->segment(2);
+
+		$paging_option = array(
+			"pageSize" => 10,
+			"blockSize" => 5
+		);		
+
+		$thisPage = ($request->page) ? $request->page : 1 ;
+		$paging = new PagingFunction($paging_option);
+
+		$totalQuery = DB::table('board');
+		if($request->key != "") {
+			$totalQuery->where(function($totalQuery) use($request){
+				$totalQuery->where('subject', 'like', '%' . $request->key . '%')
+				->orWhere('contents', 'like', '%' . $request->key . '%');
+			});
+		}
+
+		$totalQuery->where('use_status', 'Y');
+		$totalQuery->where('board_type', $boardType);
+        $totalQuery->where(function($query_set) {
+                $query_set->where('top_type', '<>', 'Y')
+                ->orWhere('top_type', null);
+        });
+
+		if($request->category_type) {
+			$totalQuery->where('category', $request->category_type);
+		}
+
+		if(request()->segment(2) == "ey_data_room" && !$request->category_type) {
+			$totalQuery->where('category', 1);
+		}
+
+		$totalCount = $totalQuery->get()->count();
+		
+		$paging_view = $paging->paging($totalCount, $thisPage, "page");
+		
+		$query = DB::table('board')
+				->select(DB::raw('*, substr(reg_date, 1, 10) as reg_date_cut'))
+				->orderBy('priority', 'asc');
+				
+		if($request->key != "") {
+			$query->where(function($query) use($request){
+				$query->where('subject', 'like', '%' . $request->key . '%')
+				->orWhere('contents', 'like', '%' . $request->key . '%');
+			});
+		}
+
+		$query->where('use_status', 'Y');
+		$query->where('board_type', $boardType);
+        $query->where(function($query_set2) {
+                $query_set2->where('top_type', '<>', 'Y')
+                ->orWhere('top_type', null);
+        });
+		
+		//$query->where('top_type', '<>', 'Y');
+		//$query->orWhere('top_type', null);
+		
+		if($request->category_type) {
+			$query->where('category', $request->category_type);
+		}
+
+		if(request()->segment(2) == "ey_data_room" && !$request->category_type) {
+			$query->where('category', 1);
+		}
+
+		if($request->page != "" && $request->page > 1) {
+			$query->skip(($request->page - 1) * $paging_option["pageSize"]);
+		}
+
+		$list = $query->take($paging_option["pageSize"])->get();
+		
+		// 게시판 출력 글 번호 계산
+		$number = $totalCount-($paging_option["pageSize"]*($thisPage-1));
+
+		$board_top_count = DB::table('board') 
+					->select(DB::raw('*'))
+					->where('board_type', $boardType)
+					->where('top_type', 'Y')
+					->get()->count();
+
+		$board_top_list = DB::table('board') 
+					->select(DB::raw('*, substr(reg_date, 1, 10) as reg_date_cut'))
+					->where('board_type', $boardType)
+					->where('top_type', 'Y')
+					->get();
+
+		$return_list = array();
+		$return_list["i"] = 1;
+		$return_list["board_top_count"] = $board_top_count;
+		$return_list["board_top_list"] = $board_top_list;
+		$return_list["data"] = $list;
+		$return_list["number"] = $number;
+		$return_list["key"] = $request->key;
+		$return_list["totalCount"] = $totalCount;
+		$return_list["paging_view"] = $paging_view;
+		$return_list["page"] = $thisPage;
+		$return_list["key"] = $request->key;
+
+		return view('sub/acc', $return_list); 
 
 	}
 
@@ -45,6 +144,7 @@ class Sub extends Controller
 			});
 		}
 
+		$totalQuery->where('use_status', 'Y');
 		$totalQuery->where('board_type', $boardType);
         $totalQuery->where(function($query_set) {
                 $query_set->where('top_type', '<>', 'Y')
@@ -65,7 +165,7 @@ class Sub extends Controller
 		
 		$query = DB::table('board')
 				->select(DB::raw('*, substr(reg_date, 1, 10) as reg_date_cut'))
-				->orderBy('idx', 'desc');
+				->orderBy('priority', 'asc');
 				
 		if($request->key != "") {
 			$query->where(function($query) use($request){
@@ -74,6 +174,7 @@ class Sub extends Controller
 			});
 		}
 
+		$query->where('use_status', 'Y');
 		$query->where('board_type', $boardType);
         $query->where(function($query_set2) {
                 $query_set2->where('top_type', '<>', 'Y')
@@ -150,7 +251,7 @@ class Sub extends Controller
 		$query = DB::table('file_list')
 				->select(DB::raw('*'))
 				->orderBy('idx', 'desc');
-				
+
 		$query->where('board_idx', $boardType);
 		
 		if($request->page != "" && $request->page > 1) {
@@ -225,6 +326,7 @@ class Sub extends Controller
 			});
 		}
 
+		$totalQuery->where('use_status', 'Y');
 		$totalQuery->where('board_type', $boardType);
         $totalQuery->where(function($query_set) {
                 $query_set->where('top_type', '<>', 'Y')
@@ -245,7 +347,7 @@ class Sub extends Controller
 		
 		$query = DB::table('board')
 				->select(DB::raw('*, substr(reg_date, 1, 10) as reg_date_cut'))
-				->orderBy('idx', 'desc');
+				->orderBy('priority', 'asc');
 				
 		if($request->key != "") {
 			$query->where(function($query) use($request){
@@ -254,6 +356,7 @@ class Sub extends Controller
 			});
 		}
 
+		$query->where('use_status', 'Y');
 		$query->where('board_type', $boardType);
         $query->where(function($query_set2) {
                 $query_set2->where('top_type', '<>', 'Y')

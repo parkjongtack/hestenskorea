@@ -12,7 +12,9 @@
                                 </div>
 							@foreach($data as $data)
                             <li class="half" style="cursor:pointer;" onclick="javascript:location.href='{{ $data->link_value }}';">
+							<div class="youtube_img">
                                 <img src="/storage/app/images/{{ $data->attach_file }}" alt="">
+							</div>
                                 <div class="acc_content_text">
                                     <p class="hei85" style="text-align: center;">{{ $data->subject }}</p>                                    
                                 </div>

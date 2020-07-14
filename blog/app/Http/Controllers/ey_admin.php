@@ -245,7 +245,7 @@ class Ey_admin extends Controller
 
 			}
 		
-		} else if(request()->segment(2) == "beds") {
+		} else if(request()->segment(2) == "beds" || request()->segment(2) == "acc") {
 			
 			if($request->write_type == "modify") {
 				
@@ -263,6 +263,12 @@ class Ey_admin extends Controller
 					copy("../storage/app/images/".$file_array2[1], "./storage/app/images/".$file_array2[1]);
 				} else {
 					$file_array2[1] = null;
+				}
+
+				if($request->all_type == "Y") {
+					$all_type = 'Y';
+				} else {
+					$all_type = 'N';
 				}
 
 				if($file_array[1] != null) {
@@ -284,6 +290,7 @@ class Ey_admin extends Controller
 							'use_status' => $request->use_status,
 							'priority' => $request->priority,
 							'link_value' => $request->link_value,
+							'all_type' => $all_type,
 							'reg_date' => \Carbon\Carbon::now(),
 						]
 					);
@@ -306,6 +313,7 @@ class Ey_admin extends Controller
 							'use_status' => $request->use_status,
 							'priority' => $request->priority,
 							'link_value' => $request->link_value,
+							'all_type' => $all_type,
 							'reg_date' => \Carbon\Carbon::now(),
 						]
 					);
@@ -322,108 +330,112 @@ class Ey_admin extends Controller
 
 				}
 
-				$insert_id = $request->board_idx;
+				if(request()->segment(2) != 'acc') {
 
-				$file = array();
-				$i = 0;
-				foreach($_FILES['writer_file2']['name'] as $key => $value) {
+					$insert_id = $request->board_idx;
 
-					$file['name'] = $_FILES['writer_file2']['name'][$key];
-					$file['tmp_name'] = $_FILES['writer_file2']['tmp_name'][$key];
-					$file['size'] = $_FILES['writer_file2']['size'][$key];
+					$file = array();
+					$i = 0;
+					foreach($_FILES['writer_file2']['name'] as $key => $value) {
 
-					$file2['name'] = $_FILES['writer_file_mobile2']['name'][$key];
-					$file2['tmp_name'] = $_FILES['writer_file_mobile2']['tmp_name'][$key];
-					$file2['size'] = $_FILES['writer_file_mobile2']['size'][$key];
+						$file['name'] = $_FILES['writer_file2']['name'][$key];
+						$file['tmp_name'] = $_FILES['writer_file2']['tmp_name'][$key];
+						$file['size'] = $_FILES['writer_file2']['size'][$key];
 
-					$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/storage/app/images/';
-					$ext_str = "jpg,gif,png";
-					$allowed_extensions = explode(',', $ext_str);
+						$file2['name'] = $_FILES['writer_file_mobile2']['name'][$key];
+						$file2['tmp_name'] = $_FILES['writer_file_mobile2']['tmp_name'][$key];
+						$file2['size'] = $_FILES['writer_file_mobile2']['size'][$key];
 
-					$max_file_size = 5242880000000000;
-					$ext = substr($file['name'], strrpos($file['name'], '.') + 1);
+						$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/storage/app/images/';
+						$ext_str = "jpg,gif,png";
+						$allowed_extensions = explode(',', $ext_str);
 
-					// 확장자 체크
-					if(!in_array($ext, $allowed_extensions)) {
-						echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
-						exit;
+						$max_file_size = 5242880000000000;
+						$ext = substr($file['name'], strrpos($file['name'], '.') + 1);
+
+						// 확장자 체크
+						if(!in_array($ext, $allowed_extensions)) {
+							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						// 파일 크기 체크
+						if($file['size'] >= $max_file_size) {
+							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						$ext = substr($file2['name'], strrpos($file2['name'], '.') + 1);
+
+						// 확장자 체크
+						if(!in_array($ext, $allowed_extensions)) {
+							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						// 파일 크기 체크
+						if($file2['size'] >= $max_file_size) {
+							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						$ext2 = substr($file2['name'], strrpos($file2['name'], '.') + 1);
+
+						// 확장자 체크
+						if(!in_array($ext2, $allowed_extensions)) {
+							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						// 파일 크기 체크
+						if($file2['size'] >= $max_file_size) {
+							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						$ext = substr($file2['name'], strrpos($file2['name'], '.') + 1);
+
+						// 확장자 체크
+						if(!in_array($ext2, $allowed_extensions)) {
+							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						// 파일 크기 체크
+						if($file2['size'] >= $max_file_size) {
+							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						$path = md5(microtime()) . '.' . $ext;
+						$path2 = md5(microtime()) . '.' . $ext;
+						if(move_uploaded_file($file['tmp_name'], $upload_directory.$path) && move_uploaded_file($file2['tmp_name'], $upload_directory.$path2)) {
+
+							DB::table('file_list')->insert(
+								[
+									'sub_subject' => $request->sub_subject[$i],
+									'sub_subject2' => $request->sub_subject2[$i],
+									'sub_subject3' => $request->sub_subject3[$i],
+									'board_type' => $request->board_type,
+									'file_name' => $file['name'],
+									'real_file_name' => $path,
+									'file_name2' => $file2['name'],
+									'real_file_name2' => $path2,
+									'board_idx' => $insert_id,
+								]
+							);					
+
+							$i++;
+
+							//$query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time) VALUES(?,?,?,now())";
+							$file_id = md5(uniqid(rand(), true));
+							$name_orig = $file['name'];
+							$name_save = $path;
+
+						}
+
 					}
-
-					// 파일 크기 체크
-					if($file['size'] >= $max_file_size) {
-						echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
-						exit;
-					}
-
-					$ext = substr($file2['name'], strrpos($file2['name'], '.') + 1);
-
-					// 확장자 체크
-					if(!in_array($ext, $allowed_extensions)) {
-						echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
-						exit;
-					}
-
-					// 파일 크기 체크
-					if($file2['size'] >= $max_file_size) {
-						echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
-						exit;
-					}
-
-					$ext2 = substr($file2['name'], strrpos($file2['name'], '.') + 1);
-
-					// 확장자 체크
-					if(!in_array($ext2, $allowed_extensions)) {
-						echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
-						exit;
-					}
-
-					// 파일 크기 체크
-					if($file2['size'] >= $max_file_size) {
-						echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
-						exit;
-					}
-
-					$ext = substr($file2['name'], strrpos($file2['name'], '.') + 1);
-
-					// 확장자 체크
-					if(!in_array($ext2, $allowed_extensions)) {
-						echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
-						exit;
-					}
-
-					// 파일 크기 체크
-					if($file2['size'] >= $max_file_size) {
-						echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
-						exit;
-					}
-
-					$path = md5(microtime()) . '.' . $ext;
-					$path2 = md5(microtime()) . '.' . $ext;
-					if(move_uploaded_file($file['tmp_name'], $upload_directory.$path) && move_uploaded_file($file2['tmp_name'], $upload_directory.$path2)) {
-
-						DB::table('file_list')->insert(
-							[
-								'sub_subject' => $request->sub_subject[$i],
-								'sub_subject2' => $request->sub_subject2[$i],
-								'sub_subject3' => $request->sub_subject3[$i],
-								'board_type' => $request->board_type,
-								'file_name' => $file['name'],
-								'real_file_name' => $path,
-								'file_name2' => $file2['name'],
-								'real_file_name2' => $path2,
-								'board_idx' => $insert_id,
-							]
-						);					
-
-						$i++;
-
-						//$query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time) VALUES(?,?,?,now())";
-						$file_id = md5(uniqid(rand(), true));
-						$name_orig = $file['name'];
-						$name_save = $path;
-
-					}
-
+				
 				}
 
 				echo "<script>alert('글 수정이 완료되었습니다.');location.href = '/ey_admin/".$request->board_type."';</script>";
@@ -447,6 +459,12 @@ class Ey_admin extends Controller
 					$file_array2[1] = null;
 				}
 				
+				if($request->all_type == "Y") {
+					$all_type = 'Y';
+				} else {
+					$all_type = 'N';
+				}
+
 				$insert_id = DB::table('board')->insertGetId(
 					[
 						'subject' => $request->subject,
@@ -464,82 +482,86 @@ class Ey_admin extends Controller
 						'end_period' => $request->end_period,
 						'use_status' => $request->use_status,
 						'priority' => $request->priority,
+						'all_type' => $all_type,
 						'reg_date' => \Carbon\Carbon::now(),
 					]
 				);
 
-				$file = array();
-				$i = 0;
-				foreach($_FILES['writer_file2']['name'] as $key => $value) {
+				if(request()->segment(2) != 'acc') {
+				
+					$file = array();
+					$i = 0;
+					foreach($_FILES['writer_file2']['name'] as $key => $value) {
 
-					$file['name'] = $_FILES['writer_file2']['name'][$key];
-					$file['tmp_name'] = $_FILES['writer_file2']['tmp_name'][$key];
-					$file['size'] = $_FILES['writer_file2']['size'][$key];
+						$file['name'] = $_FILES['writer_file2']['name'][$key];
+						$file['tmp_name'] = $_FILES['writer_file2']['tmp_name'][$key];
+						$file['size'] = $_FILES['writer_file2']['size'][$key];
 
-					$file2['name'] = $_FILES['writer_file_mobile2']['name'][$key];
-					$file2['tmp_name'] = $_FILES['writer_file_mobile2']['tmp_name'][$key];
-					$file2['size'] = $_FILES['writer_file_mobile2']['size'][$key];
+						$file2['name'] = $_FILES['writer_file_mobile2']['name'][$key];
+						$file2['tmp_name'] = $_FILES['writer_file_mobile2']['tmp_name'][$key];
+						$file2['size'] = $_FILES['writer_file_mobile2']['size'][$key];
 
-					$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/storage/app/images/';
-					$ext_str = "jpg,gif,png";
-					$allowed_extensions = explode(',', $ext_str);
+						$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/storage/app/images/';
+						$ext_str = "jpg,gif,png";
+						$allowed_extensions = explode(',', $ext_str);
 
-					$max_file_size = 5242880000000000;
-					$ext = substr($file['name'], strrpos($file['name'], '.') + 1);
+						$max_file_size = 5242880000000000;
+						$ext = substr($file['name'], strrpos($file['name'], '.') + 1);
 
-					// 확장자 체크
-					if(!in_array($ext, $allowed_extensions)) {
-						echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
-						exit;
+						// 확장자 체크
+						if(!in_array($ext, $allowed_extensions)) {
+							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						// 파일 크기 체크
+						if($file['size'] >= $max_file_size) {
+							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						$ext2 = substr($file2['name'], strrpos($file2['name'], '.') + 1);
+
+						// 확장자 체크
+						if(!in_array($ext2, $allowed_extensions)) {
+							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						// 파일 크기 체크
+						if($file2['size'] >= $max_file_size) {
+							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						$path = md5(microtime()) . '.' . $ext;
+						$path2 = md5(microtime()) . '.' . $ext2;
+						if(move_uploaded_file($file['tmp_name'], $upload_directory.$path) && move_uploaded_file($file2['tmp_name'], $upload_directory.$path2)) {
+
+							DB::table('file_list')->insert(
+								[
+									'sub_subject' => $request->sub_subject[$i],
+									'sub_subject2' => $request->sub_subject2[$i],
+									'sub_subject3' => $request->sub_subject3[$i],
+									'board_type' => $request->board_type,
+									'file_name' => $file['name'],
+									'real_file_name' => $path,
+									'file_name2' => $file2['name'],
+									'real_file_name2' => $path2,
+									'board_idx' => $insert_id,
+								]
+							);					
+
+							$i++;
+
+							//$query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time) VALUES(?,?,?,now())";
+							$file_id = md5(uniqid(rand(), true));
+							$name_orig = $file['name'];
+							$name_save = $path;
+
+						}
+
 					}
-
-					// 파일 크기 체크
-					if($file['size'] >= $max_file_size) {
-						echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
-						exit;
-					}
-
-					$ext2 = substr($file2['name'], strrpos($file2['name'], '.') + 1);
-
-					// 확장자 체크
-					if(!in_array($ext2, $allowed_extensions)) {
-						echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
-						exit;
-					}
-
-					// 파일 크기 체크
-					if($file2['size'] >= $max_file_size) {
-						echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
-						exit;
-					}
-
-					$path = md5(microtime()) . '.' . $ext;
-					$path2 = md5(microtime()) . '.' . $ext2;
-					if(move_uploaded_file($file['tmp_name'], $upload_directory.$path) && move_uploaded_file($file2['tmp_name'], $upload_directory.$path2)) {
-
-						DB::table('file_list')->insert(
-							[
-								'sub_subject' => $request->sub_subject[$i],
-								'sub_subject2' => $request->sub_subject2[$i],
-								'sub_subject3' => $request->sub_subject3[$i],
-								'board_type' => $request->board_type,
-								'file_name' => $file['name'],
-								'real_file_name' => $path,
-								'file_name2' => $file2['name'],
-								'real_file_name2' => $path2,
-								'board_idx' => $insert_id,
-							]
-						);					
-
-						$i++;
-
-						//$query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time) VALUES(?,?,?,now())";
-						$file_id = md5(uniqid(rand(), true));
-						$name_orig = $file['name'];
-						$name_save = $path;
-
-					}
-
 				}
 
 				echo "<script>alert('글 작성이 완료되었습니다.');location.href = '/ey_admin/".$request->board_type."';</script>";
@@ -548,7 +570,6 @@ class Ey_admin extends Controller
 			}
 
 		}
-
 	}
 
 	public function ey_acc(Request $request) {

@@ -24,7 +24,7 @@
 					@if(request()->segment(1) == 'ey_pcpopup')
                     <th>팝업크기/여백</th>
 					@else
-                    <th>기간</th>
+                    <!-- <th>기간</th> -->
 					@endif
                     <th>등록일</th>
                     <th>사용여부</th>
@@ -34,7 +34,7 @@
             <tbody>
 				@if($totalCount == '0')
 					<tr>
-						<td colspan="7">게시글이 없습니다.</td>
+						<td colspan="6">게시글이 없습니다.</td>
 					</tr>
 				@else
 					@foreach($data as $data)
@@ -42,7 +42,7 @@
 							<td>{{ $number-- }}</td>
 							<td>{{ $data->subject }}</td>
 							<td><a href="#none"><img src="/storage/app/images/{{ $data->attach_file }}" alt="" width="100%"></a></td>
-							<td>{{ $data->start_period }} ~ {{ $data->end_period }}</td>
+							<!-- <td>{{ $data->start_period }} ~ {{ $data->end_period }}</td> -->
 							<td>{{ $data->reg_date }}</td>
 							<td>
 								@if($data->use_status == 'Y')
