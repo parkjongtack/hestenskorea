@@ -6,9 +6,9 @@
             <colgroup>
                 <col width="100">
                 <col width="100">
-                <col width="350">
+                <col width="400">
                 <col width="250">
-                <col width="150">
+                <col width="100">
                 <col width="70">
                 <col width="180">
             </colgroup>
@@ -27,6 +27,7 @@
                     <!-- <th>기간</th> -->
 					@endif
                     <th>등록일</th>
+					<th>우선순위</th>
                     <th>사용여부</th>
                     <th>기능</th>
                 </tr>
@@ -45,13 +46,19 @@
 							<!-- <td>{{ $data->start_period }} ~ {{ $data->end_period }}</td> -->
 							<td>{{ $data->reg_date }}</td>
 							<td>
+								<span class="list_arrow first" style="cursor: pointer;"><i style="color: #555" class="fas fa-arrow-up"></i></span>
+								<span class="list_arrow second" style="cursor: pointer;"><i style="color: #ddd" class="fas fa-arrow-up"></i></span>
+								<span class="list_arrow third" style="cursor: pointer;"><i style="color: #ddd" class="fas fa-arrow-down"></i></span>
+								<span class="list_arrow four" style="cursor: pointer;"><i style="color: #555" class="fas fa-arrow-down"></i></span>
+							</td>
+							<td>
 								@if($data->use_status == 'Y')
 									사용
 								@else
 									중지
 								@endif
 							</td>
-							<td class="delete_box"><a href="javascript:control('{{ $data->idx }}');">삭제</a><a href="/ey_admin/{{ request()->segment(2) }}/write_board_form/modify/?board_idx={{ $data->idx }}" style="background-color: #08AEEA; border:1px solid #0faeea; color: #fff;">수정</a></td>
+							<td class="delete_box"><a href="javascript:control('{{ $data->idx }}');">삭제</a><a href="/ey_admin/{{ request()->segment(2) }}/write_board_form/modify?board_idx={{ $data->idx }}" style="background-color: #08AEEA; border:1px solid #0faeea; color: #fff;">수정</a></td>
 						</tr>
 					@endforeach
 				@endif

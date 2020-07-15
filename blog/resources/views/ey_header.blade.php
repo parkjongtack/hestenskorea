@@ -11,7 +11,7 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <link rel="stylesheet" href="/css/ey_index.css">
+        <link rel="stylesheet" href="/public/css/ey_index.css">
         <script src="https://kit.fontawesome.com/7f5faa19ba.js" crossorigin="anonymous"></script>
         <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -41,9 +41,9 @@
                     <div class="na_title nav_img"><i class="fas fa-comments"></i>카테고리</div>
                     <div class="na_title dep2">
                         <div class="nav_sub"><a href="/ey_admin/beds">beds</a></div>
-                        <div class="nav_sub"><a href="/ey_admin/acc/">acc</a></div>
-						<div class="nav_sub"><a href="/ey_admin/press/">press</a></div>
-                        <div class="nav_sub"><a href="/ey_admin/media/">media</a></div>
+                        <div class="nav_sub"><a href="/ey_admin/acc">acc</a></div>
+						<div class="nav_sub"><a href="/ey_admin/press">press</a></div>
+                        <div class="nav_sub"><a href="/ey_admin/media">media</a></div>
                     </div>
                     <!-- <div class="na_title nav_img"><i class="far fa-chart-bar"></i>통계 현황</div>
                     <div class="na_title dep2">
@@ -59,12 +59,12 @@
                     </div>
                     <div class="top_nav">
                         <ul>
-                            <a href="#none">
+                            <!-- <a href="#none">
                                 <li>
                                     <i class="fas fa-cog"></i>관리자 설정
                                 </li>
-                            </a>
-                            <a href="#none">
+                            </a> -->
+                            <a href="/">
                                 <li>
                                     <i class="fas fa-desktop"></i>홈페이지
                                 </li>

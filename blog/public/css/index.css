@@ -1,53 +1,53 @@
 @charset "utf-8";
-/* Noto Sans KR (korean) http://www.google.com/fonts/earlyaccess */
+/* Noto Sans KR (korean) http://www.google.com/css/css/fonts/earlyaccess */
  
 @font-face {
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 100;
-  src: url(/fonts/NotoSansKr/NotoSansKR-Thin.woff2) format('woff2'),
-       url(/fonts/NotoSansKr/NotoSansKR-Thin.woff) format('woff'),
-       url(/fonts/NotoSansKr/NotoSansKR-Thin.otf) format('opentype');
+  src: url(/css/fonts/NotoSansKr/NotoSansKR-Thin.woff2) format('woff2'),
+       url(/css/fonts/NotoSansKr/NotoSansKR-Thin.woff) format('woff'),
+       url(/css/fonts/NotoSansKr/NotoSansKR-Thin.otf) format('opentype');
 }
 @font-face {
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 300;
-  src: url(/fonts/NotoSansKr/NotoSansKR-Light.woff2) format('woff2'),
-       url(/fonts/NotoSansKr/NotoSansKR-Light.woff) format('woff'),
-       url(/fonts/NotoSansKr/NotoSansKR-Light.otf) format('opentype');
+  src: url(/css/fonts/NotoSansKr/NotoSansKR-Light.woff2) format('woff2'),
+       url(/css/fonts/NotoSansKr/NotoSansKR-Light.woff) format('woff'),
+       url(/css/fonts/NotoSansKr/NotoSansKR-Light.otf) format('opentype');
 }
 @font-face {
    font-family: 'Noto Sans KR';
    font-style: normal;
    font-weight: 400;
-   src: url(/fonts/NotoSansKr/NotoSansKR-Regular.woff2) format('woff2'),
-        url(/fonts/NotoSansKr/NotoSansKR-Regular.woff) format('woff'),
-        url(/fonts/NotoSansKr/NotoSansKR-Regular.otf) format('opentype');
+   src: url(/css/fonts/NotoSansKr/NotoSansKR-Regular.woff2) format('woff2'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Regular.woff) format('woff'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Regular.otf) format('opentype');
  }
 @font-face {
    font-family: 'Noto Sans KR';
    font-style: normal;
    font-weight: 500;
-   src: url(/fonts/NotoSansKr/NotoSansKR-Medium.woff2) format('woff2'),
-        url(/fonts/NotoSansKr/NotoSansKR-Medium.woff) format('woff'),
-        url(/fonts/NotoSansKr/NotoSansKR-Medium.otf) format('opentype');
+   src: url(/css/fonts/NotoSansKr/NotoSansKR-Medium.woff2) format('woff2'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Medium.woff) format('woff'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Medium.otf) format('opentype');
  }
 @font-face {
    font-family: 'Noto Sans KR';
    font-style: normal;
    font-weight: 700;
-   src: url(/fonts/NotoSansKr/NotoSansKR-Bold.woff2) format('woff2'),
-        url(/fonts/NotoSansKr/NotoSansKR-Bold.woff) format('woff'),
-        url(/fonts/NotoSansKr/NotoSansKR-Bold.otf) format('opentype');
+   src: url(/css/fonts/NotoSansKr/NotoSansKR-Bold.woff2) format('woff2'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Bold.woff) format('woff'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Bold.otf) format('opentype');
  }
 @font-face {
    font-family: 'Noto Sans KR';
    font-style: normal;
    font-weight: 900;
-   src: url(/fonts/NotoSansKr/NotoSansKR-Black.woff2) format('woff2'),
-        url(/fonts/NotoSansKr/NotoSansKR-Black.woff) format('woff'),
-        url(/fonts/NotoSansKr/NotoSansKR-Black.otf) format('opentype');
+   src: url(/css/fonts/NotoSansKr/NotoSansKR-Black.woff2) format('woff2'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Black.woff) format('woff'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Black.otf) format('opentype');
  } 
 
 /* contact_us */
@@ -298,7 +298,7 @@ img{max-width: 100%; display: block; margin: 0 auto;}
 .beds .beds_title{font-size: 3.125vw; font-weight: 500; line-height: 3.7500vw;}
 .beds .beds_txt{font-size: 1.3333vw; font-weight: 300;}
 .beds .beds_more{font-size: 1.2542vw; font-weight: 400; color: #3a9bff; display: block; position: relative;}
-.beds .beds_more::after{content: ">"; display: inline-block; font-size: 0.9375vw; position: absolute; top: 50%; left: 81%; transform: translateY(-50%) scale(0.5, 1.2);}
+.beds .beds_more::after{content: ">"; display: inline-block; font-size: 0.9375vw; position: absolute; top: 50%; transform: translateY(-50%) scale(0.5, 1.2);}
 .beds_sub{}
 
 /*acc*/
@@ -539,7 +539,7 @@ img{max-width: 100%; display: block; margin: 0 auto;}
     .beds .beds_title{font-size: 3.9063vw; font-weight: 500; line-height: 3.7500vw;}
     .beds .beds_txt{font-size: 1.6667vw; font-weight: 300;}
     .beds .beds_more{font-size: 1.3542vw; font-weight: 400; color: #3a9bff; display: block; position: relative;}
-    .beds .beds_more::after{content: ">"; display: inline-block; font-size: 0.9375vw; position: absolute; top: 50%; left: 77%; transform: translateY(-50%) scale(0.5, 1.2);}
+    .beds .beds_more::after{content: ">"; display: inline-block; font-size: 0.9375vw; position: absolute; top: 50%; transform: translateY(-50%) scale(0.5, 1.2);}
 
 /*acc*/
 .acc{text-align: center; font-size: 1.3889vw;}
@@ -696,7 +696,7 @@ img{max-width: 100%; display: block; margin: 0 auto;}
     .beds .beds_title{font-size: 3.8854vw; font-weight: 500; line-height: 3.500vw;}
     .beds .beds_txt{font-size: 1.8542vw; font-weight: 300;}
     .beds .beds_more{font-size: 1.5417vw; font-weight: 400; color: #3a9bff; display: block; position: relative;}
-    .beds .beds_more::after{content: ">"; display: inline-block; font-size: 0.8333vw; position: absolute; top: 50%; left: 77%; transform: translateY(-50%) scale(0.5, 1.2);}
+    .beds .beds_more::after{content: ">"; display: inline-block; font-size: 0.8333vw; position: absolute; top: 50%; transform: translateY(-50%) scale(0.5, 1.2);}
 
 /*acc*/
 .acc{text-align: center; font-size: 1.4620vw;}
