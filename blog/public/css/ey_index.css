@@ -98,6 +98,13 @@ i{color: #fff;margin-right: 5px;width: 16px;}
 #login_box input{float: none; display: block; margin: 10px auto; padding: 0px 7px; width: 300px; height: 50px; font-size: 16px; border: .5px solid #dddddd; box-sizing:border-box;}
 #login_box input[type=submit]{margin-top:30px;margin-bottom: 50px; border: 0px; float: none; display: block; padding: 0px 7px; width: 300px; height: 54px; font-size: 16px; background-color: #4895fd; color: #fff;}
 
+/*리스트 화살표*/
+.list_arrow{position:relative;}
+.list_arrow.first{top:0px}
+.list_arrow.second{margin-left: -10px;top:10px;}
+.list_arrow.third{top:20px}
+.list_arrow.four{margin-left: -10px;top:30px;}
+
 /*페이징*/
 .paging{font-size: 0; margin-top: 0; text-align: center; float: none;}
 .paging span{display: inline-block; width: 25px; height: 25px; line-height: 25px; text-align: center; color: #888888; font-size: 12px;}

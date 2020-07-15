@@ -119,10 +119,10 @@
                         팝업위치
                     </div>
                     <div class="line_content">
-                        <input type="radio" name="pop_position" value="lefttop" @if($data->pop_position == 'lefttop') checked @endif />좌측상단
-                        <input type="radio" name="pop_position" value="righttop" @if($data->pop_position == 'righttop') checked @endif />우측상단
-                        <input type="radio" name="pop_position" value="leftbot" @if($data->pop_position == 'leftbot') checked @endif />좌측하단
-                        <input type="radio" name="pop_position" value="rightbot" @if($data->pop_position == 'rightbot') checked @endif />우측하단
+                        <label for="lefttop"><input type="radio" name="pop_position" value="lefttop" id="lefttop" @if($data->pop_position == 'lefttop') checked @endif />좌측상단</label>
+                        <label for="righttop"><input type="radio" name="pop_position" value="righttop" id="righttop" @if($data->pop_position == 'righttop') checked @endif />우측상단</label>
+                        <label for="leftbot"><input type="radio" name="pop_position" value="leftbot" id="leftbot" @if($data->pop_position == 'leftbot') checked @endif />좌측하단</label>
+                        <label for="rightbot"><input type="radio" name="pop_position" value="rightbot" id="rightbot" @if($data->pop_position == 'rightbot') checked @endif />우측하단</label>
                     </div>
                 </div>
             </div>			
@@ -156,10 +156,15 @@
                             파일선택@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc' || request()->segment(2) == 'pcslider')(PC)@endif
                         </div>
                         <div class="line_content">
-                            <input type="file" name="writer_file" />
+							<input type="file" name="writer_file" />
 							<a href="/storage/app/images/{{ $data->attach_file }}" target="_blank">[첨부파일]</a>
+							@if(request()->segment(2) == 'pcslider')
+							<span class="set">(사이즈 1920x720)</span>
+							@elseif(request()->segment(2) == 'beds')
+							<span class="set">(사이즈 1400x960)</span>
+							@endif
 							@if(request()->segment(2) == 'acc')
-								<input type="checkbox" name="all_type" value="Y" @if($data->all_type == 'Y') checked @endif />가로전체 채우기
+							<label for="all_type"><input type="checkbox" id="all_type" name="all_type" value="Y" @if($data->all_type == 'Y') checked @endif />가로전체 채우기</label>
 							@endif
 							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
@@ -178,6 +183,11 @@
                         <div class="line_content">
                             <input type="file" name="writer_file_mobile" />
 							<a href="/storage/app/images/{{ $data->attach_file2 }}" target="_blank">[첨부파일2]</a>
+							@if(request()->segment(2) == 'pcslider')
+							<span class="set">(사이즈 1080x615)</span>
+							@elseif(request()->segment(2) == 'beds')
+							<span class="set">(사이즈 1400x960)</span>
+							@endif
 							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
 							@endif
@@ -219,8 +229,8 @@
 							노출여부
 						</div>
 						<div class="line_content">
-							<input type="radio" name="use_status" value="Y" @if($data->use_status == 'Y') checked @endif > 사용
-							<input type="radio" name="use_status" value="N" @if($data->use_status == 'N') checked @endif > 중지
+							<label for="see1"><input type="radio" id="see1" name="use_status" value="Y" @if($data->use_status == 'Y') checked @endif > 사용</label>
+							<label for="see2"><input type="radio" id="see2" name="use_status" value="N" @if($data->use_status == 'N') checked @endif > 중지</label>
 						</div>
 					</div>
 				</div>

@@ -98,7 +98,7 @@
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">링크</div>
 						<div class="line_content">
-							<input type="text" name="link_value" />(광고가 끝나후에 나오는 본 동영상에서 <span style="color:red;">마우스 우클릭</span>를하여 나오는 <span style="color:red;">동영상 URL 복사</span>를 클릭 후 주소를 넣으세요)
+							<input type="text" name="link_value" />@if(request()->segment(2) != 'pcslider')(광고가 끝나후에 나오는 본 동영상에서 <span style="color:red;">마우스 우클릭</span>를하여 나오는 <span style="color:red;">동영상 URL 복사</span>를 클릭 후 주소를 넣으세요)@endif
                         </div>
                 </div>
             </div>
@@ -118,10 +118,10 @@
                         팝업위치
                     </div>
                     <div class="line_content">
-                        <input type="radio" name="pop_position" value="lefttop" />좌측상단
-                        <input type="radio" name="pop_position" value="righttop" />우측상단
-                        <input type="radio" name="pop_position" value="leftbot" />좌측하단
-                        <input type="radio" name="pop_position" value="rightbot" />우측하단
+                        <label for="lefttop"><input type="radio" name="pop_position" id="lefttop" value="lefttop" />좌측상단</label>
+                        <label for="righttop"><input type="radio" name="pop_position" id="righttop" value="righttop" />우측상단</label>
+                        <label for="leftbot"><input type="radio" name="pop_position" id="leftbot" value="leftbot" />좌측하단</label>
+                        <label for="rightbot"><input type="radio" name="pop_position" id="rightbot" value="rightbot" />우측하단</label>
                     </div>
                 </div>
             </div>			
@@ -161,8 +161,13 @@
 							<span style="cursor: pointer" class="add_file2">파일추가 +</span>
 							@else
                             <input type="file" name="writer_file" />
+							@if(request()->segment(2) == 'pcslider')
+							<span class="set">(사이즈 1920x720)</span>
+							@elseif(request()->segment(2) == 'beds')
+							<span class="set">(사이즈 1400x960)</span>
+							@endif
 								@if(request()->segment(2) == 'acc')
-									<input type="checkbox" name="all_type" value="Y" />가로전체 채우기
+									<label for="all_type"><input type="checkbox" name="all_type" id="all_type" value="Y" />가로전체 채우기</label>
 								@endif
 							@endif
                         </div>
@@ -182,6 +187,11 @@
                             <input type="file" name="writer_file_mobile[]" />
 							@else
                             <input type="file" name="writer_file_mobile" />
+							@endif
+							@if(request()->segment(2) == 'pcslider')
+							<span class="set">(사이즈 1080x615)</span>
+							@elseif(request()->segment(2) == 'beds')
+							<span class="set">(사이즈 1400x960)</span>
 							@endif
 							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'popup')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
@@ -218,8 +228,8 @@
 							노출여부
 						</div>
 						<div class="line_content">
-							<input type="radio" name="use_status" value="Y" checked> 사용
-							<input type="radio" name="use_status" value="N"> 중지
+							<label for="see1"><input type="radio" id="see1" name="use_status" value="Y" checked> 사용</label>
+							<label for="see2"><input type="radio" id="see2" name="use_status" value="N"> 중지</label>
 						</div>
 					</div>
 				</div>
