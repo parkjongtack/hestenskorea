@@ -305,7 +305,15 @@ class Sub extends Controller
 
 	public function media_view(Request $request) {
 
-		return view('sub/media_view'); 
+		$board_infom = DB::table('board') 
+					->select(DB::raw('*'))
+					//->where('board_type', 'ey_faq')
+					->where('idx', $request->board_idx)
+					->first();
+
+		$return_list['data'] = $board_infom;
+
+		return view('sub/media_view', $return_list); 
 
 	}
 

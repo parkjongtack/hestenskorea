@@ -11,7 +11,7 @@
                                     <img src="https://img.youtube.com/vi/nVCubhQ454c/0.jpg" alt="">
                                 </div> -->
 							@foreach($data as $data)
-                            <li class="half" style="cursor:pointer;" onclick="javascript:location.href='{{ $data->link_value }}';">
+                            <li class="half" style="cursor:pointer;" onclick="javascript:location.href='/sub/media_view?board_idx={{ $data->idx }}';">
 								<div class="youtube_img">
 									<img src="/storage/app/images/{{ $data->attach_file }}" alt="">
 								</div>

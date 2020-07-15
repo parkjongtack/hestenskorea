@@ -1,0 +1,5 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond $1 !^(public)/
+RewriteCond %{HTTP_HOST} ^(www.)?hastensseoul.gabia.io [NC]
+RewriteRule ^(.*)$ /public/$1 [L]

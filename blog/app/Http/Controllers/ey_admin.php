@@ -184,6 +184,7 @@ class Ey_admin extends Controller
 					DB::table('board')->where('idx', $request->board_idx)->update(
 						[
 							'subject' => $request->subject,
+							'contents' => $request->contents,
 							'category' => $request->category,
 							'writer' => $request->writer,
 							'ip_addr' => request()->ip(),
@@ -207,6 +208,7 @@ class Ey_admin extends Controller
 					DB::table('board')->where('idx', $request->board_idx)->update(
 						[
 							'subject' => $request->subject,
+							'contents' => $request->contents,
 							'category' => $request->category,
 							'writer' => $request->writer,
 							'ip_addr' => request()->ip(),
@@ -242,6 +244,7 @@ class Ey_admin extends Controller
 				DB::table('board')->insert(
 					[
 						'subject' => $request->subject,
+						'contents' => $request->contents,
 						'category' => $request->category,
 						'writer' => $request->writer,
 						'ip_addr' => request()->ip(),

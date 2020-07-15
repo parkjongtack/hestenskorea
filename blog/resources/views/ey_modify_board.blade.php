@@ -402,17 +402,30 @@
 			}
 			*/
 		@elseif(request()->segment(2) == 'press')
-		let editor = new FroalaEditor('#edit', {}, function () {
-			// console.log(editor.html.get())				
-		});		
-		
-		if(editor.core.isEmpty() == true) {
-			alert("게시글을 작성해주세요.");
-			editor.events.focus(true);
-			return;
-		}
 
-		$("textarea[name=contents]").val(editor.html.get());
+			if(form.subject.value == "") {
+				alert('제목을 입력해주세요.');
+				form.subject.focus();
+				return false;
+			}
+
+			if(form.priority.value == "") {
+				alert('우선순위을 입력해주세요.');
+				form.priority.focus();
+				return false;
+			}
+
+			let editor = new FroalaEditor('#edit', {}, function () {
+				// console.log(editor.html.get())				
+			});		
+			
+			if(editor.core.isEmpty() == true) {
+				alert("게시글을 작성해주세요.");
+				editor.events.focus(true);
+				return false;
+			}
+
+			$("textarea[name=contents]").val(editor.html.get());
 
 		@endif
 

@@ -277,8 +277,146 @@
   <script type="text/javascript" src="/editor/js/third_party/spell_checker.min.js"></script>
   <script type="text/javascript" src="/editor/js/plugins/special_characters.min.js"></script>
   <script type="text/javascript" src="/editor/js/plugins/word_paste.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
 <script type="text/javascript">
+
+	(function () {
+      //new FroalaEditor("#edit")
+
+		new FroalaEditor('#edit', {
+			// Set the image upload parameter.
+			imageUploadParam: 'upfiles',
+
+			// Set the image upload URL.
+			imageUploadURL: '/file_upload',
+
+			// Additional upload params.
+			imageUploadParams: {id: 'upfiles'},
+
+			// Set request type.
+			imageUploadMethod: 'POST',
+
+			// Set max image size to 5MB.
+			imageMaxSize: 5 * 1024 * 1024,
+
+			// Allow to upload PNG and JPG.
+			imageAllowedTypes: ['jpeg', 'jpg', 'png'],
+
+			events: {
+			  'image.beforeUpload': function (images) {
+				// Return false if you want to stop the image upload.
+				//alert('1');
+				//console.log(images);
+			  },
+			  'image.uploaded': function (response) {
+				// Image was uploaded to the server.
+				//alert('2');
+				//console.log(response);
+			  },
+			  'image.inserted': function ($img, response) {
+				// Image was inserted in the editor.
+				//alert('3');
+				//alert($img);
+				//console.log(response);
+			  },
+			  'image.replaced': function ($img, response) {
+				// Image was replaced in the editor.
+				//alert('4');
+				//alert($img);
+				//console.log(response);
+			  },
+			  'image.error': function (error, response) {
+				  console.log(error);
+				  console.log(response);
+				// Bad link.
+				if (error.code == 1) {  }
+
+				// No link in upload response.
+				else if (error.code == 2) {  }
+
+				// Error during image upload.
+				else if (error.code == 3) {  }
+
+				// Parsing response failed.
+				else if (error.code == 4) {  }
+
+				// Image too text-large.
+				else if (error.code == 5) {  }
+
+				// Invalid image type.
+				else if (error.code == 6) {  }
+
+				// Image can be uploaded only to same domain in IE 8 and IE 9.
+				else if (error.code == 7) {  }
+
+				// Response contains the original server response to the request if available.
+			  }
+			},
+
+
+			// Set the video upload parameter.
+			videoUploadParam: 'upfiles',
+
+			// Set the video upload URL.
+			videoUploadURL: '/file_upload',
+
+			// Additional upload params.
+			videoUploadParams: {id: 'upfiles'},
+
+			// Set request type.
+			videoUploadMethod: 'POST',
+
+			// Set max video size to 50MB.
+			videoMaxSize: 5000 * 1024 * 1024,
+
+			// Allow to upload MP4, WEBM and OGG
+			videoAllowedTypes: ['webm', 'jpg', 'ogg', 'mp4', 'wmv', 'avi'],
+
+			events: {
+			  'video.beforeUpload': function (videos) {
+				  //alert('1');
+				// Return false if you want to stop the video upload.
+			  },
+			  'video.uploaded': function (response) {
+				// Video was uploaded to the server.
+				  //alert('2');
+			  },
+			  'video.inserted': function ($img, response) {
+				// Video was inserted in the editor.
+				  //alert('3');
+			  },
+			  'video.replaced': function ($img, response) {
+				// Video was replaced in the editor.
+			  },
+			  'video.error': function (error, response) {
+				  //alert('4');
+				// Bad link.
+				if (error.code == 1) {  }
+
+				// No link in upload response.
+				else if (error.code == 2) {  }
+
+				// Error during video upload.
+				else if (error.code == 3) {  }
+
+				// Parsing response failed.
+				else if (error.code == 4) {  }
+
+				// Video too text-large.
+				else if (error.code == 5) {  }
+
+				// Invalid video type.
+				else if (error.code == 6) {  }
+
+				// Video can be uploaded only to same domain in IE 8 and IE 9.
+				else if (error.code == 7) {  }
+
+				// Response contains the original server response to the request if available.
+			  }
+			}
+
+		});
+    })()
 
 	function submit_check() {
 
@@ -422,17 +560,10 @@
 
 		@elseif(request()->segment(2) == 'press')
 
-alert(editor.html.get());
-return false;
 
 			if(form.subject.value == "") {
 				alert('제목을 입력해주세요.');
 				form.subject.focus();
-				return false;
-			}
-			if(form.link_value.value == "") {
-				alert('링크를 입력해주세요.');
-				form.link_value.focus();
 				return false;
 			}
 
@@ -457,165 +588,32 @@ return false;
 		@endif
 
 	}
-	(function () {
-      //new FroalaEditor("#edit")
 
-		new FroalaEditor('#edit', {
-			// Set the image upload parameter.
-			imageUploadParam: 'upfiles',
-
-			// Set the image upload URL.
-			imageUploadURL: '/file_upload',
-
-			// Additional upload params.
-			imageUploadParams: {id: 'upfiles'},
-
-			// Set request type.
-			imageUploadMethod: 'POST',
-
-			// Set max image size to 5MB.
-			imageMaxSize: 5 * 1024 * 1024,
-
-			// Allow to upload PNG and JPG.
-			imageAllowedTypes: ['jpeg', 'jpg', 'png'],
-
-			events: {
-			  'image.beforeUpload': function (images) {
-				// Return false if you want to stop the image upload.
-				//alert('1');
-				//console.log(images);
-			  },
-			  'image.uploaded': function (response) {
-				// Image was uploaded to the server.
-				//alert('2');
-				//console.log(response);
-			  },
-			  'image.inserted': function ($img, response) {
-				// Image was inserted in the editor.
-				//alert('3');
-				//alert($img);
-				//console.log(response);
-			  },
-			  'image.replaced': function ($img, response) {
-				// Image was replaced in the editor.
-				//alert('4');
-				//alert($img);
-				//console.log(response);
-			  },
-			  'image.error': function (error, response) {
-				  console.log(error);
-				  console.log(response);
-				// Bad link.
-				if (error.code == 1) {  }
-
-				// No link in upload response.
-				else if (error.code == 2) {  }
-
-				// Error during image upload.
-				else if (error.code == 3) {  }
-
-				// Parsing response failed.
-				else if (error.code == 4) {  }
-
-				// Image too text-large.
-				else if (error.code == 5) {  }
-
-				// Invalid image type.
-				else if (error.code == 6) {  }
-
-				// Image can be uploaded only to same domain in IE 8 and IE 9.
-				else if (error.code == 7) {  }
-
-				// Response contains the original server response to the request if available.
-			  }
-			},
-
-
-			// Set the video upload parameter.
-			videoUploadParam: 'upfiles',
-
-			// Set the video upload URL.
-			videoUploadURL: '/file_upload',
-
-			// Additional upload params.
-			videoUploadParams: {id: 'upfiles'},
-
-			// Set request type.
-			videoUploadMethod: 'POST',
-
-			// Set max video size to 50MB.
-			videoMaxSize: 5000 * 1024 * 1024,
-
-			// Allow to upload MP4, WEBM and OGG
-			videoAllowedTypes: ['webm', 'jpg', 'ogg', 'mp4', 'wmv', 'avi'],
-
-			events: {
-			  'video.beforeUpload': function (videos) {
-				  //alert('1');
-				// Return false if you want to stop the video upload.
-			  },
-			  'video.uploaded': function (response) {
-				// Video was uploaded to the server.
-				  //alert('2');
-			  },
-			  'video.inserted': function ($img, response) {
-				// Video was inserted in the editor.
-				  //alert('3');
-			  },
-			  'video.replaced': function ($img, response) {
-				// Video was replaced in the editor.
-			  },
-			  'video.error': function (error, response) {
-				  //alert('4');
-				// Bad link.
-				if (error.code == 1) {  }
-
-				// No link in upload response.
-				else if (error.code == 2) {  }
-
-				// Error during video upload.
-				else if (error.code == 3) {  }
-
-				// Parsing response failed.
-				else if (error.code == 4) {  }
-
-				// Video too text-large.
-				else if (error.code == 5) {  }
-
-				// Invalid video type.
-				else if (error.code == 6) {  }
-
-				// Video can be uploaded only to same domain in IE 8 and IE 9.
-				else if (error.code == 7) {  }
-
-				// Response contains the original server response to the request if available.
-			  }
-			}
-
-		});
-    })()
     $(function(){
 
-		 $("#start_period, #end_period").datepicker({
-			  showOn: "both", // 버튼과 텍스트 필드 모두 캘린더를 보여준다.
-			  changeMonth: true, // 월을 바꿀수 있는 셀렉트 박스를 표시한다.
-			  changeYear: true, // 년을 바꿀 수 있는 셀렉트 박스를 표시한다.
-			  minDate: '-100y', // 현재날짜로부터 100년이전까지 년을 표시한다.
-			  nextText: '다음 달', // next 아이콘의 툴팁.
-			  prevText: '이전 달', // prev 아이콘의 툴팁.
-			  numberOfMonths: [1,1], // 한번에 얼마나 많은 월을 표시할것인가. [2,3] 일 경우, 2(행) x 3(열) = 6개의 월을 표시한다.
-			  stepMonths: 3, // next, prev 버튼을 클릭했을때 얼마나 많은 월을 이동하여 표시하는가. 
-			  yearRange: 'c-100:c+10', // 년도 선택 셀렉트박스를 현재 년도에서 이전, 이후로 얼마의 범위를 표시할것인가.
-			  showButtonPanel: true, // 캘린더 하단에 버튼 패널을 표시한다. 
-			  currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
-			  closeText: '닫기',  // 닫기 버튼 패널
-			  dateFormat: "yy-mm-dd", // 텍스트 필드에 입력되는 날짜 형식.
-			  showAnim: "slide", //애니메이션을 적용한다.
-			  showMonthAfterYear: true , // 월, 년순의 셀렉트 박스를 년,월 순으로 바꿔준다. 
-			  dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], // 요일의 한글 형식.
-			  monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] // 월의 한글 형식.
-		 });
+		@if(request()->segment(2) != 'press')
 
+			 $("#start_period, #end_period").datepicker({
+				  showOn: "both", // 버튼과 텍스트 필드 모두 캘린더를 보여준다.
+				  changeMonth: true, // 월을 바꿀수 있는 셀렉트 박스를 표시한다.
+				  changeYear: true, // 년을 바꿀 수 있는 셀렉트 박스를 표시한다.
+				  minDate: '-100y', // 현재날짜로부터 100년이전까지 년을 표시한다.
+				  nextText: '다음 달', // next 아이콘의 툴팁.
+				  prevText: '이전 달', // prev 아이콘의 툴팁.
+				  numberOfMonths: [1,1], // 한번에 얼마나 많은 월을 표시할것인가. [2,3] 일 경우, 2(행) x 3(열) = 6개의 월을 표시한다.
+				  stepMonths: 3, // next, prev 버튼을 클릭했을때 얼마나 많은 월을 이동하여 표시하는가. 
+				  yearRange: 'c-100:c+10', // 년도 선택 셀렉트박스를 현재 년도에서 이전, 이후로 얼마의 범위를 표시할것인가.
+				  showButtonPanel: true, // 캘린더 하단에 버튼 패널을 표시한다. 
+				  currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
+				  closeText: '닫기',  // 닫기 버튼 패널
+				  dateFormat: "yy-mm-dd", // 텍스트 필드에 입력되는 날짜 형식.
+				  showAnim: "slide", //애니메이션을 적용한다.
+				  showMonthAfterYear: true , // 월, 년순의 셀렉트 박스를 년,월 순으로 바꿔준다. 
+				  dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], // 요일의 한글 형식.
+				  monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] // 월의 한글 형식.
+			 });
+
+		@endif
 
 		@if(request()->segment(2) == 'acc')
 			var append_item = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><input type="file" name="writer_file[]" /><input type="checkbox" name="all_type[]" value="Y" />가로전체 채우기</div></div></div>'
