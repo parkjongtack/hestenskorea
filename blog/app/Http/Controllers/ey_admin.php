@@ -379,7 +379,9 @@ class Ey_admin extends Controller
 						$file2['tmp_name'] = $_FILES['writer_file_mobile2']['tmp_name'][$key];
 						$file2['size'] = $_FILES['writer_file_mobile2']['size'][$key];
 
-						$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/storage/app/images/';
+						$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/public/storage/app/images/';
+
+
 						$ext_str = "jpg,gif,png";
 						$allowed_extensions = explode(',', $ext_str);
 
@@ -387,13 +389,13 @@ class Ey_admin extends Controller
 						$ext = substr($file['name'], strrpos($file['name'], '.') + 1);
 
 						// 확장자 체크
-						if(!in_array($ext, $allowed_extensions)) {
+						if(!in_array($ext, $allowed_extensions) && $file['name'] != "") {
 							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
 							exit;
 						}
 
 						// 파일 크기 체크
-						if($file['size'] >= $max_file_size) {
+						if($file['size'] >= $max_file_size && $file['name'] != "") {
 							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
 							exit;
 						}
@@ -401,13 +403,13 @@ class Ey_admin extends Controller
 						$ext = substr($file2['name'], strrpos($file2['name'], '.') + 1);
 
 						// 확장자 체크
-						if(!in_array($ext, $allowed_extensions)) {
+						if(!in_array($ext, $allowed_extensions) && $file2['name'] != "") {
 							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
 							exit;
 						}
 
 						// 파일 크기 체크
-						if($file2['size'] >= $max_file_size) {
+						if($file2['size'] >= $max_file_size && $file2['name'] != "") {
 							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
 							exit;
 						}
@@ -415,13 +417,13 @@ class Ey_admin extends Controller
 						$ext2 = substr($file2['name'], strrpos($file2['name'], '.') + 1);
 
 						// 확장자 체크
-						if(!in_array($ext2, $allowed_extensions)) {
+						if(!in_array($ext2, $allowed_extensions) && $file2['name'] != "") {
 							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
 							exit;
 						}
 
 						// 파일 크기 체크
-						if($file2['size'] >= $max_file_size) {
+						if($file2['size'] >= $max_file_size && $file2['name'] != "") {
 							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
 							exit;
 						}
@@ -429,13 +431,13 @@ class Ey_admin extends Controller
 						$ext = substr($file2['name'], strrpos($file2['name'], '.') + 1);
 
 						// 확장자 체크
-						if(!in_array($ext2, $allowed_extensions)) {
+						if(!in_array($ext2, $allowed_extensions) && $file2['name'] != "") {
 							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
 							exit;
 						}
 
 						// 파일 크기 체크
-						if($file2['size'] >= $max_file_size) {
+						if($file2['size'] >= $max_file_size && $file2['name'] != "") {
 							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
 							exit;
 						}
@@ -540,7 +542,8 @@ class Ey_admin extends Controller
 						$file2['tmp_name'] = $_FILES['writer_file_mobile2']['tmp_name'][$key];
 						$file2['size'] = $_FILES['writer_file_mobile2']['size'][$key];
 
-						$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/storage/app/images/';
+						$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/public/storage/app/images/';
+
 						$ext_str = "jpg,gif,png";
 						$allowed_extensions = explode(',', $ext_str);
 
@@ -548,13 +551,13 @@ class Ey_admin extends Controller
 						$ext = substr($file['name'], strrpos($file['name'], '.') + 1);
 
 						// 확장자 체크
-						if(!in_array($ext, $allowed_extensions)) {
+						if(!in_array($ext, $allowed_extensions) && $file['name'] != "") {
 							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
 							exit;
 						}
 
 						// 파일 크기 체크
-						if($file['size'] >= $max_file_size) {
+						if($file['size'] >= $max_file_size && $file['name'] != "") {
 							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
 							exit;
 						}
@@ -562,13 +565,13 @@ class Ey_admin extends Controller
 						$ext2 = substr($file2['name'], strrpos($file2['name'], '.') + 1);
 
 						// 확장자 체크
-						if(!in_array($ext2, $allowed_extensions)) {
+						if(!in_array($ext2, $allowed_extensions) && $file2['name'] != "") {
 							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
 							exit;
 						}
 
 						// 파일 크기 체크
-						if($file2['size'] >= $max_file_size) {
+						if($file2['size'] >= $max_file_size && $file2['name'] != "") {
 							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
 							exit;
 						}
@@ -679,7 +682,7 @@ class Ey_admin extends Controller
 		
 		$query = DB::table('board')
 				->select(DB::raw('*, substr(reg_date, 1, 10) as reg_date_cut'))
-				->orderBy('idx', 'desc');
+				->orderBy('priority', 'asc');
 				
 		if($request->key != "") {
 			$query->where(function($query) use($request){
