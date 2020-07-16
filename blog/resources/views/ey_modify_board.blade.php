@@ -159,6 +159,7 @@
                 </div>
             </div>
 			@endif
+			@if(request()->segment(2) != 'press' && request()->segment(2) != 'media')
             <span id="append_target">
                 <div class="write_line cate_file">
                     <div class="all_line">
@@ -167,7 +168,7 @@
                         </div>
                         <div class="line_content">
 							<input type="file" name="writer_file" />
-							<a href="/storage/app/images/{{ $data->attach_file }}" target="_blank">[첨부파일]</a>
+							<a href="/storage/app/images/{{ $data->attach_file }}" target="_blank">[파일보기]</a>
 							@if(request()->segment(2) == 'pcslider')
 							<span class="set">(사이즈 1920x720)</span>
 							@elseif(request()->segment(2) == 'beds')
@@ -182,7 +183,34 @@
                         </div>
                     </div>
                 </div>
-            </span>
+			</span>
+			@endif
+			@if(request()->segment(2) == 'press')
+			<span id="append_target">
+                <div class="write_line cate_file">
+                    <div class="all_line">
+                        <div class="line_title">
+                            썸네일 이미지@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc' || request()->segment(2) == 'pcslider')(PC)@endif
+                        </div>
+                        <div class="line_content">
+							<input type="file" name="writer_file" />
+							<a href="/storage/app/images/{{ $data->attach_file }}" target="_blank">[썸네일 보기]</a>
+							@if(request()->segment(2) == 'pcslider')
+							<span class="set">(사이즈 1920x720)</span>
+							@elseif(request()->segment(2) == 'beds')
+							<span class="set">(사이즈 1400x960)</span>
+							@endif
+							@if(request()->segment(2) == 'acc')
+							<label for="all_type"><input type="checkbox" id="all_type" name="all_type" value="Y" @if($data->all_type == 'Y') checked @endif />가로전체 채우기</label>
+							@endif
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
+                            <span style="cursor: pointer" class="add_file">파일추가 +</span>
+							@endif
+                        </div>
+                    </div>
+                </div>
+			</span>
+			@endif
 			@if(request()->segment(2) == 'beds' || request()->segment(2) == 'acc' || request()->segment(2) == 'pcslider')
             <span id="append_target_mobile">
                 <div class="write_line cate_file">
@@ -192,7 +220,7 @@
                         </div>
                         <div class="line_content">
                             <input type="file" name="writer_file_mobile" />
-							<a href="/storage/app/images/{{ $data->attach_file2 }}" target="_blank">[첨부파일2]</a>
+							<a href="/storage/app/images/{{ $data->attach_file2 }}" target="_blank">[파일보기]</a>
 							@if(request()->segment(2) == 'pcslider')
 							<span class="set">(사이즈 1080x615)</span>
 							@elseif(request()->segment(2) == 'beds')
@@ -639,7 +667,7 @@
 				return;
 			}
 			
-	        var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"> 슬라이드 영역</div><div class="line_content"> PC : <input type="file" name="writer_file2[]" /> MOBILE : <input type="file" name="writer_file_mobile2[]" /></div></div><div class="all_line" style="border-top: 0;"><div class="line_title"> <span style="cursor: pointer; color: rgb(112, 96, 255)" class="add_file_sub">서브항목추가 +</span></div><div class="line_content"> 소제목1 : <input type="text" name="sub_subject[]" /> 소제목2 : <input type="text" name="sub_subject2[]" /> 색상 : <input type="text" name="sub_subject3[]" /></div></div></div>'
+	        var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"> 슬라이드 영역</div><div class="line_content"> PC : <input type="file" name="writer_file2[]" /> MOBILE : <input type="file" name="writer_file_mobile2[]" /></div></div><div class="all_line" style="border-top: 0;"><div class="line_title"></div><div class="line_content"> 소제목1 : <input type="text" name="sub_subject[]" /> 소제목2 : <input type="text" name="sub_subject2[]" /> 색상 : <input type="text" name="sub_subject3[]" /></div></div></div>'
 			
             $(append_item2).appendTo("#append_target_sub");
 
