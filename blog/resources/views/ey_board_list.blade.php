@@ -31,7 +31,7 @@
             <tbody>
 				@if($totalCount == '0')
 					<tr>
-						<td colspan="6">게시글이 없습니다.</td>
+						<td colspan="7">게시글이 없습니다.</td>
 					</tr>
 				@else
 					@foreach($data as $data)

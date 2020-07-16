@@ -1,14 +1,55 @@
 @charset "utf-8";
-/* @font-face {
-    font-family: 'NanumSquareR';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('../font/NanumSquareR.woff') format('woff');
-  } */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 100;
+  src: url(/css/fonts/NotoSansKr/NotoSansKR-Thin.woff2) format('woff2'),
+       url(/css/fonts/NotoSansKr/NotoSansKR-Thin.woff) format('woff'),
+       url(/css/fonts/NotoSansKr/NotoSansKR-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url(/css/fonts/NotoSansKr/NotoSansKR-Light.woff2) format('woff2'),
+       url(/css/fonts/NotoSansKr/NotoSansKR-Light.woff) format('woff'),
+       url(/css/fonts/NotoSansKr/NotoSansKR-Light.otf) format('opentype');
+}
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 400;
+   src: url(/css/fonts/NotoSansKr/NotoSansKR-Regular.woff2) format('woff2'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Regular.woff) format('woff'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Regular.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 500;
+   src: url(/css/fonts/NotoSansKr/NotoSansKR-Medium.woff2) format('woff2'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Medium.woff) format('woff'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Medium.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 700;
+   src: url(/css/fonts/NotoSansKr/NotoSansKR-Bold.woff2) format('woff2'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Bold.woff) format('woff'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Bold.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 900;
+   src: url(/css/fonts/NotoSansKr/NotoSansKR-Black.woff2) format('woff2'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Black.woff) format('woff'),
+        url(/css/fonts/NotoSansKr/NotoSansKR-Black.otf) format('opentype');
+ } 
 /*공통사항*/
 *{margin: 0; padding: 0; box-sizing: border-box;}
-body{font-size: 14px;font-family: 'NanumSquareR', sans-serif;}
+body{font-size: 14px;font-family: 'Noto Sans KR', sans-serif;}
 a{text-decoration: none; color: inherit;}
 ul,li{list-style-type: none;}
 table{border-collapse: collapse;text-align: center;}
@@ -78,9 +119,11 @@ i{color: #fff;margin-right: 5px;width: 16px;}
 .paging .move_page.page_end{background-position: right top;}
 
 /*관리자 write*/
-.write_box{padding: 10px;}
+.write_box{padding: 25px 10px;}
 .write_line{width:97%; font-size: 0; margin: 0 auto;}
-.all_line{font-size: 16px;border: 1px solid #ddd; padding: 10px 0;}
+.all_line{font-size: 14px;border: 1px solid #ddd; padding: 10px 0; border-bottom: 0;}
+.all_line.all_line_top{border-radius: 5px 5px 0 0;}
+.all_line.all_line_bottom{border-bottom: 1px solid #ddd; border-radius: 0 0 5px 5px;}
 .harf_line{display: inline-block; width: 50%; font-size: 16px;border: 1px solid #ddd;}
 .harf_line:last-child{border-left: 0;}
 .harf_line > div{display: inline-block;}
