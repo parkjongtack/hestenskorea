@@ -112,7 +112,7 @@
                         </div>
                 </div>
             </div>
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'media')
             <div class="write_line cate_file">
                 <div class="all_line">
                     <div class="line_title">
@@ -196,7 +196,7 @@
                 </div>
             </span>
 			@endif
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup' && request()->segment(2) != 'media')
 			<span id="append_target_sub">
                 <div class="write_line cate_file">
                     <div class="all_line">

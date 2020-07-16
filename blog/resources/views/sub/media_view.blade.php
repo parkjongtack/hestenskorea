@@ -47,3 +47,16 @@
         </script>
     </body>
 </html>
+<script type="text/javascript">
+
+	$(function () {
+		
+		//var removeData = setInterval(function(){
+
+			$("p").last().remove();
+
+		//}, 100);
+
+	})
+
+</script>

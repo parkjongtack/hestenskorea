@@ -23,9 +23,9 @@
 			*/
 
 			$host_local = "localhost";
-			$host_name = "root";
-			$host_pass = "adwiz1234";
-			$host_db = "hastenskorea";
+			$host_name = "hastensseoul";
+			$host_pass = "rhksfleogod04";
+			$host_db = "dbhastensseoul";
 
 			$db = new mysqli($host_local,$host_name,$host_pass,$host_db);
 			$db->set_charset("utf8");
@@ -133,7 +133,7 @@
                     <a href="/sub/acc"><li>Acc</li></a>
                     <a href="/sub/materials"><li>Material</li></a>
                     <a href="/sub/heritage01"><li>Heritage</li></a>
-                    <a href="/sub/press/?tab=1"><li>News</li></a>
+                    <a href="/sub/press?tab=1"><li>News</li></a>
                     <a href="/sub/contact_us"><li>Contact</li></a>
                 </ul>
                 <div class="hamburger" id="hamburger-1">
@@ -158,16 +158,16 @@
             </div>
             <div class="sub_nav News">
                 <ul class="">
-                    <a href="/sub/press/?tab=1"><li>PRESS</li></a>
-                    <a href="/sub/media/?tab=2"><li>MEDIA</li></a>
+                    <a href="/sub/press?tab=1"><li>PRESS</li></a>
+                    <a href="/sub/media?tab=2"><li>MEDIA</li></a>
                 </ul>
             </div>
-            <div class="sub_nav Contact">
+            <!-- <div class="sub_nav Contact">
                 <ul class="">
                     <a href="#none"><li>매장정보</li></a>
                     <a href="#none"><li>오시는 길</li></a>
                 </ul>
-            </div>
+            </div> -->
             
         </div>
         <ul id="ham_nav">

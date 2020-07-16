@@ -5,22 +5,18 @@
         <table>
             <colgroup>
                 <col width="100">
-                <col width="100">
+				<col width="75">
                 <col width="400">
                 <col width="250">
                 <col width="100">
-                <col width="70">
+                <col width="100">
                 <col width="180">
             </colgroup>
             <thead>
                 <tr>
                     <th>번호</th>
-					@if(request()->segment(1) == 'ey_pcpopup')
-                    <th>제목</th>
-					@else
-                    <th>카테고리</th>
-					@endif
                     <th>@if(request()->segment(2) == 'media')링크@else이미지@endif</th>
+                    <th>제목</th>
 					@if(request()->segment(1) == 'ey_pcpopup')
                     <th>팝업크기/여백</th>
 					@else
@@ -41,15 +37,15 @@
 					@foreach($data as $data)
 						<tr>
 							<td>{{ $number-- }}</td>
-							<td>{{ $data->subject }}</td>
-							<td>@if(request()->segment(2) == 'media')<a href="{{ $data->link_value }}" target="_blank">{{ $data->link_value }}</a>@else<a href="#none"><img src="/storage/app/images/{{ $data->attach_file }}" alt="" width="100%"></a>@endif</td>
+							<td>@if(request()->segment(2) == 'media')<a href="{{ $data->link_value }}" target="_blank">{{ $data->link_value }}</a>@else<a href="#none"><img src="/storage/app/images/{{ $data->attach_file }}" alt="" width="75px" height="75px"></a>@endif</td>
 							<!-- <td>{{ $data->start_period }} ~ {{ $data->end_period }}</td> -->
+							<td>{{ $data->subject }}</td>
 							<td>{{ $data->reg_date }}</td>
 							<td>
-								<span class="list_arrow first" style="cursor: pointer;"><i style="color: #555" class="fas fa-arrow-up"></i></span>
-								<span class="list_arrow second" style="cursor: pointer;"><i style="color: #ddd" class="fas fa-arrow-up"></i></span>
-								<span class="list_arrow third" style="cursor: pointer;"><i style="color: #ddd" class="fas fa-arrow-down"></i></span>
-								<span class="list_arrow four" style="cursor: pointer;"><i style="color: #555" class="fas fa-arrow-down"></i></span>
+								<span class="list_arrow first" style="cursor: pointer;" onclick="javascript:location.href='/ey_admin/priority_change?status=2down&board_idx={{ $data->idx }}&board_type={{ request()->segment(2) }}';"><i style="color: #555" class="fas fa-arrow-up"></i></span>
+								<span class="list_arrow second" style="cursor: pointer;" onclick="javascript:location.href='/ey_admin/priority_change?status=down&board_idx={{ $data->idx }}&board_type={{ request()->segment(2) }}';"><i style="color: #ddd" class="fas fa-arrow-up"></i></span>
+								<span class="list_arrow third" style="cursor: pointer;" onclick="javascript:location.href='/ey_admin/priority_change?status=up&board_idx={{ $data->idx }}&board_type={{ request()->segment(2) }}';"><i style="color: #ddd" class="fas fa-arrow-down"></i></span>
+								<span class="list_arrow four" style="cursor: pointer;" onclick="javascript:location.href='/ey_admin/priority_change?status=2up&board_idx={{ $data->idx }}&board_type={{ request()->segment(2) }}';"><i style="color: #555" class="fas fa-arrow-down"></i></span>
 							</td>
 							<td>
 								@if($data->use_status == 'Y')

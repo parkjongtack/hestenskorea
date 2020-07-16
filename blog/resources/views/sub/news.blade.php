@@ -2,7 +2,7 @@
 			<div id="sub_sec">
                 <div class="news">
                     <div class="news_tabs">
-                        <a href="/sub/press/?tab=1" class="tans01 hei85p @if($_SERVER['REQUEST_URI'] == '/sub/press?tab=1') on @endif">PRESS</a><a href="/sub/media/?tab=2" class="tans02 hei85p @if($_SERVER['REQUEST_URI'] == '/sub/media?tab=2') on @endif">MEDIA</a>
+                        <a href="/sub/press?tab=1" class="tans01 hei85p @if($_SERVER['REQUEST_URI'] == '/sub/press?tab=1') on @endif">PRESS</a><a href="/sub/media?tab=2" class="tans02 hei85p @if($_SERVER['REQUEST_URI'] == '/sub/media?tab=2') on @endif">MEDIA</a>
                     </div>
                     <div class="news_content inner">
                         <ul class="news_tabs_01 news_tabs_">
@@ -136,7 +136,7 @@
 
                         <ul class="news_tabs_02 news_tabs_">
 							@foreach($data2 as $data2)							
-                            <li class="half">
+                            <li class="half" onclick="javascript:location.href = '{{ $data2->link_value }}';">
                                 <div class="youtube_img">
                                     <img src="https://img.youtube.com/vi/{{ $data2->link_key }}/0.jpg" alt="">
                                 </div>
