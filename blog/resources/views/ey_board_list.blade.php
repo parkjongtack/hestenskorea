@@ -46,10 +46,10 @@
 							<!-- <td>{{ $data->start_period }} ~ {{ $data->end_period }}</td> -->
 							<td>{{ $data->reg_date }}</td>
 							<td>
-								<span class="list_arrow first" style="cursor: pointer;"><i style="color: #555" class="fas fa-arrow-up"></i></span>
-								<span class="list_arrow second" style="cursor: pointer;"><i style="color: #ddd" class="fas fa-arrow-up"></i></span>
-								<span class="list_arrow third" style="cursor: pointer;"><i style="color: #ddd" class="fas fa-arrow-down"></i></span>
-								<span class="list_arrow four" style="cursor: pointer;"><i style="color: #555" class="fas fa-arrow-down"></i></span>
+								<span class="list_arrow first" style="cursor: pointer;" onclick="javascript:location.href='/ey_admin/priority_change?status=2down&board_idx={{ $data->idx }}&board_type={{ request()->segment(2) }}';"><i style="color: #555" class="fas fa-arrow-up"></i></span>
+								<span class="list_arrow second" style="cursor: pointer;" onclick="javascript:location.href='/ey_admin/priority_change?status=down&board_idx={{ $data->idx }}&board_type={{ request()->segment(2) }}';"><i style="color: #ddd" class="fas fa-arrow-up"></i></span>
+								<span class="list_arrow third" style="cursor: pointer;" onclick="javascript:location.href='/ey_admin/priority_change?status=up&board_idx={{ $data->idx }}&board_type={{ request()->segment(2) }}';"><i style="color: #ddd" class="fas fa-arrow-down"></i></span>
+								<span class="list_arrow four" style="cursor: pointer;" onclick="javascript:location.href='/ey_admin/priority_change?status=2up&board_idx={{ $data->idx }}&board_type={{ request()->segment(2) }}';"><i style="color: #555" class="fas fa-arrow-down"></i></span>
 							</td>
 							<td>
 								@if($data->use_status == 'Y')

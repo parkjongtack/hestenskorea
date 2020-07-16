@@ -127,6 +127,75 @@ class Ey_admin extends Controller
 
 	}
 
+	public function priority_change(Request $request) {
+		
+		echo $request->status;
+
+		if($request->status == "2up") {
+		
+			$priority_infom = DB::table('board') 
+						->select(DB::raw('priority'))
+						->where('idx', $request->board_idx)
+						->first();
+
+			DB::table('board')->where('idx', $request->board_idx)->update(
+				[
+					'priority' => $priority_infom->priority + 10,
+				]
+			);
+		
+		}
+
+		if($request->status == "up") {
+		
+			$priority_infom = DB::table('board') 
+						->select(DB::raw('priority'))
+						->where('idx', $request->board_idx)
+						->first();
+
+			DB::table('board')->where('idx', $request->board_idx)->update(
+				[
+					'priority' => $priority_infom->priority + 1,
+				]
+			);
+		
+		}
+
+		if($request->status == "2down") {
+		
+			$priority_infom = DB::table('board') 
+						->select(DB::raw('priority'))
+						->where('idx', $request->board_idx)
+						->first();
+
+			DB::table('board')->where('idx', $request->board_idx)->update(
+				[
+					'priority' => $priority_infom->priority - 10,
+				]
+			);
+		
+		}
+
+		if($request->status == "down") {
+		
+			$priority_infom = DB::table('board') 
+						->select(DB::raw('priority'))
+						->where('idx', $request->board_idx)
+						->first();
+
+			DB::table('board')->where('idx', $request->board_idx)->update(
+				[
+					'priority' => $priority_infom->priority - 1,
+				]
+			);
+		
+		}
+
+		echo "<script>alert('노출순위 수정이 완료되었습니다.');location.href = '/ey_admin/".$request->board_type."';</script>";
+		exit;
+
+	}
+
 	public function write_board_action(Request $request) {
 
 		$board_cnt = DB::table('board')
@@ -138,7 +207,7 @@ class Ey_admin extends Controller
 		$answer_infom = DB::table('board') 
 					->select(DB::raw('*, board.grp as grp_now, board.prino as prino_now, board.parno as parno_now'))
 					//->where('board_type', $request->board_type)
-					->orderBy('idx', 'desc')
+					->orderBy('priority', 'asc')
 					->first();
 
 		$reply_answer_infom = DB::table('board') 
@@ -733,6 +802,7 @@ class Ey_admin extends Controller
 		$return_list["board_top_count"] = $board_top_count;
 		$return_list["board_top_list"] = $board_top_list;
 		$return_list["data"] = $list;
+		$return_list["data2"] = $list;
 		$return_list["number"] = $number;
 		$return_list["key"] = $request->key;
 		$return_list["totalCount"] = $totalCount;

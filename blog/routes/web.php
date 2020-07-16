@@ -33,6 +33,7 @@ Route::get('/sub/press', 'Sub@news');
 Route::get('/sub/media', 'Sub@news');
 Route::get('/sub/contact_us', 'Sub@contact_us');
 
+Route::get('/ey_admin/priority_change', 'Ey_admin@priority_change');
 //Route::get('/ey_admin/acc', 'Ey_admin@ey_acc');
 Route::post('/file_upload', 'Ey_admin@file_upload');
 
