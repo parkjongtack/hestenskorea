@@ -79,10 +79,10 @@
                 </div>
                 <div class="con_title">
                     <h2>
-					@if(request()->segment(2) == 'pcslider')
-					PC슬라이더
-					@elseif(request()->segment(2) == 'ey_notice')
-					커뮤니티
+					@if(request()->segment(2) == 'pcslider' || request()->segment(2) == 'popup')
+					메인페이지 설정
+					@elseif(request()->segment(2) == 'beds' || request()->segment(2) == 'acc' || request()->segment(2) == 'press' || request()->segment(2) == 'media')
+					카테고리
 					@elseif(request()->segment(2) == 'ey_newsletter')
 					커뮤니티
 					@elseif(request()->segment(2) == 'happy_call')
@@ -104,14 +104,14 @@
                     <div class="title_nav">
 					@if(request()->segment(2) == 'pcslider')
 					PC슬라이더
-					@elseif(request()->segment(2) == 'ey_notice')
-					공지사항
-					@elseif(request()->segment(2) == 'ey_newsletter')
-					뉴스레터
-					@elseif(request()->segment(2) == 'happy_call')
-					상담게시판
-					@elseif(request()->segment(2) == 'ey_data_room')
-					자료실
+					@elseif(request()->segment(2) == 'beds')
+					beds
+					@elseif(request()->segment(2) == 'acc')
+					acc
+					@elseif(request()->segment(2) == 'press')
+					press
+					@elseif(request()->segment(2) == 'media')
+					media
 					@elseif(request()->segment(2) == 'ey_law_data_room')
 					볍령정보
 					@elseif(request()->segment(2) == 'ey_security_data_room')
