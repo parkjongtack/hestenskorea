@@ -27,7 +27,7 @@
 		<input type="hidden" name="write_type" value="{{ request()->segment(4) }}" />
         <div class="write_box">
             <div class="write_line">
-                <div class="all_line">
+                <div class="all_line all_line_top">
                     <div class="line_title">
                         카테고리
                     </div>
@@ -47,8 +47,30 @@
 						@endif
                     </div>
                 </div>
+			</div>
+			@if(request()->segment(2) == 'beds')
+            <div class="write_line">
+                <div class="all_line">
+						<div class="line_title">
+							대제목
+						</div>
+						<div class="line_content">
+							<input type="text" name="subject" value="{{ $data->subject }}" />
+						</div>
+                </div>
             </div>
             <div class="write_line">
+                <div class="all_line">
+						<div class="line_title">
+							소제목
+						</div>
+						<div class="line_content">
+							<input type="text" name="subject2" value="{{ $data->contents }}" />
+						</div>
+                </div>
+            </div>
+			@endif
+			<div class="write_line">
                 <div class="all_line">
 						<div class="line_title">
 							제목
@@ -58,18 +80,6 @@
 						</div>
                 </div>
             </div>
-			@if(request()->segment(2) == 'beds')
-            <div class="write_line">
-                <div class="all_line">
-						<div class="line_title">
-							제목2
-						</div>
-						<div class="line_content">
-							<input type="text" name="subject2" value="{{ $data->contents }}" />
-						</div>
-                </div>
-            </div>
-			@endif
             <!-- <div class="write_line">
                 <div class="all_line">
                     <div class="line_title">
@@ -104,14 +114,14 @@
                 </div>
             </div>
 			@endif
-            <div class="write_line">
+            {{-- <div class="write_line">
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">우선순위</div>
 						<div class="line_content">
 							<input type="number" name="priority" value="{{ $data->priority }}" />
                         </div>
                 </div>
-            </div>
+            </div> --}}
 			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'media')
             <div class="write_line cate_file">
                 <div class="all_line">
@@ -201,25 +211,38 @@
                 <div class="write_line cate_file">
                     <div class="all_line">
                         <div class="line_title">
-                            서브파일선택
+                            슬라이드 영역
                         </div>
                         <div class="line_content">
-							소제목 : <input type="text" name="sub_subject[]" />
-							소제목2 : <input type="text" name="sub_subject2[]" />
-							소제목3 : <input type="text" name="sub_subject3[]" />
                             PC : <input type="file" name="writer_file2[]" />
 							MOBILE : <input type="file" name="writer_file_mobile2[]" />
-                            <span style="cursor: pointer" class="add_file_sub">파일추가 +</span>
-							@foreach($data2 as $data2)
-							<br/>소제목 : <input type="text" name="sub_subject[]" value="{{ $data2->sub_subject }}" style="border:none" readonly />
-							소제목2 : <input type="text" name="sub_subject2[]" value="{{ $data2->sub_subject2 }}" style="border:none" readonly />
-							소제목3 : <input type="text" name="sub_subject3[]" value="{{ $data2->sub_subject3 }}" style="border:none" readonly />
-							<a href="/storage/app/images/{{ $data2->real_file_name }}" target="_blank">[PC 파일선택]</a>
-							<a href="/storage/app/images/{{ $data2->real_file_name2 }}" target="_blank">[MOBILE 파일선택]</a>
-							<a href="javascript:control('{{ $data2->idx }}');" style="color:red;">[삭제]</a>
-							@endforeach
                         </div>
-                    </div>
+					</div>
+					<div class="all_line" style="border-top: 0;">
+						<div class="line_title">
+							<span style="cursor: pointer; color: rgb(112, 96, 255)" class="add_file_sub">서브항목추가 +</span>
+						</div>
+						<div class="line_content">
+							소제목1 : <input type="text" name="sub_subject[]" />
+							소제목2 : <input type="text" name="sub_subject2[]" />
+							색상 : <input type="text" name="sub_subject3[]" />
+						</div>
+					</div>
+					<div class="all_line">
+						<div class="line_title" style="position: relative; top:50%; transform:translateY(-50%)">슬라이드 정보</div>
+						<div class="line_content">
+							@foreach($data2 as $data2)
+							<div>
+								소제목 : <input type="text" name="sub_subject[]" value="{{ $data2->sub_subject }}" style="border:none" readonly />
+								소제목2 : <input type="text" name="sub_subject2[]" value="{{ $data2->sub_subject2 }}" style="border:none" readonly />
+								소제목3 : <input type="text" name="sub_subject3[]" value="{{ $data2->sub_subject3 }}" style="border:none" readonly />
+								<a href="/storage/app/images/{{ $data2->real_file_name }}" target="_blank">[PC 파일보기]</a>
+								<a href="/storage/app/images/{{ $data2->real_file_name2 }}" target="_blank">[MOBILE 파일보기]</a>
+								<a href="javascript:control('{{ $data2->idx }}');" style="color:red;">[삭제]</a>
+							</div>
+							@endforeach
+						</div>
+					</div>
                 </div>
             </span>
 			@endif
@@ -235,7 +258,7 @@
 					</div>
 				</div>
             <div class="write_line">
-                <div class="all_line">
+                <div class="all_line all_line_bottom">
                     <div class="line_title">
                         작성자
                     </div>
@@ -578,26 +601,27 @@
 		});
     })()
     $(function(){
-
-		 $("#start_period, #end_period").datepicker({
-			  showOn: "both", // 버튼과 텍스트 필드 모두 캘린더를 보여준다.
-			  changeMonth: true, // 월을 바꿀수 있는 셀렉트 박스를 표시한다.
-			  changeYear: true, // 년을 바꿀 수 있는 셀렉트 박스를 표시한다.
-			  minDate: '-100y', // 현재날짜로부터 100년이전까지 년을 표시한다.
-			  nextText: '다음 달', // next 아이콘의 툴팁.
-			  prevText: '이전 달', // prev 아이콘의 툴팁.
-			  numberOfMonths: [1,1], // 한번에 얼마나 많은 월을 표시할것인가. [2,3] 일 경우, 2(행) x 3(열) = 6개의 월을 표시한다.
-			  stepMonths: 3, // next, prev 버튼을 클릭했을때 얼마나 많은 월을 이동하여 표시하는가. 
-			  yearRange: 'c-100:c+10', // 년도 선택 셀렉트박스를 현재 년도에서 이전, 이후로 얼마의 범위를 표시할것인가.
-			  showButtonPanel: true, // 캘린더 하단에 버튼 패널을 표시한다. 
-			  currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
-			  closeText: '닫기',  // 닫기 버튼 패널
-			  dateFormat: "yy-mm-dd", // 텍스트 필드에 입력되는 날짜 형식.
-			  showAnim: "slide", //애니메이션을 적용한다.
-			  showMonthAfterYear: true , // 월, 년순의 셀렉트 박스를 년,월 순으로 바꿔준다. 
-			  dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], // 요일의 한글 형식.
-			  monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] // 월의 한글 형식.
-		 });
+		// @if(request()->segment(2) != 'press')
+		//  $("#start_period, #end_period").datepicker({
+		// 	  showOn: "both", // 버튼과 텍스트 필드 모두 캘린더를 보여준다.
+		// 	  changeMonth: true, // 월을 바꿀수 있는 셀렉트 박스를 표시한다.
+		// 	  changeYear: true, // 년을 바꿀 수 있는 셀렉트 박스를 표시한다.
+		// 	  minDate: '-100y', // 현재날짜로부터 100년이전까지 년을 표시한다.
+		// 	  nextText: '다음 달', // next 아이콘의 툴팁.
+		// 	  prevText: '이전 달', // prev 아이콘의 툴팁.
+		// 	  numberOfMonths: [1,1], // 한번에 얼마나 많은 월을 표시할것인가. [2,3] 일 경우, 2(행) x 3(열) = 6개의 월을 표시한다.
+		// 	  stepMonths: 3, // next, prev 버튼을 클릭했을때 얼마나 많은 월을 이동하여 표시하는가. 
+		// 	  yearRange: 'c-100:c+10', // 년도 선택 셀렉트박스를 현재 년도에서 이전, 이후로 얼마의 범위를 표시할것인가.
+		// 	  showButtonPanel: true, // 캘린더 하단에 버튼 패널을 표시한다. 
+		// 	  currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
+		// 	  closeText: '닫기',  // 닫기 버튼 패널
+		// 	  dateFormat: "yy-mm-dd", // 텍스트 필드에 입력되는 날짜 형식.
+		// 	  showAnim: "slide", //애니메이션을 적용한다.
+		// 	  showMonthAfterYear: true , // 월, 년순의 셀렉트 박스를 년,월 순으로 바꿔준다. 
+		// 	  dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], // 요일의 한글 형식.
+		// 	  monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] // 월의 한글 형식.
+		//  });
+		// @endif
 
         var append_item = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><div class="line_content">&nbsp;<input type="file" name="writer_file" /></div></div></div>'
         $('.add_file').click(function(){
@@ -615,7 +639,7 @@
 				return;
 			}
 			
-	        var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><div class="line_content">&nbsp;소제목 : <input type="text" name="sub_subject[]" />소제목2 : <input type="text" name="sub_subject2[]" />소제목3 : <input type="text" name="sub_subject3[]" /><input type="file" name="writer_file2[]" />MOBILE : <input type="file" name="writer_file_mobile2[]" /></div></div></div>'
+	        var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"> 슬라이드 영역</div><div class="line_content"> PC : <input type="file" name="writer_file2[]" /> MOBILE : <input type="file" name="writer_file_mobile2[]" /></div></div><div class="all_line" style="border-top: 0;"><div class="line_title"> <span style="cursor: pointer; color: rgb(112, 96, 255)" class="add_file_sub">서브항목추가 +</span></div><div class="line_content"> 소제목1 : <input type="text" name="sub_subject[]" /> 소제목2 : <input type="text" name="sub_subject2[]" /> 색상 : <input type="text" name="sub_subject3[]" /></div></div></div>'
 			
             $(append_item2).appendTo("#append_target_sub");
 

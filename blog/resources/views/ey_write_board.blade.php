@@ -26,7 +26,7 @@
 		<input type="hidden" name="write_type" value="{{ request()->segment(4) }}" />
         <div class="write_box">
             <div class="write_line">
-                <div class="all_line">
+                <div class="all_line all_line_top">
                     <div class="line_title">
                         카테고리
                     </div>
@@ -46,25 +46,36 @@
 						@endif
                     </div>
                 </div>
-            </div>
+			</div>
+			@if(request()->segment(2) == 'beds')
             <div class="write_line">
                 <div class="all_line">
 						<div class="line_title">
-							제목
+							대제목
 						</div>
 						<div class="line_content">
 							<input type="text" name="subject" />
 						</div>
                 </div>
             </div>
-			@if(request()->segment(2) == 'beds')
             <div class="write_line">
                 <div class="all_line">
 						<div class="line_title">
-							제목2
+							소제목
 						</div>
 						<div class="line_content">
 							<input type="text" name="subject2" />
+						</div>
+                </div>
+			</div>
+			@else
+			<div class="write_line">
+                <div class="all_line">
+						<div class="line_title">
+							제목
+						</div>
+						<div class="line_content">
+							<input type="text" name="subject" />
 						</div>
                 </div>
             </div>
@@ -103,14 +114,14 @@
                 </div>
             </div>
 			@endif
-            <div class="write_line">
+            {{-- <div class="write_line">
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">우선순위</div>
 						<div class="line_content">
 							<input type="number" name="priority" />
                         </div>
                 </div>
-            </div>
+            </div> --}}
 			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'media')
             <div class="write_line cate_file">
                 <div class="all_line">
@@ -207,17 +218,23 @@
                 <div class="write_line cate_file">
                     <div class="all_line">
                         <div class="line_title">
-                            서브파일선택
+                            슬라이드 영역
                         </div>
                         <div class="line_content">
-							소제목 : <input type="text" name="sub_subject[]" />
-							소제목2 : <input type="text" name="sub_subject2[]" />
-							소제목3 : <input type="text" name="sub_subject3[]" />
                             PC : <input type="file" name="writer_file2[]" />
 							MOBILE : <input type="file" name="writer_file_mobile2[]" />
-                            <span style="cursor: pointer" class="add_file_sub">서브항목추가 +</span>
                         </div>
-                    </div>
+					</div>
+					<div class="all_line" style="border-top: 0;">
+						<div class="line_title">
+							<span style="cursor: pointer; color: rgb(112, 96, 255)" class="add_file_sub">서브항목추가 +</span>
+						</div>
+						<div class="line_content">
+							소제목1 : <input type="text" name="sub_subject[]" />
+							소제목2 : <input type="text" name="sub_subject2[]" />
+							색상 : <input type="text" name="sub_subject3[]" />
+						</div>
+					</div>
                 </div>
 			@endif
             </span>
@@ -234,7 +251,7 @@
 					</div>
 				</div>
             <div class="write_line">
-                <div class="all_line">
+                <div class="all_line all_line_bottom">
                     <div class="line_title">
                         작성자
                     </div>
@@ -655,7 +672,7 @@
 			@if(request()->segment(2) == 'acc')
 				var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><input type="file" name="writer_file_mobile2[]" /></div></div></div>'
 			@else
-				var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><div class="line_content">&nbsp;소제목 : <input type="text" name="sub_subject[]" />소제목2 : <input type="text" name="sub_subject2[]" />소제목3 : <input type="text" name="sub_subject3[]" /> PC : <input type="file" name="writer_file2[]" />MOBILE : <input type="file" name="writer_file_mobile2[]" /></div></div></div>'
+				var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"> 슬라이드 영역</div><div class="line_content"> PC : <input type="file" name="writer_file2[]" /> MOBILE : <input type="file" name="writer_file_mobile2[]" /></div></div><div class="all_line" style="border-top: 0;"><div class="line_title"> <span style="cursor: pointer; color: rgb(112, 96, 255)" class="add_file_sub">서브항목추가 +</span></div><div class="line_content"> 소제목1 : <input type="text" name="sub_subject[]" /> 소제목2 : <input type="text" name="sub_subject2[]" /> 색상 : <input type="text" name="sub_subject3[]" /></div></div></div>'
 			@endif
 
             $(append_item2).appendTo("#append_target_sub");
