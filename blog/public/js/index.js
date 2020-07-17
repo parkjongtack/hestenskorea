@@ -22,7 +22,6 @@ $(function(){
         else{
             $('.'+nav_list+' ul').eq(0).css({marginLeft:nav_offset-ul_width/2+"px"});
         }
-        
     }
     $(nav,sub_nav).hover(function(){
         nav_list = $(this).text(); 
@@ -41,6 +40,7 @@ $(function(){
     })
     //서브
 
+
     //material
     var w_width = $(document).width();
     if(w_width < 769){
@@ -54,8 +54,6 @@ $(function(){
             console.log(img_height)
             
         },100)
-        
-        
     }
 
     $("#sub_sec .material_sub_img").click(function(){

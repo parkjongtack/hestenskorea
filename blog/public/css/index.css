@@ -246,6 +246,29 @@ img{max-width: 100%; display: block; margin: 0 auto;}
 #sub_sec .material_sub_txt{padding: 95px 0;}
 #sub_sec .material_sub_txt p{font-size: 20px; font-weight: 100; color: #555555;}
 
+/*heritage*/
+.path_child{width: 100%; opacity: 0.1; z-index: -1;}
+.path_child.on img{transform: scale(1);}
+.path_child img{transform: scale(0.1); transition: all 1s cubic-bezier(.28,1.11,.39,1.61);}
+.path_01{position: relative; top: -100px; left: -85px;}
+.path_02{position: relative; top: 80vh; left: 75vw;}
+.path_03{position: relative; top: 0; left: 40%;}
+.path_01 img{position: absolute; top: -20px; left: 0;}
+.path_01 img:last-child{left: 100px; top: 0;}
+.path_02 img{position: absolute; top: 0;}
+.path_03 img{position: absolute; top: 135vh; transform: scale(0.1);}
+.path_03 img:last-child{left: 10%;}
+
+.heritage02_sub_01{}
+.heritage02_sub_01 .path_01{position: relative; top: -100px; left: 80vw;}
+.heritage02_sub_01 .path_02{position: relative; top: 60vh; left: 30%;}
+.heritage02_sub_01 .path_03{position: relative; top: 0; left: -85px;}
+.heritage02_sub_01 .path_01 img{position: absolute; top: -20px; left: 0;}
+.heritage02_sub_01 .path_01 img:last-child{left: 100px; top: 0;}
+.heritage02_sub_01 .path_02 img{position: absolute; top: 0;}
+.heritage02_sub_01 .path_03 img{position: absolute; top: 135vh; transform: scale(0.1);}
+.heritage02_sub_01 .path_03 img:last-child{left: 10%;}
+
 .heritage01_sub_02 .h_sub_bot1{background: url(../img/sub/spirit_03.png) no-repeat center; background-size: contain; height: 21.3021vw;}
 .heritage01_sub_02 .h_sub_bot2{background: url(../img/sub/spirit_04.png) no-repeat center; background-size: contain; height: 42.5000vw;}
 .h_sub_top,.h_sub_bot{position: relative; width: 100%;display: flex;}
@@ -262,9 +285,9 @@ img{max-width: 100%; display: block; margin: 0 auto;}
 .h_sub_bot .h_sub_text_box h1{line-height: 3.7500vw;}
 .h_sub_bot .h_sub_text_box p{margin-top: 1.5625vw;}
 .h_sub_text_box h1{font-weight: 400;font-size: 3.3333vw; color: #00154a;}
-.h_sub_text_box p{font-weight: 300;font-size: 1.0417vw; line-height: 1.6667vw; color: #00154a;}
+.h_sub_text_box p{font-weight: 300;font-size: 1.0417vw; line-height: 1.6667vw; color: #00154a;text-transform: uppercase;}
 
-.heritage01_sub_02{margin-top: 6.2500vw;}
+.heritage01_sub_02{margin-top: 6.2500vw; z-index: 1;}
 .h_sub_bot1 p{position: relative; top: 50%;left: 50%;width: 100%; transform: translate(-50%,-50%) !important; text-align: center; font-size: 1.0417vw; color: #fff; font-weight: 300;}
 /* [data-aos^=fade][data-aos^=fade].aos-animate{transform: translate(-50%,-50%)} */
 .h_sub_bot2 .h_sub_bot_text{position: relative; top: 50%;left: 50%;width: 100%; transform: translate(-50%,-50%); text-align: center; font-size: 1.0417vw; color: #333333; font-weight: 300;}

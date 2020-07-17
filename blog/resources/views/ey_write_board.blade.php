@@ -242,7 +242,7 @@
 			
 			<span id="append_target_sub">
 			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc' && request()->segment(2) != 'media' && request()->segment(2) != 'popup')
-                <div class="write_line cate_file">
+                <div class="write_line cate_file slider_area">
                     <div class="all_line">
                         <div class="line_title">
                             슬라이드 영역
@@ -250,6 +250,7 @@
                         <div class="line_content">
                             PC : <input type="file" name="writer_file2[]" />
 							MOBILE : <input type="file" name="writer_file_mobile2[]" />
+							우선순위 : <input type="number" style="width: 100px">
                         </div>
 					</div>
 					<div class="all_line" style="border-top: 0;">
@@ -262,7 +263,21 @@
 							색상 : <input type="text" name="sub_subject3[]" />
 						</div>
 					</div>
-                </div>
+				</div>
+				<div class="cate_file_append"></div>
+				<div class="write_line cate_file">
+                    <div class="all_line">
+                        <div class="line_title">
+                            상세이미지 영역
+                        </div>
+                        <div class="line_content">
+                            PC : <input type="file" name="writer_file2[]" />
+							MOBILE : <input type="file" name="writer_file_mobile2[]" />
+							우선순위 : <input type="number" style="width: 100px"> <span style="cursor: pointer; color: rgb(112, 96, 255)" class="add_file_sub_sub">서브항목추가 +</span>
+                        </div>
+					</div>
+				</div>
+				<div class="cate_file_append_sub"></div>
 			@endif
             </span>
 			
@@ -698,13 +713,19 @@
 			
 			@if(request()->segment(2) == 'acc')
 				var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><input type="file" name="writer_file_mobile2[]" /></div></div></div>'
+				$(append_item2).appendTo("#append_target_sub");
 			@else
-				var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"> 슬라이드 영역</div><div class="line_content"> PC : <input type="file" name="writer_file2[]" /> MOBILE : <input type="file" name="writer_file_mobile2[]" /></div></div><div class="all_line" style="border-top: 0;"><div class="line_title"></div><div class="line_content"> 소제목1 : <input type="text" name="sub_subject[]" /> 소제목2 : <input type="text" name="sub_subject2[]" /> 색상 : <input type="text" name="sub_subject3[]" /></div></div></div>'
+				var append_item2 = '<div class="write_line cate_file slider_area"><div class="all_line"><div class="line_title"> 슬라이드 영역</div><div class="line_content"> PC : <input type="file" name="writer_file2[]" /> MOBILE : <input type="file" name="writer_file_mobile2[]" /></div></div><div class="all_line" style="border-top: 0;"><div class="line_title"></div><div class="line_content"> 소제목1 : <input type="text" name="sub_subject[]" /> 소제목2 : <input type="text" name="sub_subject2[]" /> 색상 : <input type="text" name="sub_subject3[]" /></div></div></div>'
+				$(append_item2).appendTo(".cate_file_append");
 			@endif
 
-            $(append_item2).appendTo("#append_target_sub");
+            
 
-        });
+		});
+		$('.add_file_sub_sub').click(function(){
+			var append_item2 = '<div class="write_line cate_file"> <div class="all_line"> <div class="line_title"> 상세이미지 영역 </div> <div class="line_content"> PC : <input type="file" name="writer_file2[]" /> MOBILE : <input type="file" name="writer_file_mobile2[]" /> 우선순위 : <input type="number" style="width: 100px"> </div> </div> </div>'
+				$(append_item2).appendTo(".cate_file_append_sub");
+		});
     })
 </script>
 @include('ey_footer')

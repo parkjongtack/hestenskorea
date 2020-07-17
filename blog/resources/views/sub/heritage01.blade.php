@@ -1,20 +1,20 @@
 @include('inc/head')
 			<div id="sub_sec">
                 <div class="heritage01_sub_01">
-                    <!-- <div class="back_path">
+                    <div class="back_path">
                         <div class="path_01 path_child">
-                            <img class="aaa" src="../img/sub/path1.png" alt="">
+                            <img src="../img/sub/path2.png" alt="">
                             <img src="../img/sub/path1.png" alt="">
                         </div>
                         <div class="path_02 path_child">
-                            <img src="../img/sub/path1.png" alt="">
-                            <img src="../img/sub/path1.png" alt="">
+                            <img src="../img/sub/path5.png" alt="">
+                            <img src="../img/sub/path4.png" alt="">
                         </div>
                         <div class="path_03 path_child">
-                            <img src="../img/sub/path1.png" alt="">
-                            <img src="../img/sub/path1.png" alt="">
+                            <img src="../img/sub/path2.png" alt="">
+                            <img src="../img/sub/path9.png" alt="">
                         </div>
-                    </div> -->
+                    </div>
                     <div class="h_sub_top">
                         <div class="h_sub_img_box mo_block" data-aos="fade-right">
                             <img class="mo_block" src="../img/sub/m_spirit_01.png" alt="">
@@ -110,8 +110,21 @@
 @include('inc/footer')
         <script>
              $(document).ready(function(){
-   console.log("a")
-});
+                var path_child = [];
+    path_child[0] = $(".path_01 img").eq(0).offset().top;
+    path_child[1] = $(".path_02 img").eq(0).offset().top;
+    path_child[2] = $(".path_03 img").eq(0).offset().top;
+    $(".path_01 img").css({transform: 'scale(1)'})
+    $(window).scroll(function(){
+        var now_scroll = $(window).scrollTop();
+        if(now_scroll>=path_child[1]/2.5){
+            $(".path_02 img").css({transform: 'scale(1)'})
+        }
+        if(now_scroll>=path_child[2]/2.5){
+            $(".path_03 img").css({transform: 'scale(1)'})
+        }
+    });
+             });
             var swiper = new Swiper('.main_slider', {
                 direction: 'vertical',
                 spaceBetween: 10,
@@ -124,7 +137,7 @@
                   el: '.swiper-pagination',
                   clickable: true,
                 },
-            });
+            });            
         </script>
     </body>
 </html>
