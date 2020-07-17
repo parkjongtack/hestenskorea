@@ -296,7 +296,7 @@ img{max-width: 100%; display: block; margin: 0 auto;}
 .heritage02_sub_02 .tel_box{display: block; width: 15.8854vw; height: 3.6458vw; border: 0.2604vw solid #00154a; color: #00154a; font-size: 1.2500vw; font-weight: 700; line-height: 3.1250vw; margin: 0 auto; margin-top: 3.1250vw;}
 
 .heritage03_sub_01 .h_sub_bot1{background: url(../img/sub/royal_01.png) no-repeat center; background-size: cover; height: 38.0208vw;}
-.heritage03_sub_01 .h_sub_bot1 h1{font-size: 3.3333vw; font-weight: 400; color: #fff; text-align: center; position: relative; top: 50%; transform: translateY(-50%);}
+.heritage03_sub_01 .h_sub_bot1 h1{font-size: 3.3333vw; font-weight: 400; color: #fff; text-align: center;}
 .heritage03_sub_01 .h_sub_bot2{background-color: #3a3a3a; color: #fff; height: 32.2917vw;}
 .heritage03_sub_01 .h_sub_bot2 .h_sub_bot_text{color: #fff; display: inline-block; width: auto; left: 0; top: 30%; transform: translate(0%,-50%); vertical-align: middle;}
 .heritage03_sub_01 .h_sub_bot2 .h_sub_bot_text p{text-align: left;}
@@ -355,8 +355,8 @@ img{max-width: 100%; display: block; margin: 0 auto;}
 .notice_view .view_title span{color: #a6a6a6; font-size:16px; font-weight: 300;float:right;}
 
 /*contact*/
-.map{margin-bottom: 100px;}
-.root_daum_roughmap{width: 100% !important;}
+.map{margin-bottom: 100px; width: 1400px !important; margin: 0 auto; margin-top: 150px;}
+.root_daum_roughmap{width: 1400px !important; margin: 0 auto;}
 .contact_info{font-size: 0; margin-bottom: 100px;}
 .contact_info .info{display: inline-block; font-size: 20px; height: 400px; border-bottom: 1px solid #fff; position: relative; vertical-align: top;}
 .contact_info .left{width: 480px; background-color: #00154a;}
@@ -540,7 +540,7 @@ img{max-width: 100%; display: block; margin: 0 auto;}
     .heritage02_sub_02 .tel_box{display: block; width: 15.8854vw; height: 3.6458vw; border: 0.2604vw solid #00154a; color: #00154a; font-size: 1.2500vw; font-weight: 700; line-height: 3.1250vw; margin: 0 auto; margin-top: 3.1250vw;}
     
     .heritage03_sub_01 .h_sub_bot1{background: url(../img/sub/royal_01.png) no-repeat center; background-size: cover; height: 38.0208vw;}
-    .heritage03_sub_01 .h_sub_bot1 h1{font-size: 3.3333vw; font-weight: 400; color: #fff; text-align: center; position: relative; top: 50%; transform: translateY(-50%);}
+    .heritage03_sub_01 .h_sub_bot1 h1{font-size: 3.3333vw; font-weight: 400; color: #fff; text-align: center;}
     .heritage03_sub_01 .h_sub_bot2{background-color: #3a3a3a; color: #fff; height: 32.2917vw;}
     .heritage03_sub_01 .h_sub_bot2 .h_sub_bot_text{color: #fff; display: inline-block; width: auto; left: 0; top: 30%; transform: translate(0%,-50%);}
     .heritage03_sub_01 .h_sub_bot2 .h_sub_bot_text p{text-align: left;}
@@ -586,8 +586,8 @@ img{max-width: 100%; display: block; margin: 0 auto;}
 .pag_write li.on a{color: #fff; background-color: #3d6cb4;}
 
 /*contact*/
-.map{margin-bottom: 6.9444vw;}
-.root_daum_roughmap{width: 100% !important;}
+.map{width: 97.2222vw;}
+.root_daum_roughmap{width: 97.2222vw !important; margin: 0 auto !important;}
 .contact_info{font-size: 0; margin-bottom: 6.9444vw;}
 .contact_info .info{display: inline-block; font-size: 1.3889vw; height: 27.7778vw; border-bottom: 0.0694vw solid #fff; position: relative; vertical-align: top;}
 .contact_info .left{width: 33.3333vw; background-color: #00154a;}
@@ -696,7 +696,7 @@ img{max-width: 100%; display: block; margin: 0 auto;}
     .heritage02_sub_02 .tel_box{display: block; width: 15.8854vw; height: 4.6818vw; border: 0.2604vw solid #00154a; color: #00154a; font-size: 1.2500vw; font-weight: 700; line-height: 4.2429vw; margin: 0 auto; margin-top: 3.1250vw;}
 
     .heritage03_sub_01 .h_sub_bot1{background: url(../img/sub/royal_01.png) no-repeat center; background-size: cover; height: 38.0208vw;}
-    .heritage03_sub_01 .h_sub_bot1 h1{font-size: 3.3333vw; font-weight: 400; color: #fff; text-align: center; position: relative; top: 50%; transform: translateY(-50%);}
+    .heritage03_sub_01 .h_sub_bot1 h1{font-size: 3.3333vw; font-weight: 400; color: #fff; text-align: center;}
     .heritage03_sub_01 .h_sub_bot2{background-color: #3a3a3a; color: #fff; height: 32.2917vw;}
     .heritage03_sub_01 .h_sub_bot2 .h_sub_bot_text p{text-align: left;}
     .heritage03_sub_01 .h_sub_bot2 .h_sub_bot_img{width: 41.1458vw; display: inline-block; text-align: center; position: relative; top: 50%; transform: translateY(-50%); margin-left: 8.8542vw;}
@@ -743,8 +743,8 @@ img{max-width: 100%; display: block; margin: 0 auto;}
 .pag_write li.on a{color: #fff; background-color: #3d6cb4;}
 
 /*contact*/
-.map{margin-bottom: 7.3099vw;}
-.root_daum_roughmap{width: 100% !important; height:38.4053vw !important;}
+.map{margin-bottom: 0; width: 86.1010vw !important; margin: 0 auto;  margin-top: 150px;}
+.root_daum_roughmap{width: 86.1010vw !important; height:38.4053vw !important;}
 .wrap_map{height:38.4053vw !important;}
 .contact_info{font-size: 0; margin-bottom: 7.3099vw; width: 86.1010vw;}
 .contact_info .info{display: inline-block; font-size: 1.4620vw; height: 22.9700vw; border-bottom: 0.0731vw solid #fff; position: relative; vertical-align: top;}
@@ -843,8 +843,9 @@ img{max-width: 100%; display: block; margin: 0 auto;}
   #footer .inner > div{margin-top: 1.6667vw;}
   #footer .inner > div a{width: 6.3889vw;margin-left: 0; margin-right: 1.3889vw;}
   
-	/*contact*/
-	.root_daum_roughmap{width: 100% !important; height:72.222vw !important;}
+  /*contact*/
+  .map{width: 89.722vw !important;}
+	.root_daum_roughmap{width: 89.722vw !important; height:72.222vw !important;}
 	.wrap_map{height:72.222vw !important;}
 	.contact_info{width: 89.722vw;}
 	.contact_info .info{width:89.722vw; border:0;}

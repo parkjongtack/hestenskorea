@@ -130,7 +130,7 @@
                 </div>
                 <ul class="nav_list">
                     <a href="/sub/beds"><li>Beds</li></a>
-                    <a href="/sub/acc"><li>Acc</li></a>
+                    <a href="/sub/acc/pillows"><li>Acc</li></a>
                     <a href="/sub/materials"><li>Material</li></a>
                     <a href="/sub/heritage01"><li>Heritage</li></a>
                     <a href="/sub/press?tab=1"><li>News</li></a>

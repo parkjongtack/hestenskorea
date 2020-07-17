@@ -2,12 +2,16 @@
 			<div id="sub_sec">
                 <div class="heritage03_sub_01">
                     <div class="h_sub_bot1">
-                        <h1 class="hei85p mo_none">
-                            URVEYOR TO THE<br>SWEDISH ROYAL COURT<br>SINCE 1952
-                        </h1>
-                        <h1 class="hei85p mo_block">
-                            URVEYOR TO THE<br>SWEDISH ROYAL<br>COURT SINCE 1952
-                        </h1>
+                        <div style="position: relative; top: 50%; transform: translateY(-50%);">
+                            <h1 class="hei85p mo_none">
+                                <span data-aos="fade-up" data-aos-delay="0">URVEYOR TO THE</span><br><span data-aos="fade-up" data-aos-delay="500">SWEDISH ROYAL COURT</span><br><span data-aos="fade-up" data-aos-delay="1000">SINCE 1952</span>
+                            </h1>
+                        </div>
+                        <div style="position: relative; top: 50%; transform: translateY(-50%);">
+                            <h1 class="hei85p mo_block">
+                                <span data-aos="fade-up" data-aos-delay="0"> URVEYOR TO THE</span><br><span data-aos="fade-up" data-aos-delay="500">SWEDISH ROYAL</span><br><span data-aos="fade-up" data-aos-delay="1000">COURT SINCE 1952</span>
+                            </h1>
+                        </div>
                     </div>
                     <div class="h_sub_bot2">
                         <div class="h_sub_bot_img">
