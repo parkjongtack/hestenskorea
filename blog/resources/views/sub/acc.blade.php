@@ -19,7 +19,7 @@
                     <div class="acc_content">
                         <ul class="inner">
 							@foreach($data as $data)
-                            <li class="@if($data->all_type == 'Y') all_  @else @if($i%2 == '0') half n_m @else half @endif @endif">
+                            <li class="@if($data->all_type == 'Y') all_  @else @if($i%2 == '0') half @else half n_m @endif @endif">
                                 <img class="mo_block" src="/storage/app/images/{{ $data->attach_file2 }}" alt="">
                                 <img class="mo_none" src="/storage/app/images/{{ $data->attach_file }}" alt="">
                                 <div class="acc_content_text">
@@ -29,101 +29,6 @@
                             </li>
 								{{ $i++ }}
 							@endforeach
-                            <!-- <li class="half n_m">
-                                <img class="mo_block" src="../img/acc_img01.png" alt="">
-                                <img class="mo_none" src="../img/acc_img01.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li>
-                            <li class="half">
-                                <img class="mo_block" src="../img/acc_img01.png" alt="">
-                                <img class="mo_none" src="../img/acc_img01.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li>
-                            <li class="half n_m">
-                                <img class="mo_block" src="../img/acc_img01.png" alt="">
-                                <img class="mo_none" src="../img/acc_img01.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li>
-                            <li class="half">
-                                <img class="mo_block" src="../img/acc_img01.png" alt="">
-                                <img class="mo_none" src="../img/acc_img01.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li>
-                            <li class="half n_m">
-                                <img class="mo_block" src="../img/acc_img01.png" alt="">
-                                <img class="mo_none" src="../img/acc_img01.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li>
-                            <li class="all_">
-                                <img src="../img/acc_img02.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li>
-                            <li class="half">
-                                <img class="mo_block" src="../img/acc_img01.png" alt="">
-                                <img class="mo_none" src="../img/acc_img01.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li>
-                            <li class="half n_m">
-                                <img class="mo_block" src="../img/acc_img01.png" alt="">
-                                <img class="mo_none" src="../img/acc_img01.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li>
-                            <li class="half">
-                                <img class="mo_block" src="../img/acc_img01.png" alt="">
-                                <img class="mo_none" src="../img/acc_img01.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li>
-                            <li class="half n_m">
-                                <img class="mo_block" src="../img/acc_img01.png" alt="">
-                                <img class="mo_none" src="../img/acc_img01.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li>
-                            <li class="half">
-                                <img class="mo_block" src="../img/acc_img01.png" alt="">
-                                <img class="mo_none" src="../img/acc_img01.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li>
-                            <li class="half n_m">
-                                <img class="mo_block" src="../img/acc_img01.png" alt="">
-                                <img class="mo_none" src="../img/acc_img01.png" alt="">
-                                <div class="acc_content_text">
-                                    <p class="hei85"></p>
-                                    <h2 class="hei85"></h2>
-                                </div>
-                            </li> -->
                         </ul>
                     </div>
                 </div>

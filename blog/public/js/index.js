@@ -17,7 +17,9 @@ $(function(){
         //console.log(ul_width);
         if(nav_list == "Contact"){
             $('.'+nav_list+' ul').eq(0).css({marginLeft:nav_offset-ul_width+"px"});
-        }else{
+        }else if(nav_list == "Acc"){
+        }
+        else{
             $('.'+nav_list+' ul').eq(0).css({marginLeft:nav_offset-ul_width/2+"px"});
         }
         
