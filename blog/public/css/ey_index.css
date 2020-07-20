@@ -153,6 +153,6 @@ input[type=file]{width: 200px;}
 .paging{font-size: 0; margin-top: 0; text-align: center; float: none;}
 .paging span{display: inline-block; width: 25px; height: 25px; line-height: 25px; text-align: center; color: #888888; font-size: 12px;}
 .paging span button,.paging button{color: #888; border:0; background-color:#fff; cursor: pointer;}
-.paging button.on{cursor: default;}
-.paging button.on{background-color: #3d6cb4; color: #fff; width: 15px;}
+.paging button.btn-primary{cursor: default; display: inline-block;}
+.paging button.btn-primary{background-color: #3d6cb4; color: #fff; width: 25px; height: 25px;}
 .paging span.on a{color: #fff;}

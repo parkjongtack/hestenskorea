@@ -716,7 +716,7 @@ class Ey_admin extends Controller
 		}
 
 		$paging_option = array(
-			"pageSize" => 1,
+			"pageSize" => 10,
 			"blockSize" => 5
 		);
 

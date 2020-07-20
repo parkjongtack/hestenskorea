@@ -133,7 +133,7 @@
                     <a href="/sub/acc/pillows"><li>Acc</li></a>
                     <a href="/sub/materials"><li>Material</li></a>
                     <a href="/sub/heritage01"><li>Heritage</li></a>
-                    <a href="/sub/press?tab=1"><li>News</li></a>
+                    <a href="/sub/notice?tab=3"><li>News</li></a>
                     <a href="/sub/contact_us"><li>Contact</li></a>
                 </ul>
                 <div class="hamburger" id="hamburger-1">
@@ -170,7 +170,8 @@
                 </ul>
             </div>
             <div class="sub_nav News">
-                <ul class="">
+				<ul class="">
+					<a href="/sub/notice?tab=3"><li>NOTICE</li></a>
                     <a href="/sub/press?tab=1"><li>PRESS</li></a>
                     <a href="/sub/media?tab=2"><li>MEDIA</li></a>
                 </ul>
@@ -213,10 +214,11 @@
                 <a href="/sub/heritage02"><li>Blue Check</li></a>
                 <a href="/sub/heritage03"><li>Royal Court</li></a>
             </ul>
-            <li class="ham_list"><a href="/sub/news?tab=1">News</a></li>
-            {{-- <ul class="ham_list_sub hamNews">
-                <a href="#none"><li>PRESS</li></a>
-                <a href="#none"><li>MEDIA</li></a>
-            </ul> --}}
+            <li class="ham_list">News</li>
+            <ul class="ham_list_sub hamNews">
+                <a href="/sub/notice?tab=3"><li>NOTICE</li></a>
+                <a href="/sub/press?tab=1"><li>PRESS</li></a>
+                <a href="/sub/media?tab=2"><li>MEDIA</li></a>
+            </ul>
             <li class="ham_list"><a href="/sub/contact_us">Contact</a></li>
         </ul>
