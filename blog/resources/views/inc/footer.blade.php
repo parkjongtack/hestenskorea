@@ -32,3 +32,10 @@
         </div>
     </div>
 </div>
+<script>
+    AOS.init({
+            duration: 1000,
+            easing: 'ease-out-back',
+        });
+    window.addEventListener('load', AOS.refresh);
+</script>

@@ -20,7 +20,15 @@ Route::get('/', function () {
 
 Route::get('/', 'Main@main');
 
-Route::get('/sub/acc', 'Sub@acc');
+Route::get('/sub/acc/pillows', 'Sub@acc');
+Route::get('/sub/acc/downqults', 'Sub@acc');
+Route::get('/sub/acc/bedlinen', 'Sub@acc');
+Route::get('/sub/acc/headborards', 'Sub@acc');
+Route::get('/sub/acc/skirts', 'Sub@acc');
+Route::get('/sub/acc/legs', 'Sub@acc');
+Route::get('/sub/acc/covers', 'Sub@acc');
+Route::get('/sub/acc/personal', 'Sub@acc');
+Route::get('/sub/acc/collection', 'Sub@acc');
 Route::get('/sub/beds', 'Sub@beds');
 Route::get('/sub/beds/sub', 'Sub@beds_sub');
 Route::get('/sub/contact_us', 'Sub@contact_us');
