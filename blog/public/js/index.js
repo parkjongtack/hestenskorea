@@ -51,8 +51,6 @@ $(function(){
                 img_height[i] = img_height[i]/360*100;
                 $("#sub_sec .material_sub_img").eq(i).css({height:img_height[i]+"vw"});
             }
-            console.log(img_height)
-            
         },100)
     }
 
@@ -272,10 +270,13 @@ $(function(){
     
     if(now_url.indexOf("press?tab=1") != -1){
         $('.news_content ul.news_tabs_').hide();
-        $('.news_content ul.news_tabs_').eq(0).show();
-    }else{
-        $('.news_content ul.news_tabs_').hide();
         $('.news_content ul.news_tabs_').eq(1).show();
+    }else if(now_url.indexOf("press?tab=2") != -1){
+        $('.news_content ul.news_tabs_').hide();
+        $('.news_content ul.news_tabs_').eq(2).show();
+    }else if(now_url.indexOf("press?tab=3") != -1){
+        $('.news_content ul.news_tabs_').hide();
+        $('.news_content ul.news_tabs_').eq(0).show();
     }
     // $('.news_tabs a').click(function(){
     //     var idx = $(this).index();
