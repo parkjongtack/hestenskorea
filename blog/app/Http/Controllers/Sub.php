@@ -321,8 +321,10 @@ class Sub extends Controller
 
 		if($request->tab == 1) {
 			$boardType = 'press';
-		} else {
+		} else if($request->tab == 2) {
 			$boardType = 'media';
+		}else{
+			$boardType = 'notice';
 		}
 
 		$paging_option = array(

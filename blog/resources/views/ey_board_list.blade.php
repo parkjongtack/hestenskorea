@@ -15,7 +15,7 @@
             <thead>
                 <tr>
                     <th>번호</th>
-                    <th>@if(request()->segment(2) == 'media')링크@else이미지@endif</th>
+                    <th>@if(request()->segment(2) == 'media')링크@elseif(request()->segment(2) != 'notice') 이미지@endif</th>
                     <th>제목</th>
 					@if(request()->segment(1) == 'ey_pcpopup')
                     <th>팝업크기/여백</th>

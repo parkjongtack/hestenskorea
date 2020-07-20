@@ -53,6 +53,8 @@
 							</select>
 						@elseif(request()->segment(2) == 'media')
 							<input type="text" name="category" value="MEDIA" readonly style="border:none;" />
+						@elseif(request()->segment(2) == 'notice')
+							<input type="text" name="category" value="NOTICE" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'popup')
 							<input type="text" name="category" value="POPUP" readonly style="border:none;" />
 						@endif
@@ -115,7 +117,7 @@
                 </div>
             </div>
 			@endif
-			@if(request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup' && request()->segment(2) != 'press')
+			@if(request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup' && request()->segment(2) != 'press' && request()->segment(2) != 'notice')
             <div class="write_line">
                 <div class="all_line">
                     <div class="line_title" style="vertical-align:middle;">링크</div>
@@ -133,7 +135,7 @@
                         </div>
                 </div>
             </div> --}}
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'media')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'acc' && request()->segment(2) != 'media' && request()->segment(2) != 'notice')
             <div class="write_line cate_file">
                 <div class="all_line">
                     <div class="line_title">
@@ -170,7 +172,7 @@
                 </div>
             </div>
 			@endif
-			@if(request()->segment(2) != 'press' && request()->segment(2) != 'media')
+			@if(request()->segment(2) != 'press' && request()->segment(2) != 'media' && request()->segment(2) != 'notice')
             <span id="append_target">
                 <div class="write_line cate_file">
                     <div class="all_line">
@@ -245,7 +247,7 @@
                 </div>
             </span>
 			@endif
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc' && request()->segment(2) != 'popup' && request()->segment(2) != 'media')
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc' && request()->segment(2) != 'media' && request()->segment(2) != 'popup'  && request()->segment(2) != 'notice')
 			<span id="append_target_sub">
                 <div class="write_line cate_file">
                     <div class="all_line">
@@ -473,7 +475,7 @@
 				return false;
 			}
 			*/
-		@elseif(request()->segment(2) == 'press')
+		@elseif(request()->segment(2) == 'press' || request()->segment(2) == 'notice')
 
 			if(form.subject.value == "") {
 				alert('제목을 입력해주세요.');

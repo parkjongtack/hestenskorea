@@ -12,13 +12,15 @@
                                 <div class="notice_name">작성자</div>
                                 <div class="notice_date">등록일</div>
                             </li>
+                            @foreach($data as $data)
                             <li>
-                                <div class="notice_num">3</div>
-                                <div class="notice_title"><a href="#none">안녕하세요. 산업보안 정보 도서관 게시판입니다.</a></div>
+                                <div class="notice_num">{{ $number-- }}</div>
+                            <div class="notice_title"><a href="/sub/media_view?board_idx={{ $data->idx }}">{{$data->subject}}</a></div>
                                 <div class="notice_name">관리자</div>
-                                <div class="notice_date">20-06-30</div>
+                                <div class="notice_date">{{ $data->reg_date }}</div>
                             </li>
-                            <li>
+                            @endforeach
+                            {{-- <li>
                                 <div class="notice_num">2</div>
                                 <div class="notice_title"><a href="#none">안녕하세요. 산업보안 정보 도서관 게시판입니다.</a></div>
                                 <div class="notice_name">관리자</div>
@@ -29,7 +31,7 @@
                                 <div class="notice_title"><a href="#none">안녕하세요. 산업보안 정보 도서관 게시판입니다.</a></div>
                                 <div class="notice_name">관리자</div>
                                 <div class="notice_date">20-06-30</div>
-                            </li>
+                            </li> --}}
                         </ul>
                         <div class="pag_write news_tabs_01">
 							{!! $paging_view !!}
