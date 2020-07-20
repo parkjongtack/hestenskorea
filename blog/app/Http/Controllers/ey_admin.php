@@ -112,9 +112,20 @@ class Ey_admin extends Controller
 							->select(DB::raw('*'))
 							//->where('board_type', $request->board_type)
 							->where('board_idx', $request->board_idx)
+							->where('sub_main_status', 'N')
 							->get();
 
 				$return_list['data2'] = $board_inform2;
+
+				$board_inform2 = DB::table('file_list') 
+							->select(DB::raw('*'))
+							//->where('board_type', $request->board_type)
+							->where('board_idx', $request->board_idx)
+							->where('sub_main_status', 'Y')
+							->get();
+
+				$return_list['data3'] = $board_inform2;
+
 			}
 
 			return view('ey_modify_board', $return_list);
@@ -448,7 +459,7 @@ class Ey_admin extends Controller
 						$file2['tmp_name'] = $_FILES['writer_file_mobile2']['tmp_name'][$key];
 						$file2['size'] = $_FILES['writer_file_mobile2']['size'][$key];
 
-						$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/public/storage/app/images/';
+						$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/storage/app/images/';
 
 
 						$ext_str = "jpg,gif,png";
@@ -598,7 +609,7 @@ class Ey_admin extends Controller
 				);
 
 				if(request()->segment(2) != 'acc' && request()->segment(2) != 'pcslider' && request()->segment(2) != 'popup') {
-				
+			
 					$file = array();
 					$i = 0;
 					foreach($_FILES['writer_file2']['name'] as $key => $value) {
@@ -611,7 +622,85 @@ class Ey_admin extends Controller
 						$file2['tmp_name'] = $_FILES['writer_file_mobile2']['tmp_name'][$key];
 						$file2['size'] = $_FILES['writer_file_mobile2']['size'][$key];
 
-						$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/public/storage/app/images/';
+						$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/storage/app/images/';
+
+						$ext_str = "jpg,gif,png";
+						$allowed_extensions = explode(',', $ext_str);
+
+						$max_file_size = 5242880000000000;
+						$ext = substr($file['name'], strrpos($file['name'], '.') + 1);
+
+						// 확장자 체크
+						if(!in_array($ext, $allowed_extensions) && $file['name'] != "") {
+							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						// 파일 크기 체크
+						if($file['size'] >= $max_file_size && $file['name'] != "") {
+							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						$ext2 = substr($file2['name'], strrpos($file2['name'], '.') + 1);
+
+						// 확장자 체크
+						if(!in_array($ext2, $allowed_extensions) && $file2['name'] != "") {
+							echo "<script>alert('업로드할 수 없는 확장자 입니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						// 파일 크기 체크
+						if($file2['size'] >= $max_file_size && $file2['name'] != "") {
+							echo "<script>alert('5MB 까지만 업로드 가능합니다.');history.go(-1);</script>";
+							exit;
+						}
+
+						$path = md5(microtime()) . '.' . $ext;
+						$path2 = md5(microtime()) . '.' . $ext2;
+
+						if(move_uploaded_file($file['tmp_name'], $upload_directory.$path) && move_uploaded_file($file2['tmp_name'], $upload_directory.$path2)) {
+
+							DB::table('file_list')->insert(
+								[
+									'sub_subject' => $request->sub_subject[$i],
+									'sub_subject2' => $request->sub_subject2[$i],
+									'sub_subject3' => $request->sub_subject3[$i],
+									'board_type' => $request->board_type,
+									'file_name' => $file['name'],
+									'real_file_name' => $path,
+									'file_name2' => $file2['name'],
+									'real_file_name2' => $path2,
+									'board_idx' => $insert_id,
+									'priority' => $request->sub_slide_priority,
+								]
+							);					
+
+							$i++;
+
+							//$query = "INSERT INTO upload_file (file_id, name_orig, name_save, reg_time) VALUES(?,?,?,now())";
+							$file_id = md5(uniqid(rand(), true));
+							$name_orig = $file['name'];
+							$name_save = $path;
+
+						}
+
+					}
+
+
+					$file = array();
+					$i = 0;
+					foreach($_FILES['writer_sub_file2']['name'] as $key => $value) {
+
+						$file['name'] = $_FILES['writer_sub_file2']['name'][$key];
+						$file['tmp_name'] = $_FILES['writer_sub_file2']['tmp_name'][$key];
+						$file['size'] = $_FILES['writer_sub_file2']['size'][$key];
+
+						$file2['name'] = $_FILES['writer_sub_file_mobile2']['name'][$key];
+						$file2['tmp_name'] = $_FILES['writer_sub_file_mobile2']['tmp_name'][$key];
+						$file2['size'] = $_FILES['writer_sub_file_mobile2']['size'][$key];
+
+						$upload_directory = $_SERVER['DOCUMENT_ROOT'].'/storage/app/images/';
 
 						$ext_str = "jpg,gif,png";
 						$allowed_extensions = explode(',', $ext_str);
@@ -651,15 +740,17 @@ class Ey_admin extends Controller
 
 							DB::table('file_list')->insert(
 								[
-									'sub_subject' => $request->sub_subject[$i],
-									'sub_subject2' => $request->sub_subject2[$i],
-									'sub_subject3' => $request->sub_subject3[$i],
+									//'sub_subject' => $request->sub_subject[$i],
+									//'sub_subject2' => $request->sub_subject2[$i],
+									//'sub_subject3' => $request->sub_subject3[$i],
 									'board_type' => $request->board_type,
 									'file_name' => $file['name'],
 									'real_file_name' => $path,
 									'file_name2' => $file2['name'],
 									'real_file_name2' => $path2,
 									'board_idx' => $insert_id,
+									'sub_main_status' => 'Y',
+									'priority' => $request->sub_image_priority[$i],
 								]
 							);					
 
@@ -673,6 +764,9 @@ class Ey_admin extends Controller
 						}
 
 					}
+
+
+
 				}
 
 				echo "<script>alert('글 작성이 완료되었습니다.');location.href = '/ey_admin/".$request->board_type."';</script>";

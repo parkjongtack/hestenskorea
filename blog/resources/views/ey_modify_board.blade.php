@@ -255,6 +255,7 @@
                         <div class="line_content">
                             PC : <input type="file" name="writer_file2[]" />
 							MOBILE : <input type="file" name="writer_file_mobile2[]" />
+							우선순위 : <input type="number" name="sub_slide_priority" style="width: 100px">
                         </div>
 					</div>
 					<div class="all_line" style="border-top: 0;">
@@ -265,6 +266,7 @@
 							소제목1 : <input type="text" name="sub_subject[]" />
 							소제목2 : <input type="text" name="sub_subject2[]" />
 							색상 : <input type="text" name="sub_subject3[]" />
+							
 						</div>
 					</div>
 					<div class="all_line">
@@ -275,6 +277,7 @@
 								소제목 : <input type="text" name="sub_subject[]" value="{{ $data2->sub_subject }}" style="border:none" readonly />
 								소제목2 : <input type="text" name="sub_subject2[]" value="{{ $data2->sub_subject2 }}" style="border:none" readonly />
 								소제목3 : <input type="text" name="sub_subject3[]" value="{{ $data2->sub_subject3 }}" style="border:none" readonly />
+								우선순위 : {{ $data2->priority }}
 								<a href="/storage/app/images/{{ $data2->real_file_name }}" target="_blank">[PC 파일보기]</a>
 								<a href="/storage/app/images/{{ $data2->real_file_name2 }}" target="_blank">[MOBILE 파일보기]</a>
 								<a href="javascript:control('{{ $data2->idx }}');" style="color:red;">[삭제]</a>
@@ -282,7 +285,29 @@
 							@endforeach
 						</div>
 					</div>
+					<div class="cate_file_append"></div>
+					<div class="write_line cate_file">
+						<div class="all_line">
+							<div class="line_title">
+								상세이미지 영역
+							</div>
+							<div class="line_content">
+								PC : <input type="file" name="writer_sub_file2[]" />
+								MOBILE : <input type="file" name="writer_sub_file_mobile2[]" />
+								우선순위 : <input type="number" name="sub_image_priority[]" style="width: 100px"> <span style="cursor: pointer; color: rgb(112, 96, 255)" class="add_file_sub_sub">서브항목추가 +</span>
+							</div>
+							@foreach($data3 as $data3)
+							<div>
+								<a href="/storage/app/images/{{ $data3->real_file_name }}" target="_blank">[PC 파일보기]</a>
+								<a href="/storage/app/images/{{ $data3->real_file_name2 }}" target="_blank">[MOBILE 파일보기]</a>
+								우선순위 : {{ $data3->priority }}
+								<a href="javascript:control('{{ $data3->idx }}');" style="color:red;">[삭제]</a>
+							</div>
+							@endforeach
+						</div>
+					</div>
                 </div>
+				<div class="cate_file_append_sub"></div>
             </span>
 			@endif
 				<div class="write_line cate_file">
@@ -683,6 +708,10 @@
             $(append_item2).appendTo("#append_target_sub");
 
         });
+		$('.add_file_sub_sub').click(function(){
+			var append_item2 = '<div class="write_line cate_file"> <div class="all_line"> <div class="line_title"> 상세이미지 영역 </div> <div class="line_content"> PC : <input type="file" name="writer_sub_file2[]" /> MOBILE : <input type="file" name="writer_sub_file_mobile2[]" /> 우선순위 : <input type="number" name="sub_image_priority[]" style="width: 100px"> </div> </div> </div>'
+				$(append_item2).appendTo(".cate_file_append_sub");
+		});
 
     })
 </script>

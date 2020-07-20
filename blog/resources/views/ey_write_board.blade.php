@@ -261,7 +261,7 @@
                         <div class="line_content">
                             PC : <input type="file" name="writer_file2[]" />
 							MOBILE : <input type="file" name="writer_file_mobile2[]" />
-							우선순위 : <input type="number" style="width: 100px">
+							우선순위 : <input type="number" name="sub_slide_priority" style="width: 100px">
                         </div>
 					</div>
 					<div class="all_line" style="border-top: 0;">
@@ -282,9 +282,9 @@
                             상세이미지 영역
                         </div>
                         <div class="line_content">
-                            PC : <input type="file" name="writer_file2[]" />
-							MOBILE : <input type="file" name="writer_file_mobile2[]" />
-							우선순위 : <input type="number" style="width: 100px"> <span style="cursor: pointer; color: rgb(112, 96, 255)" class="add_file_sub_sub">서브항목추가 +</span>
+                            PC : <input type="file" name="writer_sub_file2[]" />
+							MOBILE : <input type="file" name="writer_sub_file_mobile2[]" />
+							우선순위 : <input type="number" name="sub_image_priority[]" style="width: 100px"> <span style="cursor: pointer; color: rgb(112, 96, 255)" class="add_file_sub_sub">서브항목추가 +</span>
                         </div>
 					</div>
 				</div>
@@ -734,7 +734,7 @@
 
 		});
 		$('.add_file_sub_sub').click(function(){
-			var append_item2 = '<div class="write_line cate_file"> <div class="all_line"> <div class="line_title"> 상세이미지 영역 </div> <div class="line_content"> PC : <input type="file" name="writer_file2[]" /> MOBILE : <input type="file" name="writer_file_mobile2[]" /> 우선순위 : <input type="number" style="width: 100px"> </div> </div> </div>'
+			var append_item2 = '<div class="write_line cate_file"> <div class="all_line"> <div class="line_title"> 상세이미지 영역 </div> <div class="line_content"> PC : <input type="file" name="writer_sub_file2[]" /> MOBILE : <input type="file" name="writer_sub_file_mobile2[]" /> 우선순위 : <input type="number" name="sub_image_priority[]" style="width: 100px"> </div> </div> </div>'
 				$(append_item2).appendTo(".cate_file_append_sub");
 		});
     })

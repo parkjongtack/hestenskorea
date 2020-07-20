@@ -251,7 +251,7 @@ class Sub extends Controller
 		
 		$query = DB::table('file_list')
 				->select(DB::raw('*'))
-				->orderBy('idx', 'desc');
+				->orderBy('priority', 'asc');
 
 		$query->where('board_idx', $boardType);
 		
@@ -263,7 +263,6 @@ class Sub extends Controller
 		
 		// 게시판 출력 글 번호 계산
 		$number = $totalCount-($paging_option["pageSize"]*($thisPage-1));
-
 		$return_list = array();
 		$return_list["data"] = $list;
 		$return_list["data2"] = $list;

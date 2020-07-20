@@ -38,6 +38,17 @@
                   clickable: true,
                 },
             });
+
+			function page(page){		
+				var f = document.search_form;
+				f.page.value = page;
+				f.submit();
+			}
         </script>
     </body>
+	<form name="search_form" action="{{ $_SERVER['REQUEST_URI'] }}/" class="board_search_con" onsubmit="return search();">
+		<input type="hidden" name="page" />
+		<!-- <input type="text" name="key" placeholder="검색어를 입력하세요" value="{{ $key }}" required> -->
+		<button></button>
+	</form>
 </html>
