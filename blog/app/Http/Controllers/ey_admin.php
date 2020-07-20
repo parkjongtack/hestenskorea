@@ -716,9 +716,9 @@ class Ey_admin extends Controller
 		}
 
 		$paging_option = array(
-			"pageSize" => 10,
+			"pageSize" => 1,
 			"blockSize" => 5
-		);		
+		);
 
 		$thisPage = ($request->page) ? $request->page : 1 ;
 		$paging = new PagingFunction($paging_option);
