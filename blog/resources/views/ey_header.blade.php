@@ -44,6 +44,7 @@
                         <div class="nav_sub"><a href="/ey_admin/acc">acc</a></div>
 						<div class="nav_sub"><a href="/ey_admin/press">press</a></div>
                         <div class="nav_sub"><a href="/ey_admin/media">media</a></div>
+                        <div class="nav_sub"><a href="/ey_admin/notice">notice</a></div>
                     </div>
                     <!-- <div class="na_title nav_img"><i class="far fa-chart-bar"></i>통계 현황</div>
                     <div class="na_title dep2">
@@ -81,22 +82,8 @@
                     <h2>
 					@if(request()->segment(2) == 'pcslider' || request()->segment(2) == 'popup')
 					메인페이지 설정
-					@elseif(request()->segment(2) == 'beds' || request()->segment(2) == 'acc' || request()->segment(2) == 'press' || request()->segment(2) == 'media')
+					@elseif(request()->segment(2) == 'beds' || request()->segment(2) == 'acc' || request()->segment(2) == 'press' || request()->segment(2) == 'media' || request()->segment(2) == 'notice')
 					카테고리
-					@elseif(request()->segment(2) == 'ey_newsletter')
-					커뮤니티
-					@elseif(request()->segment(2) == 'happy_call')
-					커뮤니티
-					@elseif(request()->segment(2) == 'ey_data_room')
-					커뮤니티
-					@elseif(request()->segment(2) == 'ey_law_data_room')
-					커뮤니티
-					@elseif(request()->segment(2) == 'ey_security_data_room')
-					커뮤니티
-					@elseif(request()->segment(2) == 'ey_cso_request_education')
-					커뮤니티
-					@elseif(request()->segment(2) == 'ey_security_request_education')
-					커뮤니티
 					@elseif(request()->segment(2) == 'ey_pcslider')
 					PC슬라이더
 					@endif
@@ -109,7 +96,9 @@
 					@elseif(request()->segment(2) == 'acc')
 					acc
 					@elseif(request()->segment(2) == 'press')
-					press
+                    press
+                    @elseif(request()->segment(2) == 'notice')
+                    notice
 					@elseif(request()->segment(2) == 'media')
 					media
 					@elseif(request()->segment(2) == 'ey_law_data_room')

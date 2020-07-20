@@ -247,7 +247,7 @@ class Ey_admin extends Controller
 		}
 
 
-		if(request()->segment(2) == "press" || request()->segment(2) == "media") {
+		if(request()->segment(2) == "press" || request()->segment(2) == "media" || request()->segment(2) == "notice") {
 
 			if($request->write_type == "modify") {
 				
@@ -320,7 +320,7 @@ class Ey_admin extends Controller
 				} else {
 					$file_array[1] = null;
 				}
-				
+
 				DB::table('board')->insert(
 					[
 						'subject' => $request->subject,
@@ -806,7 +806,7 @@ class Ey_admin extends Controller
 		if(request()->segment(2) != "notice") {
 			$boardType = request()->segment(2);
 		} else {
-			$boardType = "ey_notice";
+			$boardType = "notice";
 		}
 
 		$paging_option = array(
