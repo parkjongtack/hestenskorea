@@ -32,9 +32,9 @@
                     @elseif(request()->segment(3) == 'bedlinen')
                     <div class="acc_title">
                         <p class="hastens_name hei85p bold">HÄSTENS</p>
-                        <h2 class="hei85p">PILLOWS</h2>
+                        <h2 class="hei85p">BED LINE</h2>
                     </div>
-                    <div class="acc_text">
+<!--                     <div class="acc_text">
                         <p class="hei85p">
                             Unique beds deserve unique pillows. Unsurprisingly then,<br>
                             our pillow range is crafted to complement the comfort characteristics of each Hästens bed model.<br>
@@ -44,13 +44,13 @@
                             neck and windpipe are supported in a straight position, your breathing opens up. Helping you relax,<br>
                             sleep more soundly and even snore less. And above all, create the optimum conditions for waking up as the very best you.
                         </p>
-                    </div>
+                    </div> -->
                     @elseif(request()->segment(3) == 'headborards')
                     <div class="acc_title">
                         <p class="hastens_name hei85p bold">HÄSTENS</p>
-                        <h2 class="hei85p">PILLOWS</h2>
+                        <h2 class="hei85p">HEADBORARDS</h2>
                     </div>
-                    <div class="acc_text">
+<!--                     <div class="acc_text">
                         <p class="hei85p">
                             Unique beds deserve unique pillows. Unsurprisingly then,<br>
                             our pillow range is crafted to complement the comfort characteristics of each Hästens bed model.<br>
@@ -60,13 +60,13 @@
                             neck and windpipe are supported in a straight position, your breathing opens up. Helping you relax,<br>
                             sleep more soundly and even snore less. And above all, create the optimum conditions for waking up as the very best you.
                         </p>
-                    </div>
+                    </div> -->
                     @elseif(request()->segment(3) == 'skirts')
                     <div class="acc_title">
                         <p class="hastens_name hei85p bold">HÄSTENS</p>
-                        <h2 class="hei85p">PILLOWS</h2>
+                        <h2 class="hei85p">BED SKIRTS</h2>
                     </div>
-                    <div class="acc_text">
+<!--                     <div class="acc_text">
                         <p class="hei85p">
                             Unique beds deserve unique pillows. Unsurprisingly then,<br>
                             our pillow range is crafted to complement the comfort characteristics of each Hästens bed model.<br>
@@ -76,13 +76,13 @@
                             neck and windpipe are supported in a straight position, your breathing opens up. Helping you relax,<br>
                             sleep more soundly and even snore less. And above all, create the optimum conditions for waking up as the very best you.
                         </p>
-                    </div>
+                    </div> -->
                     @elseif(request()->segment(3) == 'legs')
                     <div class="acc_title">
                         <p class="hastens_name hei85p bold">HÄSTENS</p>
-                        <h2 class="hei85p">PILLOWS</h2>
+                        <h2 class="hei85p">BED LEGS</h2>
                     </div>
-                    <div class="acc_text">
+<!--                     <div class="acc_text">
                         <p class="hei85p">
                             Unique beds deserve unique pillows. Unsurprisingly then,<br>
                             our pillow range is crafted to complement the comfort characteristics of each Hästens bed model.<br>
@@ -92,13 +92,13 @@
                             neck and windpipe are supported in a straight position, your breathing opens up. Helping you relax,<br>
                             sleep more soundly and even snore less. And above all, create the optimum conditions for waking up as the very best you.
                         </p>
-                    </div>
+                    </div> -->
                     @elseif(request()->segment(3) == 'covers')
                     <div class="acc_title">
                         <p class="hastens_name hei85p bold">HÄSTENS</p>
-                        <h2 class="hei85p">PILLOWS</h2>
+                        <h2 class="hei85p">MATTRESS COVERS</h2>
                     </div>
-                    <div class="acc_text">
+<!--                     <div class="acc_text">
                         <p class="hei85p">
                             Unique beds deserve unique pillows. Unsurprisingly then,<br>
                             our pillow range is crafted to complement the comfort characteristics of each Hästens bed model.<br>
@@ -108,13 +108,13 @@
                             neck and windpipe are supported in a straight position, your breathing opens up. Helping you relax,<br>
                             sleep more soundly and even snore less. And above all, create the optimum conditions for waking up as the very best you.
                         </p>
-                    </div>
+                    </div> -->
                     @elseif(request()->segment(3) == 'personal')
                     <div class="acc_title">
                         <p class="hastens_name hei85p bold">HÄSTENS</p>
-                        <h2 class="hei85p">PILLOWS</h2>
+                        <h2 class="hei85p">PERSONAL ACC</h2>
                     </div>
-                    <div class="acc_text">
+<!--                     <div class="acc_text">
                         <p class="hei85p">
                             Unique beds deserve unique pillows. Unsurprisingly then,<br>
                             our pillow range is crafted to complement the comfort characteristics of each Hästens bed model.<br>
@@ -124,9 +124,12 @@
                             neck and windpipe are supported in a straight position, your breathing opens up. Helping you relax,<br>
                             sleep more soundly and even snore less. And above all, create the optimum conditions for waking up as the very best you.
                         </p>
-                    </div>
+                    </div> -->
                     @elseif(request()->segment(3) == 'collection')
-
+					<div class="acc_title">
+                        <p class="hastens_name hei85p bold">HÄSTENS</p>
+                        <h2 class="hei85p">CHILDREN'S COLLECTION</h2>
+                    </div>
                     @endif
                     <div class="acc_content">
                         <ul class="inner">
