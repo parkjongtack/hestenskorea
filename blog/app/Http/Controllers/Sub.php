@@ -234,7 +234,7 @@ class Sub extends Controller
 		$boardType = $request->board_idx;
 
 		$paging_option = array(
-			"pageSize" => 19,
+			"pageSize" => 3000,
 			"blockSize" => 5
 		);		
 
@@ -261,9 +261,82 @@ class Sub extends Controller
 
 		$list = $query->take($paging_option["pageSize"])->get();
 		
+		//print_r($list);
+		//exit;
+
+		$html_data = "";
+		$sub_main_status_check = "loop_not";
+		foreach($list as $key => $value) {
+
+			//echo "sub_main_status=".$value->sub_main_status."<br/>";
+			//exit;
+
+			if($value->sub_main_status == "N") {
+
+				//echo "N";
+
+				if($sub_main_status_check == "loop_not") {
+
+					$html_data .= '<div class="swiper-container beds_sub_slide">';
+					$html_data .= '	<div class="swiper-wrapper">';
+
+					$sub_html_inform = DB::table('file_list') 
+								->select(DB::raw('*'))
+								->where('board_idx', $value->board_idx)
+								->where('sub_main_status', 'N')
+								->get();
+					
+					//echo count($sub_html_inform);
+
+					foreach($sub_html_inform as $key2 => $value2) {
+
+						$html_data .= '<div class="beds_detail swiper-slide">';
+						$html_data .= '<img class="mo_none" src="/storage/app/images/'.$value2->real_file_name.'" alt="">';
+						$html_data .= '<img class="mo_block" src="/storage/app/images/'.$value2->real_file_name2.'" alt="">';
+						$html_data .= '<div class="besd_explain">';
+						$html_data .= '<div class="besd_explain_title">';
+						$html_data .= '<p class="beds_txt hei85p_kr">'.$value2->sub_subject.'</p>';
+						$html_data .= '<p class="beds_txt hei85p_kr">'.$value2->sub_subject2.'</p>';
+						$html_data .= '</div>';
+						$html_data .= '<div class="besd_explain_detail">';
+						$html_data .= 'COLOR : <b>'.$value2->sub_subject3.'</b>';
+						$html_data .= '</div>';
+						$html_data .= '</div>';
+						$html_data .= '</div>';					
+
+					}
+					
+					$html_data .= '</div>';
+					$html_data .= '<div class="swiper-pagination"></div>';
+					$html_data .= '<div class="swiper-button-next"></div>';
+					$html_data .= '<div class="swiper-button-prev"></div>';
+					$html_data .= '</div>';
+					
+					$sub_main_status_check = "loop_ok";
+
+				}
+
+			} else {
+
+
+				$html_data .= '<div class="beds_bot">';
+				$html_data .= '	<img class="mo_none" src="/storage/app/images/'.$value->real_file_name.'" alt="">';
+				$html_data .= '	<img class="mo_block" src="/storage/app/images/'.$value->real_file_name2.'" alt="">';
+				$html_data .= '</div>';
+
+			}
+
+		}
+		
+
+		//echo htmlspecialchars($html_data);
+		//echo $html_data;
+		//exit;
+		
 		// 게시판 출력 글 번호 계산
 		$number = $totalCount-($paging_option["pageSize"]*($thisPage-1));
 		$return_list = array();
+		$return_list["html_data"] = $html_data;
 		$return_list["data"] = $list;
 		$return_list["data2"] = $list;
 		$return_list["data3"] = $list;

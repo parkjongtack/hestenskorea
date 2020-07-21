@@ -89,7 +89,7 @@
 							제목
 						</div>
 						<div class="line_content">
-							<input type="text" name="subject" value="{{ $data->subject }}" />
+							<input type="text" name="subject3" value="{{ $data->subject }}" />
 						</div>
                 </div>
             </div>
@@ -247,9 +247,9 @@
                 </div>
             </span>
 			@endif
-			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc' && request()->segment(2) != 'media' && request()->segment(2) != 'popup'  && request()->segment(2) != 'notice')
 			<span id="append_target_sub">
-                <div class="write_line cate_file">
+			@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'acc' && request()->segment(2) != 'media' && request()->segment(2) != 'popup'  && request()->segment(2) != 'notice')
+                <div class="write_line cate_file slider_area">
                     <div class="all_line">
                         <div class="line_title">
                             슬라이드 영역
@@ -287,6 +287,7 @@
 							@endforeach
 						</div>
 					</div>
+					</div>
 					<div class="cate_file_append"></div>
 					<div class="write_line cate_file">
 						<div class="all_line">
@@ -307,11 +308,10 @@
 							</div>
 							@endforeach
 						</div>
-					</div>
-                </div>
+					</div>					
 				<div class="cate_file_append_sub"></div>
-            </span>
 			@endif
+            </span>
 				<div class="write_line cate_file">
 					<div class="all_line">
 						<div class="line_title">
@@ -444,20 +444,20 @@
 		@elseif(request()->segment(2) == 'beds')
 			
 			if(form.subject.value == "") {
-				alert('제목을 입력해주세요.');
+				alert('대제목을 입력해주세요.');
 				form.subject.focus();
 				return false;
 			}
 
 			if(form.subject2.value == "") {
-				alert('제목2를 입력해주세요.');
+				alert('소제목을 입력해주세요.');
 				form.subject2.focus();
 				return false;
 			}
 		
-			if(form.subject2.value == "") {
-				alert('제목2를 입력해주세요.');
-				form.subject2.focus();
+			if(form.subject3.value == "") {
+				alert('제목3을 입력해주세요.');
+				form.subject3.focus();
 				return false;
 			}			
 
@@ -705,10 +705,18 @@
 				return;
 			}
 			
+			@if(request()->segment(2) == 'acc')
+				var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"></div><input type="file" name="writer_file_mobile2[]" /></div></div></div>'
+				$(append_item2).appendTo("#append_target_sub");
+			@else
+				var append_item2 = '<div class="write_line cate_file slider_area"><div class="all_line"><div class="line_title"> 슬라이드 영역</div><div class="line_content"> PC : <input type="file" name="writer_file2[]" /> MOBILE : <input type="file" name="writer_file_mobile2[]" /></div></div><div class="all_line" style="border-top: 0;"><div class="line_title"></div><div class="line_content"> 소제목1 : <input type="text" name="sub_subject[]" /> 소제목2 : <input type="text" name="sub_subject2[]" /> 색상 : <input type="text" name="sub_subject3[]" /></div></div></div>'
+				$(append_item2).appendTo(".cate_file_append");
+			@endif
+			/*
 	        var append_item2 = '<div class="write_line cate_file"><div class="all_line"><div class="line_title"> 슬라이드 영역</div><div class="line_content"> PC : <input type="file" name="writer_file2[]" /> MOBILE : <input type="file" name="writer_file_mobile2[]" /></div></div><div class="all_line" style="border-top: 0;"><div class="line_title"></div><div class="line_content"> 소제목1 : <input type="text" name="sub_subject[]" /> 소제목2 : <input type="text" name="sub_subject2[]" /> 색상 : <input type="text" name="sub_subject3[]" /></div></div></div>'
 			
             $(append_item2).appendTo("#append_target_sub");
-
+			*/
         });
 		$('.add_file_sub_sub').click(function(){
 			var append_item2 = '<div class="write_line cate_file"> <div class="all_line"> <div class="line_title"> 상세이미지 영역 </div> <div class="line_content"> PC : <input type="file" name="writer_sub_file2[]" /> MOBILE : <input type="file" name="writer_sub_file_mobile2[]" /> 우선순위 : <input type="number" name="sub_image_priority[]" style="width: 100px"> </div> </div> </div>'

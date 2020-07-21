@@ -1,7 +1,8 @@
 @include('inc/head')
 			<div id="sub_sec">
                 <div class="beds_sub inner">
-					<div class="beds_bot">
+					{!! $html_data !!}
+					<!-- <div class="beds_bot">
                         <img class="mo_none" src="/img/sub/beds_sub_bot.png" alt="">
                         <img class="mo_block" src="/img/sub/m_beds_sub_bot.png" alt="">
                     </div>
@@ -24,11 +25,10 @@
 							@endforeach
                             </div>
 							<div class="swiper-pagination"></div>
-							<!-- Add Arrows -->
 							<div class="swiper-button-next"></div>
 							<div class="swiper-button-prev"></div>
                         </div>
-					</div>
+					</div> -->
                 </div>
             </div>
 @include('inc/footer')
