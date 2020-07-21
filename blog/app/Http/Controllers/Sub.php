@@ -520,6 +520,7 @@ class Sub extends Controller
 		$return_list["board_top_list"] = $board_top_list;
 		$return_list["data"] = $list;
 		$return_list["data2"] = $list;
+		$return_list["data3"] = $list;
 		$return_list["number"] = $number;
 		$return_list["key"] = $request->key;
 		$return_list["totalCount"] = $totalCount;

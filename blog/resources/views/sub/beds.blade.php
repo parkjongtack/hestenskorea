@@ -2,7 +2,7 @@
 			<div id="sub_sec">
                 <div class="beds">
 					@foreach($data as $data)
-						<div class="beds_detail inner">
+						<div class="beds_detail inner" style="margin-bottom: 10px;">
 							<img class="mo_none" src="/storage/app/images/{{ $data->attach_file }}" alt="">
 							<img class="mo_block" src="/storage/app/images/{{ $data->attach_file2 }}" alt="">
 							<div class="besd_explain">
@@ -10,7 +10,7 @@
 								<p class="beds_title hei85p_kr">{{ $data->subject }}</p>
 								<p class="beds_txt hei85p_kr">{{ $data
 								->contents }}</p>
-								<a class="beds_more hei85p_kr" href="/sub/beds/sub/?board_idx={{ $data->idx }}">SHOW ME THE BED</a>
+								<a class="beds_more hei85p_kr" href="/sub/beds/sub?board_idx={{ $data->idx }}">SHOW ME THE BED</a>
 							</div>
 						</div>
 					@endforeach

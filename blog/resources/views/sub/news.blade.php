@@ -38,13 +38,13 @@
                         </div>
 
                         <ul class="news_tabs_01 news_tabs_">
-							@foreach($data as $data)
-                            <li class="half" style="cursor:pointer;" onclick="javascript:location.href='/sub/media_view?board_idx={{ $data->idx }}';">
+							@foreach($data3 as $data3)
+                            <li class="half" style="cursor:pointer;" onclick="javascript:location.href='/sub/media_view?board_idx={{ $data3->idx }}';">
 								<div class="youtube_img">
-									<img src="/storage/app/images/{{ $data->attach_file }}" alt="">
+									<img src="/storage/app/images/{{ $data3->attach_file }}" alt="">
 								</div>
                                 <div class="acc_content_text">
-                                    <p class="hei85" style="text-align: center;">{{ $data->subject }}</p>                                    
+                                    <p class="hei85" style="text-align: center;">{{ $data3->subject }}</p>                                    
                                 </div>
                             </li>
 							@endforeach
