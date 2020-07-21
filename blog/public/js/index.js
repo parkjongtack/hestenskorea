@@ -288,3 +288,9 @@ $(function(){
     //     $('.pag_write').eq(idx).show();
     // })
 });
+
+function page(page){		
+	var f = document.search_form;
+	f.page.value = page;
+	f.submit();
+}

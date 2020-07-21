@@ -41,6 +41,7 @@ class Sub extends Controller
 
 		$totalQuery->where('use_status', 'Y');
 		$totalQuery->where('board_type', $boardType);
+		$totalQuery->where('category2', request()->segment(3));
         $totalQuery->where(function($query_set) {
                 $query_set->where('top_type', '<>', 'Y')
                 ->orWhere('top_type', null);
@@ -71,6 +72,7 @@ class Sub extends Controller
 
 		$query->where('use_status', 'Y');
 		$query->where('board_type', $boardType);
+		$query->where('category2', request()->segment(3));
         $query->where(function($query_set2) {
                 $query_set2->where('top_type', '<>', 'Y')
                 ->orWhere('top_type', null);
@@ -100,12 +102,14 @@ class Sub extends Controller
 					->select(DB::raw('*'))
 					->where('board_type', $boardType)
 					->where('top_type', 'Y')
+					->where('category2', request()->segment(3))
 					->get()->count();
 
 		$board_top_list = DB::table('board') 
 					->select(DB::raw('*, substr(reg_date, 1, 10) as reg_date_cut'))
 					->where('board_type', $boardType)
 					->where('top_type', 'Y')
+					->where('category2', request()->segment(3))
 					->get();
 
 		$return_list = array();
@@ -130,7 +134,7 @@ class Sub extends Controller
 		$boardType = request()->segment(2);
 
 		$paging_option = array(
-			"pageSize" => 10,
+			"pageSize" => 30000,
 			"blockSize" => 5
 		);		
 
@@ -377,9 +381,35 @@ class Sub extends Controller
 
 	public function media_view(Request $request) {
 
+		if($_GET['tab'] == 1) {
+			$boardType = "press";
+		} else if($_GET['tab'] == 2) {
+			$boardType = "media";
+		} else if($_GET['tab'] == 3) {
+			$boardType = "notice";
+		}
+
+		$board_prev_infom = DB::table('board') 
+					->select(DB::raw('*'))
+					->where('board_type', $boardType)
+					->where('idx', '<', $request->board_idx)
+					->orderBy('idx', 'desc')
+					->first();
+
+		$return_list['board_prev'] = $board_prev_infom;
+
+		$board_next_infom = DB::table('board') 
+					->select(DB::raw('*'))
+					->where('board_type', $boardType)
+					->where('idx', '>', $request->board_idx)
+					->orderBy('idx', 'desc')
+					->first();
+
+		$return_list['board_next'] = $board_next_infom;
+
+
 		$board_infom = DB::table('board') 
 					->select(DB::raw('*'))
-					//->where('board_type', 'ey_faq')
 					->where('idx', $request->board_idx)
 					->first();
 
@@ -436,7 +466,7 @@ class Sub extends Controller
 		
 		$query = DB::table('board')
 				->select(DB::raw('*, substr(reg_date, 1, 10) as reg_date_cut, substring_index(link_value,"/",-1) as link_key'))
-				->orderBy('priority', 'asc');
+				->orderBy('idx', 'desc');
 				
 		if($request->key != "") {
 			$query->where(function($query) use($request){

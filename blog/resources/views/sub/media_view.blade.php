@@ -12,50 +12,16 @@
                 <p>작성자 : 관리자</p>
             </div>
             <div class="view_content">
-			{!! $data->contents !!}
-                <!-- <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p><img src="/img/view_img_sample.png" alt=""></p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p> -->
+				{!! $data->contents !!}
             </div>
             <div class="submit_box">
-                <a href="/sub/press?tab=1">이전글</a>
-                <a href="/sub/press?tab=1">다음글</a>
-                <a href="/sub/press?tab=1">목록</a>
-            </div>
-        </div>
-        {{--NOTICE--}}
-        <div class="notice_view notice__">
-            <div class="view_title">
-                <p>{{ $data->subject }}</p>
-                <span>{{ $data->reg_date }} | 조회 111</span>
-            </div>
-            <div class="view_name">
-                <p>작성자 : 관리자</p>
-            </div>
-            <div class="view_content">
-			{!! $data->contents !!}
-                <!-- <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p><img src="/img/view_img_sample.png" alt=""></p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p>
-                <p>안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.안녕하세요 ‘Try Everything 2020’행사 공지사항 안내드립니다.</p> -->
-            </div>
-            <div class="submit_box">
-                <div class="submit_box">
-                    <a href="/sub/press?tab=1">이전글</a>
-                    <a href="/sub/press?tab=1">다음글</a>
-                    <a href="/sub/press?tab=1">목록</a>
-                </div>
+				@if($board_prev->idx)
+					<a href="/sub/media_view?tab={{ $_GET['tab'] }}&board_idx={{ $board_prev->idx }}">이전글</a>
+				@endif
+				@if($board_next->idx)
+					<a href="/sub/media_view?tab={{ $_GET['tab'] }}&board_idx={{ $board_next->idx }}">다음글</a>
+				@endif
+                <a href="/sub/press?tab={{ $_GET['tab'] }}">목록</a>
             </div>
         </div>
     </div>
@@ -87,7 +53,7 @@
 		
 		//var removeData = setInterval(function(){
 
-			$("p").last().remove();
+			//$("p").last().remove();
 
 		//}, 100);
 

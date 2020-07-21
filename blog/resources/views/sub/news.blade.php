@@ -15,7 +15,7 @@
                             @foreach($data as $data)
                             <li>
                                 <div class="notice_num">{{ $number-- }}</div>
-                            <div class="notice_title"><a href="/sub/media_view?board_idx={{ $data->idx }}">{{$data->subject}}</a></div>
+                            <div class="notice_title"><a href="/sub/media_view?tab=3&board_idx={{ $data->idx }}">{{$data->subject}}</a></div>
                                 <div class="notice_name">관리자</div>
                                 <div class="notice_date">{{ $data->reg_date }}</div>
                             </li>
@@ -82,6 +82,11 @@
                     </div>
                 </div>
             </div>
+			<form name="search_form" action="{{ $_SERVER['REQUEST_URI'] }}" class="board_search_con" onsubmit="return search();">
+				<input type="hidden" name="page" />
+				<!-- <input type="text" name="key" placeholder="검색어를 입력하세요" value="{{ $key }}" required> -->
+				<button></button>
+			</form>
 @include('inc/footer')
     </body>
 </html>

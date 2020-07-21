@@ -39,16 +39,16 @@
 							<input type="text" name="category" value="BEDS" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'acc')
 							<input type="text" name="category" value="ACC" readonly style="border:none;" />
-							<select name="" id="">
-								<option value="Pillows">Pillows</option>
-								<option value="Down quilts">Down quilts</option>
-								<option value="Bed linen">Bed linen</option>
-								<option value="Headboards and covers">Headboards and covers</option>
-								<option value="Bed skirts">Bed skirts</option>
-								<option value="Bed legs">Bed legs</option>
-								<option value="Mattress covers">Mattress covers</option>
-								<option value="Personal Accessories">Personal Accessories</option>
-								<option value="children's collection">children's collection</option>
+							<select name="category2" id="category2">
+								<option value="pillows">Pillows</option>
+								<option value="downqults">Down quilts</option>
+								<option value="bedlinen">Bed linen</option>
+								<option value="headborards">Headboards and covers</option>
+								<option value="skirts">Bed skirts</option>
+								<option value="legs">Bed legs</option>
+								<option value="covers">Mattress covers</option>
+								<option value="personal">Personal Accessories</option>
+								<option value="collection">children's collection</option>
 							</select>
 						@elseif(request()->segment(2) == 'media')
 							<input type="text" name="category" value="MEDIA" readonly style="border:none;" />
@@ -244,7 +244,7 @@
 							@elseif(request()->segment(2) == 'beds')
 							<span class="set">(사이즈 1400x960)</span>
 							@endif
-							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'popup')
+							@if(request()->segment(2) != 'pcslider' && request()->segment(2) != 'press' && request()->segment(2) != 'beds' && request()->segment(2) != 'popup' && request()->segment(2) != 'acc')
                             <span style="cursor: pointer" class="add_file">파일추가 +</span>
 							@endif
                         </div>

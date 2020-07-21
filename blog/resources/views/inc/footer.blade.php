@@ -18,7 +18,7 @@
         <ul>
             <li>㈜The8h 디에이트에이치 "Hastens Seoul"</li>
             <li>서울시 강남구 삼성로 743 예진빌딩 1,2층</li>
-            <li>MAIL : INFO@HANSTENSSEOUL.COM</li>
+            <li>MAIL : Hastenskorea@the8h.com</li>
             <li>tel : +82(0)2 516 4973</li>
             <li>(c) 2019 The8h. all rights reserved.</li>
         </ul>

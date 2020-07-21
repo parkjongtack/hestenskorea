@@ -40,16 +40,16 @@
 							<input type="text" name="category" value="BEDS" readonly style="border:none;" />
 						@elseif(request()->segment(2) == 'acc')
 							<input type="text" name="category" value="ACC" readonly style="border:none;" />
-							<select name="" id="">
-								<option value="Pillows">Pillows</option>
-								<option value="Down quilts">Down quilts</option>
-								<option value="Bed linen">Bed linen</option>
-								<option value="Headboards and covers">Headboards and covers</option>
-								<option value="Bed skirts">Bed skirts</option>
-								<option value="Bed legs">Bed legs</option>
-								<option value="Mattress covers">Mattress covers</option>
-								<option value="Personal Accessories">Personal Accessories</option>
-								<option value="children's collection">children's collection</option>
+							<select name="category2" id="category2">
+								<option value="pillows" @if($data->category2 == 'pillows') selected @endif >Pillows</option>
+								<option value="downqults" @if($data->category2 == 'downqults') selected @endif >Down quilts</option>
+								<option value="bedlinen" @if($data->category2 == 'bedlinen') selected @endif >Bed linen</option>
+								<option value="headborards" @if($data->category2 == 'headborards') selected @endif >Headboards and covers</option>
+								<option value="skirts" @if($data->category2 == 'skirts') selected @endif >Bed skirts</option>
+								<option value="legs" @if($data->category2 == 'legs') selected @endif >Bed legs</option>
+								<option value="covers" @if($data->category2 == 'covers') selected @endif >Mattress covers</option>
+								<option value="personal" @if($data->category2 == 'personal') selected @endif >Personal Accessories</option>
+								<option value="collection" @if($data->category2 == 'collection') selected @endif >children's collection</option>
 							</select>
 						@elseif(request()->segment(2) == 'media')
 							<input type="text" name="category" value="MEDIA" readonly style="border:none;" />
@@ -82,17 +82,19 @@
 						</div>
                 </div>
             </div>
-			@endif
+			@else
 			<div class="write_line">
                 <div class="all_line">
 						<div class="line_title">
 							제목
 						</div>
 						<div class="line_content">
-							<input type="text" name="subject3" value="{{ $data->subject }}" />
+							<input type="text" name="subject" value="{{ $data->subject }}" />
 						</div>
                 </div>
             </div>
+			@endif
+
             <!-- <div class="write_line">
                 <div class="all_line">
                     <div class="line_title">
@@ -502,17 +504,18 @@
 			*/
 		@elseif(request()->segment(2) == 'press' || request()->segment(2) == 'notice')
 
-			if(form.subject.value == "") {
+			if(form.subject3.value == "") {
 				alert('제목을 입력해주세요.');
 				form.subject.focus();
 				return false;
 			}
-
+			/*
 			if(form.priority.value == "") {
 				alert('우선순위을 입력해주세요.');
 				form.priority.focus();
 				return false;
 			}
+			*/
 
 			let editor = new FroalaEditor('#edit', {}, function () {
 				// console.log(editor.html.get())				

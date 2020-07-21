@@ -3,13 +3,14 @@
                 <div class="swiper-container main_slider">
                     <div class="swiper-wrapper">
 						@foreach($data as $data)
-                        <div class="swiper-slide"><img class="mo_none" src="/storage/app/images/{{ $data->attach_file }}" alt=""><img class="mo_block" src="/storage/app/images/{{ $data->attach_file2 }}" alt=""></div>
+                        <div class="swiper-slide"><img class="mo_none" src="/storage/app/images/{{ $data->attach_file }}" alt=""><img class="mo_block" src="/storage/app/images/{{ $data->attach_file2 }}" alt=""><input type="hidden" id="link_value" name="link_value" value="{{ $data->link_value }}" /></div>
+						
                         @endforeach
 						<!-- <div class="swiper-slide"><img class="mo_none" src="/img/main_slider_01.png" alt=""><img class="mo_block" src="/img/m_main_slider_01.png" alt=""><a href="#none" class="slider_more_btn">READ MORE</a></div>
                         <div class="swiper-slide"><img class="mo_none" src="/img/main_slider_01.png" alt=""><img class="mo_block" src="/img/m_main_slider_01.png" alt=""><a href="#none" class="slider_more_btn">READ MORE</a></div> -->
                     </div>
                     <!-- Add Pagination -->
-                    <a href="{{ $data->link_value }}" target="_blank" class="slider_more_btn">READ MORE</a>
+                    <a href="{{ $data->link_value }}" target="_blank" id="link_value_text" class="slider_more_btn">READ MORE</a>
                     <div class="swiper-pagination"></div>
                     
                 </div>
@@ -83,6 +84,24 @@
                   clickable: true,
                 },
             });
+
+			$(function () {
+
+				//alert($(".swiper-slide-active").children('input[name=link_value]').val());
+				//slider_more_btn
+				//re_read_func();
+
+				var timerId = setInterval(re_read_func, 1000);
+
+			});
+
+			function re_read_func() {
+				//console.log($(".swiper-slide-active").children('input[name=link_value]').val());
+				$("#link_value_text").attr('href', $(".swiper-slide-active").children('input[name=link_value]').val())
+			}
+
+			//alert($(".swiper-slide-active").children('input[name=link_value]').val());
+
         </script>
     </body>
 </html>

@@ -17,7 +17,7 @@
                     {{-- <div class="beds_bot">
                         <img src="../img/sub/beds_bot.png" alt="">
                     </div> --}}
-					{!! $paging_view !!}
+					<!-- {!! $paging_view !!} -->
                 </div>
             </div>
 @include('inc/footer')
@@ -46,9 +46,4 @@
 			}
         </script>
     </body>
-	<form name="search_form" action="{{ $_SERVER['REQUEST_URI'] }}/" class="board_search_con" onsubmit="return search();">
-		<input type="hidden" name="page" />
-		<!-- <input type="text" name="key" placeholder="검색어를 입력하세요" value="{{ $key }}" required> -->
-		<button></button>
-	</form>
 </html>

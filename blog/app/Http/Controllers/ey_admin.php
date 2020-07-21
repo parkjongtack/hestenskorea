@@ -260,7 +260,6 @@ class Ey_admin extends Controller
 				}
 
 				if($file_array[1] != null) {
-
 					DB::table('board')->where('idx', $request->board_idx)->update(
 						[
 							'subject' => $request->subject,
@@ -380,6 +379,7 @@ class Ey_admin extends Controller
 						[
 							'subject' => $request->subject,
 							'category' => $request->category,
+							'category2' => $request->category2,
 							'writer' => $request->writer,
 							'ip_addr' => request()->ip(),
 							'board_type' => $request->board_type,
@@ -409,6 +409,7 @@ class Ey_admin extends Controller
 						[
 							'subject' => $request->subject,
 							'category' => $request->category,
+							'category2' => $request->category2,
 							'writer' => $request->writer,
 							'ip_addr' => request()->ip(),
 							'board_type' => $request->board_type,
@@ -663,6 +664,7 @@ class Ey_admin extends Controller
 					[
 						'subject' => $request->subject,
 						'contents' => $request->subject2,
+						'category2' => $request->category2,
 						'writer' => $request->writer,
 						'ip_addr' => request()->ip(),
 						'board_type' => $request->board_type,
