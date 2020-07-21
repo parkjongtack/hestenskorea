@@ -131,7 +131,7 @@
                     <div class="acc_content">
                         <ul class="inner">
 							@foreach($data as $data)
-                            <li class="@if($data->all_type == 'Y') all_  @else @if($i%2 == '0') half @else half n_m @endif @endif">
+                            <li class="@if($data->all_type == 'Y') all_  @else half @if($j%2 == '0') n_m @endif @endif">
                                 <img class="mo_block" src="/storage/app/images/{{ $data->attach_file2 }}" alt="">
                                 <img class="mo_none" src="/storage/app/images/{{ $data->attach_file }}" alt="">
                                 <div class="acc_content_text">
@@ -140,6 +140,9 @@
                                 </div>
                             </li>
 								{{ $i++ }}
+								@if($data->all_type != 'Y')
+									{{ $j++ }}
+								@endif
 							@endforeach
                         </ul>
                     </div>

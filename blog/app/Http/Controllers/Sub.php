@@ -114,6 +114,7 @@ class Sub extends Controller
 
 		$return_list = array();
 		$return_list["i"] = 1;
+		$return_list["j"] = 1;
 		$return_list["board_top_count"] = $board_top_count;
 		$return_list["board_top_list"] = $board_top_list;
 		$return_list["data"] = $list;
