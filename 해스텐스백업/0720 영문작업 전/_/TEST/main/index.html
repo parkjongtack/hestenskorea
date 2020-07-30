@@ -1,0 +1,46 @@
+<%
+Dim cnfg_userCode : cnfg_userCode = UCase(Request.ServerVariables("HTTP_ACCEPT_LANGUAGE")) 
+
+Dim requestPln
+requestPln = request("pLn")
+
+IF requestPln="" THEN
+  
+	  Dim userPLN
+    userPLN = Session("pLn")
+    if userPLN="" then
+        userPLN = request.Cookies("pLn")
+    end if
+		
+		if userPLN="" then
+       if Left(cnfg_userCode,2) = "KO" then
+    	     response.Cookies("pLn")="Kor"
+    			 Session("pLn")="Kor"
+    	 else
+    	     response.Cookies("pLn")="Eng"
+    			 Session("pLn")="Eng"			 	 
+    	 end if
+    else
+    	 Session("pLn")=userPLN
+    end if
+		
+ELSE
+    Session("pLn") = requestPln
+    response.Cookies("pLn")= requestPln
+END IF
+
+response.cookies("pLn").expires=date + 365
+
+if request("reUrl")="" then
+    if Session("pLn")="Kor" then
+        server.execute("index_Kr.html")
+    else
+        server.execute("index_En.html")
+    end if
+elseif inStr(request("reUrl"),"index.html")>0 then
+    response.redirect "index.html?pLn="&Session("pLn")
+else
+    response.redirect request("reUrl")
+end if
+
+%>

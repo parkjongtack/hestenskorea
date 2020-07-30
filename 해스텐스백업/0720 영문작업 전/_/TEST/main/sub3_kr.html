@@ -1,0 +1,135 @@
+<!-- #include file="head.html"-->
+<!-- #include file="header.html"-->
+        <div id="sub_sec">
+            <div class="sub_top event_">
+                <div class="top_title">
+                    <h2>행사개요</h2>
+                    <!-- <p>Try Everything 2020 행사개요</p> -->
+                </div>
+            </div>
+            <div class="sub_nav sub1_page">
+                <ul>
+                    <li><a href="sub2.html">행사소개</a></li>
+                    <!-- <li><a href="sub1.html">서울창업허브 소개</a></li> -->
+                    <li><a href="sub4.html">참여기관 소개</a></li>
+                    <li class="on table_hover_list"><a href="sub3.html">CONTACT US</a></li>
+                </ul>
+            </div>
+            <div class="sub_content">
+                <div class="content_title">
+                    <p><span>|</span>&nbsp;&nbsp;&nbsp;&nbsp;T r y&nbsp;&nbsp;E v e r y t h i n g&nbsp;&nbsp;2&nbsp;0&nbsp;2&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<span>|</span></p>
+                    <h2>CONTACT US</h2>
+                    <!-- <p style="color: #333; margin-top: 5px;" class="korean">문의 하실 내용을 작성해주시면 가능한 빠른 시간 내에 회신 드리겠습니다.</p> -->
+                </div>
+                <div class="content_inner">
+                    <div class="contact_info">
+                        <ul>
+                            <li>
+                                <div class="fW_500">문의내용</div>
+                                <div class="fW_500">이메일</div>
+                                <div class="fW_500">문의전화</div>
+                            </li>
+                            <li>
+                                <div class="fW_500">참가문의</div>
+                                <div>registration@tryeverything.or.kr</div>
+                                <div>02-2000-2087</div>
+                            </li>
+                            <li>
+                                <div class="fW_500">프로그램</div>
+                                <div>program@tryeverything.or.kr</div>
+                                <div>02-6288-6338</div>
+                            </li>
+                            <li>
+                                <div class="fW_500">기업참여</div>
+                                <div>meetup@tryeverything.or.kr</div>
+                                <div>02-6288-6335</div>
+                            </li>
+                            <li>
+                                <div class="fW_500">일반문의</div>
+                                <div>secretartiat@tryeverything.or.kr</div>
+                                <div>02-6288-6322</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="contact_form_title">
+                        <h2>문의하기</h2>
+                        <p>문의 하실 내용을 작성해주시면 가능한 빠른 시간 내에 회신 드리겠습니다.</p>
+                    </div>
+                     <form name="contactForm"  id="contactForm" class="contact_form" >
+						<input type="hidden" name="s_email"  id="s_email">
+                        <ul>
+                            <li class="contact_form_outer">
+                                <p class="contact_sub_title"><b>구분</b></p>
+                                <div class="input_box">
+                                    <select name="cate" id="cate">
+                                        <option value="" selected disabled>문의 유형을 선택해주세요</option>
+                                        <option value="VC">VC</option>
+                                        <option value="AC">AC</option>
+                                        <option value="스타트업">스타트업</option>
+                                        <option value="기타">기타</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="contact_form_outer">
+                                <p class="contact_sub_title"><b>질문분야</b></p>
+                                <div class="input_box">
+                                    <select name="quesCate" id="quesCate">
+                                        <option value="" selected disabled>질문분야를 선택해주세요</option>
+                                        <option value="강연">강연</option>
+                                        <option value="기업참여">기업참여</option>
+                                        <option value="행사참여">행사참여</option>
+                                        <option value="행사안내">행사안내</option>
+                                        <option value="기타">기타</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="contact_form_outer">
+                                <p class="contact_sub_title"><b>이름</b></p>
+                                <div class="input_box">
+                                    <input type="text" name="s_name" id="s_name" maxlength="100">
+                                </div>
+                            </li>
+                            <li class="contact_form_outer">
+                                <p class="contact_sub_title"><b>이메일</b></p>
+                                <div class="input_box contact_email">
+                                    <input type="text" class="email_f" style="ime-mode:disabled;" name="email_01" id="email_01" maxlength="80">&nbsp;&nbsp;@&nbsp;&nbsp;<input type="text" class="email_s" style="ime-mode:disabled;" name="email_02" id="email_02" maxlength="80">
+                                    <select name="email_03" id="email_03"  class="e_mail selectEmail" onChange="inEmail();" >
+                                        <option value="" selected>직접 입력</option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="hanmail.net">hanmail.net</option>
+                                        <option value="hotmail.com">hotmail.com</option>
+                                        <option value="nate.com">nate.com</option>
+                                        <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                        <option value="empas.com">empas.com</option>
+                                        <option value="dreamwiz.com">dreamwiz.com</option>
+                                        <option value="freechal.com">freechal.com</option>
+                                        <option value="lycos.co.kr">lycos.co.kr</option>
+                                        <option value="korea.com">korea.com</option>
+                                        <option value="gmail.com">gmail.com</option>
+                                        <option value="hanmir.com">hanmir.com</option>
+                                        <option value="paran.com">paran.com</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li class="contact_form_outer">
+                                <p class="contact_sub_title"><b>제목</b></p>
+                                <div class="input_box">
+                                    <input type="text" name="s_title" id="s_title" maxlength="100">
+                                </div>
+                            </li>
+                            <li class="contact_form_outer">
+                                <p class="contact_sub_title"><b>내용</b></p>
+                                <div class="input_box">
+                                    <textarea name="s_content" id="s_content" cols="30" rows="10"></textarea>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="submit_box" id="id_but">
+                            <input type="button" class="submit" value="문의하기" onClick="goSend()">
+                            <input type="reset" value="취소">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+<!-- #include file="footer.html"-->

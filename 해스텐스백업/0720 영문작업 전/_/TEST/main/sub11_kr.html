@@ -1,0 +1,101 @@
+<!-- #include virtual="/common/inc/site_config_inc.asp" -->
+<!-- #include virtual="/common/inc/base64.asp" -->
+<%
+Dim nCate : nCate ="VIDEO"
+Dim nLang : nLang ="KOR"
+%>
+<!-- #include virtual="/common/inc/page_inc.asp" -->
+<!-- #include virtual="/common/proc/board_config_inc.asp" -->
+<!-- #include file="head.html"-->
+<!-- #include file="header.html"-->
+<!-- #include file="head.html"-->
+
+<!-- #include file="header.html"-->
+        <div id="sub_sec">
+            <div class="sub_top apply_top">
+                <div class="top_title">
+                    <h2>미디어</h2>
+                    <!-- <p>Try Everything 2020 미디어</p> -->
+                </div>
+            </div>
+            <div class="sub_nav sub5_page">
+                <ul>
+                    <li><a href="sub8.html">공지사항</a></li>
+                    <li><a class="on_nav" href="sub9.html">행사뉴스레터</a></li>
+                    <li><a href="sub10.html">관련보도</a></li>
+                    <li class="on table_hover_list on_nav"><a href="sub11.html">행사 영상</a></li>
+                    <li><a class="on_nav" href="sub12.html">행사 사진</a></li>
+                </ul>
+            </div>
+            <div class="sub_content">
+                <div class="content_title">
+                    <p><span>|</span>&nbsp;&nbsp;&nbsp;&nbsp;T r y&nbsp;&nbsp;E v e r y t h i n g&nbsp;&nbsp;2&nbsp;0&nbsp;2&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<span>|</span></p>
+                    <h2>행사 영상</h2>
+                    <p style="color: #333; margin-top: 5px;" class="korean">Try Everything 행사 영상 게시판입니다.</p>
+                </div>
+                <div class="content_info">
+                    <div class="notice_search search_form">
+                        <div class="left">
+                            <p class="fW_300">총 <b><%=formatnumber(totalCnt,0)%>건</b>의 결과</p>
+                        </div>
+                        <div class="right">
+                            <div class="search_box">
+                                <form id="schForm" name="schForm" method="get">
+                                        <select name="schField" id="schValue">
+																				    <option  value="title">제목</option>
+                                        </select>
+                                        <input type="text" name="schValue" id="schValue" maxlength='100' value="<%=request("schValue")%>" <%if not isEmptyStr(schValue) then%>style='background:#fff6dc;'<%end if%>>
+                                        <button></button>
+                                    </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallay_list">
+                        <ul>
+<%
+Dim fw,fh
+fw = 400
+fh = 250
+
+				
+IF not isNull(SqlExe) THEN
+    Dim iCounter,idx,title,view_Date,idxTmpNum,file_sv
+    For iCounter = 0 to ubound(SqlExe, 2)	
+		    
+		    idx         = SqlExe(0,iCounter)
+				title		  	= outSql(SqlExe(2,iCounter))
+				view_Date		= replace(SqlExe(4,iCounter),"-",".")
+				file_sv			= SqlExe(6,iCounter)
+				idxTmpNum = writing_count-(iCounter)-((currentPage-1) * perPage)
+				
+				if isEmptyStr(file_sv) then
+				    file_sv = "<img src='img/gallay_sampl1e.png' alt=''>"
+				else
+				    file_sv = "<img src='/upload/board/"&file_sv&"' alt='' style='max-width:"&fw&"px;max-height:"&fh&"px;'>"				
+				end if
+				
+															
+%>												
+                            <li>
+                                <a href="board_view.html?idx=<%=base64Encode(idx)%><%=viewP%>">
+                                    <div class="gallay_img"><%=file_sv%></div>
+                                    <div class="gallay_text">
+                                        <span style='max-width:100%;display: block;text-overflow:ellipsis;overflow: hidden;white-space: normal;'><%=title%></span>
+                                    </div>
+                                </a>
+                            </li>
+													
+<%
+    Next
+END IF
+%>                               
+                        </ul>
+                        <%
+            						if cint(writing_count)>perPage then 
+            						    response.write pageUtil(perPage, p_size, writing_count, currentPage, "?a=1"&searchLinkString)
+            						end if
+            						%>
+                </div>
+            </div>
+        </div>
+<!-- #include file="footer.html"-->

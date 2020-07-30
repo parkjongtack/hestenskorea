@@ -1,0 +1,55 @@
+<div id="header">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt=""></a>
+            </div>
+            <div class="h_nav_outer">
+                <ul class="nav_list">
+                    <li><a href="sub2.html">행사개요</a></li>
+                    <li><a href="sub.html">프로그램</a></li>
+                    <li><a href="#none">연사소개</a></li>
+                    <li><a href="sub5.html">참가신청</a></li>
+                    <li><a href="sub8.html">미디어</a></li>
+                    <li><a href="#none" onclick="alert('준비중입니다.')">ENG</a></li>
+                </ul>
+            </div>
+            <div class="nav_show">
+                <div class="nav_show_outer">
+                    <ul>
+                        <li><a class="" href="sub2.html">행사소개</a></li>
+                        <!-- <li><a class="on" href="#none">행사소개</a></li> -->
+                        <!-- <li><a class="" href="sub1.html">서울창업허브 소개</a></li> -->
+                        <li><a class="" href="sub4.html">참여기관 소개</a></li>
+                        <li><a class="" href="sub3.html">CONTACT US</a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="" href="sub.html">주요일정</a></li>
+                        <li><a class="on" href="sub7.html">세부프로그램</a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="on" href="#none">2020</a></li>
+                        <li><a class="on" href="#none">2019</a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="" href="sub5.html">참가신청 안내</a></li>
+                        <li><a class="" href="sub6.html">온라인 스타트업 전시</a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="" href="sub8.html">공지사항</a></li>
+                        <li><a class="on" href="sub9.html">행사뉴스레터</a></li>
+                        <li><a class="" href="sub10.html">관련보도</a></li>
+                        <li><a class="on" href="sub11.html">행사 영상</a></li>
+                        <li><a class="on" href="sub12.html">행사 사진</a></li>
+                    </ul>
+                    <ul class="blank"></ul>
+                </div>
+            </div>
+        </div>
+		<script>
+			$(".nav_show_outer a").click(function(){
+				var get_class = $(this).attr("class");
+				if(get_class == "on"){
+					alert("추후 오픈 예정입니다.")
+					return false;
+				}
+			});
+		</script>

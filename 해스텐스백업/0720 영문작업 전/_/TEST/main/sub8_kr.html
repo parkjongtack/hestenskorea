@@ -1,0 +1,97 @@
+<!-- #include virtual="/common/inc/site_config_inc.asp" -->
+<!-- #include virtual="/common/inc/base64.asp" -->
+<%
+Dim nCate : nCate ="NEWS"
+Dim nLang : nLang ="KOR"
+%>
+<!-- #include virtual="/common/inc/page_inc.asp" -->
+<!-- #include virtual="/common/proc/board_config_inc.asp" -->
+<!-- #include file="head.html"-->
+<!-- #include file="header.html"-->
+
+        <div id="sub_sec">
+            <div class="sub_top event_ apply_top">
+                <div class="top_title">
+                    <h2>미디어</h2>
+                    <!-- <p>Try Everything 2020 미디어</p> -->
+                </div>
+            </div>
+            <div class="sub_nav sub5_page">
+                <ul>
+                    <li class="on table_hover_list on_nav"><a href="sub8.html">공지사항</a></li>
+                    <!-- <li><a href="sub1.html">서울창업허브 소개</a></li> -->
+                    <li><a class="on_nav" href="sub9.html">행사뉴스레터</a></li>
+                    <li><a href="sub10.html">관련보도</a></li>
+                    <li><a class="on_nav" href="sub11.html">행사 영상</a></li>
+                    <li><a class="on_nav" href="sub12.html">행사 사진</a></li>
+                </ul>
+            </div>
+            <div class="sub_content">
+                <div class="content_title">
+                    <p><span>|</span>&nbsp;&nbsp;&nbsp;&nbsp;T r y&nbsp;&nbsp;E v e r y t h i n g&nbsp;&nbsp;2&nbsp;0&nbsp;2&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;<span>|</span></p>
+                    <h2>공지사항</h2>
+                    <p style="color: #333; margin-top: 5px;" class="korean">행사와 관련된 새로운 소식들을 만나보세요</p>
+                </div>
+                <div class="content_inner">
+                    <div class="contact_info media_notice">
+                        <div class="notice_search search_form">
+                            <div class="left">
+                                <p class="fW_300">총 <b><%=formatnumber(totalCnt,0)%>건</b>의 결과</p>
+                            </div>
+                            <div class="right">
+                                <div class="search_box">
+                                    <form id="schForm" name="schForm" method="get">
+                                        <select name="schField" id="schValue">
+																				    <option  value="ALL" <%if schValue="ALL" then%>selected<%end if%>>전체</option>
+                                            <option  value="title" <%if schValue="title" then%>selected<%end if%>>제목</option>
+																						<option  value="content" <%if schValue="content" then%>selected<%end if%>>내용</option>
+																						
+                                        </select>
+                                        <input type="text" name="schValue" id="schValue" maxlength='100' value="<%=request("schValue")%>" <%if not isEmptyStr(schValue) then%>style='background:#fff6dc;'<%end if%>>
+                                        <button></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="notice_list">
+                            <li>
+                                <div class="fW_500">번호</div>
+                                <div class="fW_500" >제목</div>
+                                <div class="fW_500">작성일</div>
+                            </li>
+<%
+IF not isNull(SqlExe) THEN
+    Dim iCounter,idx,title,view_Date,idxTmpNum
+    For iCounter = 0 to ubound(SqlExe, 2)	
+		    
+		    idx       = SqlExe(0,iCounter)
+				title			= outSql(SqlExe(2,iCounter))
+				view_Date		= replace(SqlExe(4,iCounter),"-",".")
+				idxTmpNum = writing_count-(iCounter)-((currentPage-1) * perPage)
+															
+%>	
+														
+                            <li>
+                                <div class=""><span style='height:45px;display: block;overflow: hidden;'><%=idxTmpNum%></span></div>
+																<div><span style='max-width:90%;height:45px;display: block;text-overflow:ellipsis;overflow: hidden;white-space: nowrap;'><a href="board_view.html?idx=<%=base64Encode(idx)%><%=viewP%>"><%=title%></a></span></div>
+                                <div><span style='height:45px;display: block;overflow: hidden;'><%=view_Date%></span></div>
+                            </li>
+<%
+    Next
+END IF
+%>
+                        </ul>
+												
+												<%
+            						if cint(writing_count)>perPage then 
+            						    response.write pageUtil(perPage, p_size, writing_count, currentPage, "?a=1"&searchLinkString)
+            						end if
+            						%>
+						
+                        
+						
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- #include file="footer.html"-->

@@ -1,0 +1,13 @@
+  <%
+  Dim userPLN
+  userPLN = Session("pLn")
+  if userPLN="" then
+      userPLN = request.Cookies("pLn")
+  end if	
+  
+  if userPLN="Eng" then
+      server.execute("sub12_en.html")
+  else
+      server.execute("sub12_kr.html")
+  end if
+  %>
